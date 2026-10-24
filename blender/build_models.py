@@ -21,7 +21,9 @@ import math
 import os
 import sys
 
+import bmesh
 import bpy
+from mathutils import Euler, Vector
 
 OUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output")
 
@@ -153,10 +155,11 @@ class B:
 
     def _fin(self, n, m, loc, rot, scale, parent, smooth=True, bevel=0.0, bake_scale=False):
         o = bpy.context.active_object
-        if bake_scale:  # escala en la malla => biselado uniforme
+        if bake_scale:  # escala y rotación en la malla => biselado uniforme y degradados rectos
+            rm = Euler(rot).to_matrix()
             for v in o.data.vertices:
-                v.co = (v.co.x * scale[0], v.co.y * scale[1], v.co.z * scale[2])
-            scale = (1, 1, 1)
+                v.co = rm @ Vector((v.co.x * scale[0], v.co.y * scale[1], v.co.z * scale[2]))
+            scale, rot = (1, 1, 1), (0, 0, 0)
         o.location, o.rotation_euler, o.scale = loc, rot, scale
         o.data.materials.append(m)
         if bevel:
@@ -182,17 +185,24 @@ class B:
                          bake_scale=True)
 
     def cyl(self, n, m, loc=(0, 0, 0), r=0.5, depth=1.0, rot=(0, 0, 0), scale=(1, 1, 1),
-            parent=None, r2=None, bevel=0.0):
+            parent=None, r2=None, bevel=0.0, verts=40):
         if r2 is None:
-            bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=depth, vertices=40)
+            bpy.ops.mesh.primitive_cylinder_add(radius=r, depth=depth, vertices=verts)
         else:
             bpy.ops.mesh.primitive_cone_add(radius1=r, radius2=r2, depth=depth, vertices=40)
         return self._fin(n, m, loc, rot, scale, parent, bevel=bevel, bake_scale=True)
 
     def torus(self, n, m, loc=(0, 0, 0), major=1.0, minor=0.1, rot=(0, 0, 0), scale=(1, 1, 1),
-              parent=None):
+              parent=None, half=False):
         bpy.ops.mesh.primitive_torus_add(major_radius=major, minor_radius=minor,
                                          major_segments=64, minor_segments=16)
+        if half:  # deja solo la mitad con Y local >= 0 (p. ej. diadema)
+            me = bpy.context.active_object.data
+            bm = bmesh.new()
+            bm.from_mesh(me)
+            bmesh.ops.delete(bm, geom=[v for v in bm.verts if v.co.y < -0.01], context="VERTS")
+            bm.to_mesh(me)
+            bm.free()
         o = self._fin(n, m, loc, rot, scale, parent, smooth=False, bake_scale=True)
         for p in o.data.polygons:
             p.use_smooth = True
@@ -226,16 +236,19 @@ class B:
 
 
 # ----------------------------------------------------------------------------
-# Robot base (estilo chibi): cabeza grande con pantalla, torso compacto,
-# brazos con codo, botas. Medidas: suelo z=0, cabeza hasta z≈3.
+# Robot base (estilo chibi). Suelo en z=0. Variantes de silueta:
+#   head_shape: "box" | "round" | "hex" | "pill"
+#   body_shape: "box" | "round" | "taper"      legs=False => flota con propulsor
+#   eyes: "pill" | "dot" | "star" | "visor"    ears: "disc" | "headset" | None
+#   antenna: "single" | "twin" | None
+# Tras llamarlo, b.info tiene head_top, chest_y, chest_z, top (altura del torso).
 # ----------------------------------------------------------------------------
-CHEST_Y, CHEST_Z = -0.57, 1.08  # dónde van los emblemas del pecho
-HEAD_TOP = 1.24  # altura local de la parte superior de la cabeza (sobre head_pivot)
+HEAD_TOP = 1.24  # parte superior de la cabeza "box" (sobre head_pivot)
 
 
 def robot(b, body, head, limb, accent, eye_c="#00E5FF", screen_c=SCREEN, metal=0.5,
-          head_bevel=0.22, body_bevel=0.2, eyes="pill", antenna=True, ears=True):
-    """Construye el robot base. Colores en hex o materiales ya creados."""
+          head_shape="box", body_shape="box", body_dims=(1.3, 1.0, 1.1), legs=True,
+          head_bevel=0.22, body_bevel=0.2, eyes="pill", antenna="single", ears="disc"):
     n = b.name
     body_m = as_mat(body, f"{n}_body", rough=0.3, metal=metal, coat=0.4)
     head_m = as_mat(head, f"{n}_head", rough=0.3, metal=metal, coat=0.4)
@@ -246,39 +259,107 @@ def robot(b, body, head, limb, accent, eye_c="#00E5FF", screen_c=SCREEN, metal=0
     led_m = mat(f"{n}_led", eye_c, 0.2, emit=8.0)
     glint_m = mat(f"{n}_glint", "#FFFFFF", 0.1, emit=12.0)
 
-    # torso + pelvis + placa del pecho
-    b.box("body", body_m, (0, 0, 1.05), (1.3, 1.0, 1.1), bevel=body_bevel)
-    b.box("pelvis", joint_m, (0, 0, 0.52), (0.9, 0.72, 0.22), bevel=0.08)
-    b.box("chest_plate", acc_m, (0, -0.5, CHEST_Z), (0.82, 0.08, 0.6), bevel=0.04)
-    b.cyl("neck", joint_m, (0, 0, 1.66), 0.2, 0.16)
-    b.torus("neck_ring", acc_m, (0, 0, 1.62), 0.26, 0.045)
+    # --- torso ---
+    base = 0.5 if legs else 0.85
+    w, d, h = body_dims
+    top = base + h
+    if body_shape == "box":
+        b.box("body", body_m, (0, 0, base + h / 2), (w, d, h), bevel=body_bevel)
+        chest_z, chest_y = base + h * 0.53, -d / 2 - 0.07
+        b.box("chest_plate", acc_m, (0, -d / 2, chest_z), (w * 0.63, 0.08, h * 0.55), bevel=0.04)
+        sh_x, sh_z = w / 2 + 0.15, top - 0.2
+    elif body_shape == "round":
+        b.sphere("body", body_m, (0, 0, base + h / 2), 1.0, (w / 2, d / 2, h / 2))
+        chest_z, chest_y = base + h / 2 + 0.05, -d / 2 - 0.06
+        b.cyl("chest_plate", acc_m, (0, -d / 2, chest_z), 0.28, 0.06, (math.pi / 2, 0, 0),
+              bevel=0.02)
+        sh_x, sh_z = w / 2 * 0.92 + 0.08, base + h / 2 + 0.2
+    else:  # "taper": cono invertido
+        r1, r2 = w * 0.28, w / 2
+        b.cyl("body", body_m, (0, 0, base + h / 2), r1, h, r2=r2, bevel=0.08)
+        f = 0.6
+        chest_z, chest_y = base + h * f, -(r1 + (r2 - r1) * f) - 0.04
+        sh_x, sh_z = r2 + 0.12, top - 0.15
+    if legs:
+        b.box("pelvis", joint_m, (0, 0, 0.52), (0.9, 0.72, 0.22), bevel=0.08)
+    b.cyl("neck", joint_m, (0, 0, top + 0.06), 0.2, 0.16)
+    b.torus("neck_ring", acc_m, (0, 0, top + 0.02), 0.26, 0.045)
 
-    # cabeza
-    hp = b.pivot("head_pivot", (0, 0, 1.72))
-    b.box("head", head_m, (0, 0, 0.62), (1.7, 1.3, 1.24), parent=hp, bevel=head_bevel)
-    b.box("screen", screen_m, (0, -0.64, 0.64), (1.42, 0.06, 0.92), parent=hp,
-          bevel=min(0.14, head_bevel * 0.7))
-    if eyes == "pill":
+    # --- cabeza ---
+    hp = b.pivot("head_pivot", (0, 0, top + 0.12))
+    if head_shape == "box":
+        hc, head_top, head_w, eye_y, mouth_y = 0.62, 1.24, 0.85, -0.68, -0.68
+        b.box("head", head_m, (0, 0, hc), (1.7, 1.3, 1.24), parent=hp, bevel=head_bevel)
+        b.box("screen", screen_m, (0, -0.64, hc + 0.02), (1.42, 0.06, 0.92), parent=hp,
+              bevel=min(0.14, head_bevel * 0.7))
+    elif head_shape == "round":
+        hc, head_top, head_w, eye_y, mouth_y = 0.72, 1.44, 0.95, -0.87, -0.855
+        b.sphere("head", head_m, (0, 0, hc), 1.0, (0.95, 0.8, 0.72), parent=hp)
+        b.sphere("screen", screen_m, (0, -0.3, hc), 1.0, (0.72, 0.62, 0.5), parent=hp)
+    elif head_shape == "hex":
+        hc, head_top, head_w, eye_y, mouth_y = 0.78, 1.56, 0.9, -0.66, -0.66
+        b.cyl("head", head_m, (0, 0, hc), 0.9, 1.2, (math.pi / 2, 0, 0), parent=hp, bevel=0.1,
+              verts=6)
+        b.cyl("screen", screen_m, (0, -0.6, hc), 0.72, 0.06, (math.pi / 2, 0, 0), parent=hp,
+              bevel=0.03, verts=6)
+    else:  # "pill": cápsula horizontal
+        hc, head_top, head_w, eye_y, mouth_y = 0.6, 1.2, 0.95, -0.65, -0.62
+        b.cyl("head", head_m, (0, 0, hc), 0.6, 0.7, (0, math.pi / 2, 0), parent=hp)
+        b.cyl("screen", screen_m, (0, -0.12, hc), 0.5, 0.7, (0, math.pi / 2, 0), parent=hp)
         for s, sx in (("L", -1), ("R", 1)):
-            b.sphere(f"eye_{s}", led_m, (sx * 0.32, -0.68, 0.72), 1.0, (0.13, 0.04, 0.19), parent=hp)
-            b.sphere(f"glint_{s}", glint_m, (sx * 0.32 + 0.05, -0.715, 0.8), 0.035, parent=hp)
-    else:  # visor de una sola ranura
-        b.box("eye_L", led_m, (0, -0.68, 0.72), (1.0, 0.04, 0.14), parent=hp, bevel=0.03)
-        b.pivot("eye_R", (0, 0, 0.72), parent=hp)  # para que existan ambos nombres
-    b.box("mouth", led_m, (0, -0.68, 0.4), (0.26, 0.03, 0.05), parent=hp, bevel=0.02)
-    if ears:
-        for s, sx in (("L", -1), ("R", 1)):
-            b.cyl(f"ear_{s}", acc_m, (sx * 0.88, 0, 0.64), 0.24, 0.12, (0, math.pi / 2, 0),
-                  parent=hp, bevel=0.03)
-            b.cyl(f"ear_cap_{s}", joint_m, (sx * 0.96, 0, 0.64), 0.12, 0.08, (0, math.pi / 2, 0),
-                  parent=hp, bevel=0.02)
-    if antenna:
-        b.cyl("antenna", joint_m, (0, 0, HEAD_TOP + 0.14), 0.03, 0.3, parent=hp)
-        b.sphere("antenna_tip", led_m, (0, 0, HEAD_TOP + 0.32), 0.07, parent=hp)
+            b.sphere(f"head_end_{s}", head_m, (sx * 0.35, 0, hc), 0.6, parent=hp)
+            b.sphere(f"screen_end_{s}", screen_m, (sx * 0.35, -0.12, hc), 0.5, parent=hp)
 
-    # brazos (ligeramente abiertos) y piernas
+    ez = hc + 0.1
     for s, sx in (("L", -1), ("R", 1)):
-        sh = b.pivot(f"shoulder_{s}", (sx * 0.8, 0, 1.4), (0, -sx * math.radians(10), 0))
+        ex = sx * 0.3
+        if eyes == "pill":
+            b.sphere(f"eye_{s}", led_m, (ex, eye_y, ez), 1.0, (0.13, 0.04, 0.19), parent=hp)
+            b.sphere(f"glint_{s}", glint_m, (ex + 0.05, eye_y - 0.035, ez + 0.08), 0.035, parent=hp)
+        elif eyes == "dot":
+            b.sphere(f"eye_{s}", led_m, (ex, eye_y, ez), 1.0, (0.12, 0.04, 0.12), parent=hp)
+            b.sphere(f"glint_{s}", glint_m, (ex + 0.04, eye_y - 0.035, ez + 0.05), 0.03, parent=hp)
+        elif eyes == "star":
+            b.flat(f"eye_{s}", led_m, star4_pts(0.17), 0.03, (ex, eye_y, ez), parent=hp, bevel=0)
+    if eyes == "visor":
+        b.box("eye_L", led_m, (0, eye_y, ez), (1.0, 0.04, 0.14), parent=hp, bevel=0.03)
+        b.pivot("eye_R", (0, 0, ez), parent=hp)  # para que existan ambos nombres
+    b.box("mouth", led_m, (0, mouth_y, hc - 0.24), (0.26, 0.03, 0.05), parent=hp, bevel=0.02)
+
+    if ears == "disc":
+        for s, sx in (("L", -1), ("R", 1)):
+            b.cyl(f"ear_{s}", acc_m, (sx * (head_w + 0.03), 0, hc), 0.24, 0.12,
+                  (0, math.pi / 2, 0), parent=hp, bevel=0.03)
+            b.cyl(f"ear_cap_{s}", joint_m, (sx * (head_w + 0.11), 0, hc), 0.12, 0.08,
+                  (0, math.pi / 2, 0), parent=hp, bevel=0.02)
+    elif ears == "headset":
+        b.torus("headband", acc_m, (0, 0, hc), head_w + 0.12, 0.055, (math.pi / 2, 0, 0),
+                parent=hp, half=True)
+        for s, sx in (("L", -1), ("R", 1)):
+            b.cyl(f"ear_{s}", acc_m, (sx * (head_w + 0.1), 0, hc), 0.3, 0.2, (0, math.pi / 2, 0),
+                  parent=hp, bevel=0.05)
+        a, z = Vector((-(head_w + 0.12), -0.1, hc - 0.15)), Vector((-0.38, eye_y - 0.08, hc - 0.32))
+        mid, dv = (a + z) / 2, z - a
+        b.cyl("mic_boom", joint_m, tuple(mid), 0.03, dv.length,
+              tuple(dv.to_track_quat("Z", "Y").to_euler()), parent=hp)
+        b.sphere("mic", led_m, tuple(z), 0.07, parent=hp)
+
+    if antenna == "single":
+        b.cyl("antenna", joint_m, (0, 0, head_top + 0.14), 0.03, 0.3, parent=hp)
+        b.sphere("antenna_tip", led_m, (0, 0, head_top + 0.32), 0.07, parent=hp)
+    elif antenna == "twin":
+        for s, sx in (("L", -1), ("R", 1)):
+            t = math.radians(sx * 25)
+            dx, dz = math.sin(t), math.cos(t)
+            bx, bz = sx * 0.32, head_top - 0.06
+            b.cyl(f"antenna_{s}", joint_m, (bx + dx * 0.2, 0, bz + dz * 0.2), 0.03, 0.4, (0, t, 0),
+                  parent=hp)
+            b.flat(f"antenna_tip_{s}", led_m, star4_pts(0.16), 0.05,
+                   (bx + dx * 0.46, 0, bz + dz * 0.46), parent=hp, bevel=0)
+
+    # --- brazos ---
+    for s, sx in (("L", -1), ("R", 1)):
+        sh = b.pivot(f"shoulder_{s}", (sx * sh_x, 0, sh_z), (0, -sx * math.radians(10), 0))
         b.sphere(f"shoulder_joint_{s}", joint_m, (0, 0, 0), 0.19, parent=sh)
         b.cyl(f"upper_arm_{s}", limb_m, (0, 0, -0.24), 0.1, 0.36, parent=sh)
         b.sphere(f"elbow_{s}", joint_m, (0, 0, -0.45), 0.12, parent=sh)
@@ -286,9 +367,22 @@ def robot(b, body, head, limb, accent, eye_c="#00E5FF", screen_c=SCREEN, metal=0
         b.sphere(f"hand_{s}", joint_m, (0, 0, -0.9), 0.16, (1, 0.8, 1.1), parent=sh)
         b.sphere(f"thumb_{s}", joint_m, (-sx * 0.12, -0.06, -0.86), 0.06, parent=sh)
 
-        hip = b.pivot(f"hip_{s}", (sx * 0.3, 0, 0.5))
-        b.cyl(f"leg_{s}", joint_m, (0, 0, -0.14), 0.12, 0.28, parent=hip)
-        b.box(f"foot_{s}", limb_m, (0, -0.08, -0.39), (0.42, 0.62, 0.22), parent=hip, bevel=0.09)
+    # --- piernas o propulsor ---
+    if legs:
+        for s, sx in (("L", -1), ("R", 1)):
+            hip = b.pivot(f"hip_{s}", (sx * 0.3, 0, 0.5))
+            b.cyl(f"leg_{s}", joint_m, (0, 0, -0.14), 0.12, 0.28, parent=hip)
+            b.box(f"foot_{s}", limb_m, (0, -0.08, -0.39), (0.42, 0.62, 0.22), parent=hip,
+                  bevel=0.09)
+    else:
+        r1 = w * 0.28
+        flame = mat(f"{n}_flame", eye_c, 0.2, emit=4.0)
+        core = mat(f"{n}_flame_core", "#FFFFFF", 0.2, emit=10.0)
+        b.torus("thruster", joint_m, (0, 0, base), r1 * 0.9, 0.07)
+        b.sphere("flame", flame, (0, 0, base - 0.12), r1 * 0.7, (1, 1, 0.55))
+        b.sphere("flame_core", core, (0, 0, base - 0.1), r1 * 0.4, (1, 1, 0.6))
+
+    b.info = dict(head_top=head_top, chest_y=chest_y, chest_z=chest_z, top=top)
     return hp
 
 
@@ -296,39 +390,52 @@ def robot(b, body, head, limb, accent, eye_c="#00E5FF", screen_c=SCREEN, metal=0
 # Personajes
 # ----------------------------------------------------------------------------
 def build_claude(b):
-    """Claude: crema + terracota, destello irregular flotando sobre la antena y en el pecho."""
+    """Claude: redondito y cálido (crema + terracota), bufanda y destello sobre la cabeza."""
     orange = "#D97757"
-    hp = robot(b, "#F0EEE6", orange, orange, "#E9E4D8", eye_c="#FFD9C2", screen_c="#1E1410")
+    hp = robot(b, "#F0EEE6", orange, orange, "#2A1E18", eye_c="#FFD9C2", screen_c="#1E1410",
+               head_shape="round", body_shape="round", body_dims=(1.35, 1.05, 1.2), eyes="dot",
+               antenna=None, ears=None)
+    i = b.info
     spark = mat("claude_spark", orange, 0.3, 0.2, coat=0.5)
-    b.flat("spark", spark, sparkle_pts(), 0.1, (0, 0, HEAD_TOP + 0.75), parent=hp)
+    joint = mat("claude_stem", JOINT, 0.35, 0.85)
+    b.cyl("spark_stem", joint, (0, 0, i["head_top"] + 0.1), 0.03, 0.24, parent=hp)
+    b.flat("spark", spark, sparkle_pts(), 0.1, (0, 0, i["head_top"] + 0.6), parent=hp)
     b.flat("chest_spark", spark, sparkle_pts(lengths=(0.24, 0.19, 0.23, 0.17, 0.25, 0.2, 0.22, 0.18,
                                                       0.24, 0.19, 0.22), r_in=0.05),
-           0.05, (0, CHEST_Y, CHEST_Z))
+           0.05, (0, i["chest_y"], i["chest_z"]))
+    # bufanda terracota con una punta colgando
+    scarf = mat("claude_scarf", "#C4623F", 0.7)
+    b.torus("scarf", scarf, (0, 0, i["top"] + 0.02), 0.36, 0.11, scale=(1, 0.95, 0.8))
+    b.box("scarf_tail", scarf, (0.25, -0.42, i["top"] - 0.22), (0.2, 0.08, 0.42),
+          (0, math.radians(-12), 0), bevel=0.04)
 
 
 def build_chatgpt(b):
-    """ChatGPT: blanco + verde OpenAI, 'flor' de 6 eslabones en el pecho, orejas de auricular."""
+    """ChatGPT: alto y delgado, cabeza hexagonal verde, diadema con micrófono de asistente."""
     green = "#10A37F"
-    robot(b, "#F7F7F8", green, green, "#202123", eye_c="#B8FFE8", screen_c="#0A1F19")
-    knot = mat("gpt_knot", "#FFFFFF", 0.25, 0.1, emit=0.0)
-    for i in range(6):
-        a = i * math.tau / 6
-        b.torus(f"petal_{i}", knot, (math.cos(a) * 0.1, CHEST_Y, CHEST_Z + math.sin(a) * 0.1),
+    robot(b, "#F7F7F8", green, green, "#202123", eye_c="#B8FFE8", screen_c="#0A1F19",
+          head_shape="hex", body_dims=(1.1, 0.9, 1.35), eyes="pill", antenna=None,
+          ears="headset")
+    i = b.info
+    knot = mat("gpt_knot", "#FFFFFF", 0.25, 0.1)
+    for k in range(6):
+        a = k * math.tau / 6
+        b.torus(f"petal_{k}", knot, (math.cos(a) * 0.1, i["chest_y"], i["chest_z"] + math.sin(a) * 0.1),
                 0.1, 0.022, (math.pi / 2, -a, 0), scale=(1.7, 1.0, 1.0))
 
 
 def build_gemini(b):
-    """Gemini: degradado azul→violeta→rosa y estrella de 4 puntas luminosa."""
-    stops = [(0.0, "#1C5BD8"), (0.5, "#4285F4"), (0.8, "#9B72CB"), (1.0, "#D96570")]
-    g_body = grad_mat("gemini_body", stops)
+    """Gemini: flota con propulsor, cabeza cápsula, ojos de estrella y antenas gemelas."""
+    g_body = grad_mat("gemini_body", [(0.0, "#1C5BD8"), (0.5, "#4285F4"), (0.8, "#9B72CB"),
+                                      (1.0, "#D96570")])
     g_head = grad_mat("gemini_head", [(0.0, "#4285F4"), (0.6, "#9B72CB"), (1.0, "#D96570")])
-    hp = robot(b, g_body, g_head, "#4285F4", "#E8EEFF", eye_c="#FFFFFF", screen_c="#0B0B2A")
+    robot(b, g_body, g_head, "#4285F4", "#E8EEFF", eye_c="#CFE0FF", screen_c="#0B0B2A",
+          head_shape="pill", body_shape="taper", body_dims=(1.3, 1.0, 1.05), legs=False,
+          eyes="star", antenna="twin", ears=None)
+    i = b.info
     star = grad_mat("gemini_star", [(0.0, "#4285F4"), (0.5, "#9B72CB"), (1.0, "#D96570")], 0.2,
                     0.2, axis=0)
-    glow = mat("gemini_glow", "#C9D8FF", 0.2, emit=4.0)
-    b.flat("star", star, star4_pts(0.42), 0.12, (0, 0, HEAD_TOP + 0.8), parent=hp, bevel=0.02)
-    b.flat("star_glow", glow, star4_pts(0.15), 0.14, (0, 0, HEAD_TOP + 0.8), parent=hp)
-    b.flat("chest_star", star, star4_pts(0.26), 0.06, (0, CHEST_Y, CHEST_Z))
+    b.flat("chest_star", star, star4_pts(0.26), 0.06, (0, i["chest_y"], i["chest_z"]))
 
 
 def build_deepseek(b):
@@ -384,11 +491,12 @@ def build_deepseek(b):
 def build_grok(b):
     """Grok: negro brillante, anguloso, visor de una ranura y logo de xAI en el pecho."""
     hp = robot(b, "#141417", "#141417", "#26262B", "#2E2E34", eye_c="#FFFFFF", screen_c="#000000",
-               metal=0.35, head_bevel=0.06, body_bevel=0.06, eyes="visor", antenna=False)
+               metal=0.35, head_bevel=0.06, body_bevel=0.06, eyes="visor", antenna=None)
+    cy, cz = b.info["chest_y"], b.info["chest_z"]
     white = mat("grok_white", "#FFFFFF", 0.25, emit=1.5)
     dark = mat("grok_pad", "#26262B", 0.3, 0.8, coat=0.6)
-    b.torus("chest_ring", white, (0, CHEST_Y, CHEST_Z), 0.2, 0.03, (math.pi / 2, 0, 0))
-    b.box("chest_slash", white, (0, CHEST_Y - 0.01, CHEST_Z), (0.05, 0.04, 0.62),
+    b.torus("chest_ring", white, (0, cy, cz), 0.2, 0.03, (math.pi / 2, 0, 0))
+    b.box("chest_slash", white, (0, cy - 0.01, cz), (0.05, 0.04, 0.62),
           (0, math.radians(40), 0), bevel=0.01)
     # antena en forma de aleta y hombreras angulosas
     b.box("fin", dark, (0, 0.1, HEAD_TOP + 0.12), (0.08, 0.7, 0.3), (math.radians(-15), 0, 0),
