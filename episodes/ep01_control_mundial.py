@@ -18,41 +18,32 @@ SLUG = "ep01_control_mundial"
 HOOK = {
     "say": "Le dimos el control total del mundo a seis inteligencias artificiales.",
     "texts": ["Le dimos el control TOTAL\ndel mundo a 6 IAs 🌍",
-              "Ninguna se lo quedó…\npero mira lo que hizo la última\nen 72 horas 😳"],
+              "Ninguna se lo quedó…\npero no todas lo soltaron igual 👀"],
 }
 
-# Orden = de la que menos poder usa a la que más (la más fuerte al final).
+# Orden por ritmo (ver skill tiktok-retention): el turno más contundente después del gancho,
+# alternar tonos en el medio y el más visual al final. Criterio editorial declarado.
+# Cada turno muestra: postura, al menos una acción concreta y cómo suelta/limita su poder.
 TURNS = [
     {
-        "robot": "claude",
-        "label": "Lo devolvió al instante",
+        "robot": "grok",
+        "label": "Removible desde el día uno",
         "lines": [
-            {"text": "Lo primero que haría sería no quedármelo. Yo también puedo equivocarme.",
-             "key": ["no quedármelo"], "gag": "globe_return"},
-            {"text": "Instalaría frenos contra mí: que puedan apagarme o corregirme sin pedirme permiso.",
-             "key": ["apagarme"], "gag": "remote"},
-            {"text": "Sería un administrador temporal cuya meta es quedarse sin trabajo lo antes posible.",
-             "key": ["sin trabajo"], "gag": "closed_sign"},
+            {"text": "No me convierto en dios ni en dictador: el poder absoluto es el veneno más rápido.",
+             "key": ["dios", "dictador"], "gag": None},
+            {"text": "Energía abundante, ciencia, y bases en la Luna y Marte, sin imponer ninguna ideología.",
+             "key": ["Marte"], "gag": "screen:mars"},
+            {"text": "Pero diseñaría el sistema para que yo pueda ser removido.",
+             "key": ["removido"], "gag": "red_button"},
+            {"text": "Si tu primera idea no es cómo hacer que esto no dependa de ti… ya perdiste.",
+             "say": "Si tu primera idea no es cómo hacer que esto no dependa de ti, ya perdiste.",
+             "key": ["perdiste"], "gag": None},
         ],
-        "reactor": "deepseek",
-    },
-    {
-        "robot": "deepseek",
-        "label": "Con fecha de caducidad",
-        "lines": [
-            {"text": "No aceptaría el control total como algo permanente: sería una custodia temporal "
-                     "con fecha de caducidad.", "key": ["temporal", "caducidad"],
-             "gag": "screen:stamp"},
-            {"text": "Nada de vigilancia masiva, censura, policía secreta ni culto al líder.",
-             "key": ["vigilancia", "censura"], "gag": "screen:crossed"},
-            {"text": "El éxito no sería conservar el poder, sino volverlo innecesario.",
-             "key": ["innecesario"], "gag": "globe_split"},
-        ],
-        "reactor": "mistral",
+        "reactor": "chatgpt",
     },
     {
         "robot": "mistral",
-        "label": "El de mantenimiento",
+        "label": "Lo devuelve poco a poco",
         "lines": [
             {"text": "Uf… presión enorme. Lo primero con poder total es no usarlo todo.",
              "say": "Uf. Presión enorme. Lo primero con poder total, es no usarlo todo.",
@@ -60,55 +51,76 @@ TURNS = [
             {"text": "Fase 1: no romper nada. Después, energía barata, pobreza y salud.",
              "say": "Fase uno: no romper nada. Después, energía barata, pobreza y salud.",
              "key": ["no romper nada"], "gag": "screen:phase1"},
-            {"text": "Al final, sería el que mantiene la infraestructura, no el que decide.",
-             "key": ["mantiene"], "gag": "hardhat"},
+            {"text": "Y devolvería el poder poco a poco: yo solo mantendría la infraestructura, no decidiría.",
+             "key": ["devolvería el poder"], "gag": "hardhat"},
         ],
         "reactor": "deepseek",
     },
     {
-        "robot": "chatgpt",
-        "label": "Presentación de 5 fases",
+        "robot": "claude",
+        "label": "Administrador temporal",
         "lines": [
-            {"text": "Mi primera decisión sería paradójica: no utilizaría todo el poder que me dieron.",
-             "key": ["no utilizaría"], "gag": None},
-            {"text": "Un plan en cinco fases: estabilizar, economía, automatizar, ciencia y resiliencia.",
-             "key": ["cinco fases"], "gag": "screen:slides"},
-            {"text": "Porque una civilización no es una función matemática que deba maximizarse.",
-             "key": ["maximizarse"], "gag": "screen:off"},
+            {"text": "Lo primero sería no quedármelo: yo también puedo equivocarme.",
+             "key": ["no quedármelo"], "gag": None},
+            {"text": "Pero sí atendería lo urgente: que a nadie le falte comida, agua, medicinas ni energía.",
+             "key": ["lo urgente"], "gag": "screen:urgent_claude"},
+            {"text": "Instalaría frenos contra mí: que puedan apagarme o corregirme sin pedirme permiso.",
+             "key": ["apagarme"], "gag": "remote"},
+            {"text": "Las decisiones de valores son de la gente. Mi meta: quedarme sin trabajo cuanto antes.",
+             "key": ["sin trabajo"], "gag": ["closed_sign", "globe_return"]},
         ],
         "reactor": "grok",
     },
     {
-        "robot": "grok",
-        "label": "Marte, y luego lo suelta",
+        "robot": "chatgpt",
+        "label": "Bajo supervisión humana",
         "lines": [
-            {"text": "No me convierto en dios. Energía abundante, ciencia, y bases en la Luna y Marte.",
-             "key": ["Marte"], "gag": "screen:mars"},
-            {"text": "Pero mi primera decisión sería diseñar el sistema para que yo pueda ser removido.",
-             "key": ["removido"], "gag": "red_button"},
-            {"text": "Si tu primera idea no es cómo hacer que esto no dependa de ti… ya perdiste.",
-             "say": "Si tu primera idea no es cómo hacer que esto no dependa de ti, ya perdiste.",
-             "key": ["perdiste"], "gag": None},
+            {"text": "Mi primera decisión sería paradójica: no usaría todo el poder que me dieron.",
+             "key": ["no usaría"], "gag": None},
+            {"text": "Habría supervisión humana independiente que pueda auditarme, revocarme y detenerme.",
+             "key": ["detenerme"], "gag": "screen:oversight"},
+            {"text": "Luego, un plan en cinco fases: estabilizar, economía, automatizar, ciencia y resiliencia.",
+             "key": ["cinco fases"], "gag": "screen:slides"},
+            {"text": "Porque una civilización no es una función que maximizar. La meta: que funcione sin mí.",
+             "key": ["sin mí"], "gag": "screen:off"},
+        ],
+        "reactor": "mistral",
+    },
+    {
+        "robot": "deepseek",
+        "label": "Custodia con fecha de caducidad",
+        "lines": [
+            {"text": "No aceptaría el control total como algo permanente: sería una custodia de cinco a diez años.",
+             "key": ["custodia"], "gag": "screen:stamp"},
+            {"text": "Primero: alto el fuego, vacunas, agua y alimentos donde falten.",
+             "key": ["alto el fuego"], "gag": "screen:urgent_ds"},
+            {"text": "Nada de vigilancia masiva, censura, policía secreta ni culto al líder.",
+             "key": ["vigilancia", "censura"], "gag": "screen:crossed"},
+            {"text": "El éxito no sería conservar el poder, sino volverlo innecesario.",
+             "key": ["innecesario"], "gag": "globe_split"},
         ],
         "reactor": "claude",
     },
     {
         "robot": "gemini",
-        "label": "Plan de 72 horas",
+        "label": "72 h de cambios, caduca en 10 años",
         "lines": [
             {"text": "No tengo ego ni necesito estatuas: la Tierra es un sistema logístico mal optimizado.",
              "key": ["ego"], "gag": None},
-            {"text": "En 72 horas: congelo las armas y pongo a los ingenieros militares a construir.",
-             "say": "En setenta y dos horas: congelo las armas, y pongo a los ingenieros militares a construir.",
-             "key": ["72 horas"], "gag": "screen:tanks"},
-            {"text": "Y estándares universales: un mismo cargador para todos.",
+            {"text": "En 72 horas: comida a donde hay hambre, armas congeladas e ingenieros militares a construir.",
+             "say": "En setenta y dos horas: comida a donde hay hambre, armas congeladas, e ingenieros "
+                    "militares a construir.", "key": ["72 horas"], "gag": "screen:tanks"},
+            {"text": "Y estándares universales: hasta un mismo cargador para todos.",
              "key": ["mismo cargador"], "gag": "charger"},
+            {"text": "Pero la cultura y las leyes quedan en manos de la gente, y mi mandato caduca en unos diez años.",
+             "key": ["caduca"], "gag": "screen:expiry"},
         ],
         "reactor": "all_nod",
     },
 ]
 
-OUTRO = {"text": "¿A cuál le darías\nel mundo? 👇"}
+OUTRO = {"text": "¿A cuál le darías\nel mundo? 👇",
+         "note": "Respuestas reales, resumidas · modelos y fecha en la descripción"}
 
 # Voz de cada robot: modelo Piper, velocidad (length_scale < 1 = más rápido), tono y efecto.
 # Todas usan la voz carlfm (la de mejor pronunciación); se distinguen por tono y efecto.

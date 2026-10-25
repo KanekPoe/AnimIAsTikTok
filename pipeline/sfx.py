@@ -153,6 +153,10 @@ GAG_SFX = {
     "screen:tanks": mech,
     "charger": thud,
     "screen:off": lambda: sweep(800, 80, 0.15) * 0.3,
+    "screen:urgent_ds": holo_open,
+    "screen:urgent_claude": holo_open,
+    "screen:oversight": holo_open,
+    "screen:expiry": stamp,
 }
 
 

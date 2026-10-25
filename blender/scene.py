@@ -80,6 +80,12 @@ def pop_out(obj, f, s=1.0):
     kf(obj, "scale", f, (0, 0, 0), "CONSTANT")
 
 
+def gags(ln):
+    """Una frase puede tener un gag (str) o varios (lista)."""
+    g = ln.get("gag")
+    return [] if not g else ([g] if isinstance(g, str) else list(g))
+
+
 def frame_of(t, fps):
     return int(round(t * fps)) + 1
 
@@ -491,12 +497,13 @@ class Stage:
             kf(g, "location", f0 + 5, tuple(mid))
             kf(g, "location", f0 + 10, tuple(d["offer"]))
             pos = d["offer"].copy()
-            if tr["lines"][0].get("gag") == "globe_return":
-                fl = F(tr["lines"][0]["start"]) + 6
-                kf(g, "location", fl, tuple(pos))
-                kf(g, "location", fl + 6, tuple((pos + GLOBE_REST) / 2 + Vector((0, 0, 0.7))))
-                kf(g, "location", fl + 13, tuple(GLOBE_REST))
-                pos = GLOBE_REST.copy()
+            for ln in tr["lines"]:
+                if "globe_return" in gags(ln):
+                    fl = F(ln["start"]) + 6
+                    kf(g, "location", fl, tuple(pos))
+                    kf(g, "location", fl + 6, tuple((pos + GLOBE_REST) / 2 + Vector((0, 0, 0.7))))
+                    kf(g, "location", fl + 13, tuple(GLOBE_REST))
+                    pos = GLOBE_REST.copy()
         # giro continuo
         kf(self.globe_spin, "rotation_euler", 1, (0, 0, 0), "LINEAR")
         kf(self.globe_spin, "rotation_euler", self.end_frame, (0, 0, self.end_frame / 30 * 0.9),
@@ -633,8 +640,9 @@ class Stage:
                 kf(shL, "rotation_euler", f0 + 6, (b0[0] - 0.55, b0[1], b0[2]))
                 kf(shL, "rotation_euler", f0 + 16, b0)
             for ln in tr["lines"]:  # sostener un objeto con el derecho
-                g = ln.get("gag")
-                if g in hold:
+                for g in gags(ln):
+                    if g not in hold:
+                        continue
                     shR, b1 = parts["shoulder_R"], base["shoulder_R"]
                     f0, f1 = F(ln["start"]), F(tr["end"])
                     kf(shR, "rotation_euler", f0, b1)
@@ -672,10 +680,9 @@ class Stage:
             n = tr["robot"]
             f_end = F(tr["end"])
             screen, screen_end = [], None
-            for ln in tr["lines"]:
-                g = ln.get("gag")
+            for ln, g in ((ln, g) for ln in tr["lines"] for g in gags(ln)):
                 f0, f1 = F(ln["start"]), F(ln["end"])
-                if not g:
+                if g == "globe_return":
                     continue
                 if g == "screen:off":
                     screen_end = f0 + 2
@@ -772,25 +779,41 @@ class Stage:
         raise ValueError(kind)
 
     def shot_list(self):
+        """Un plano por frase (más la reacción al final de cada turno)."""
         S, F = [], self.F
         h = self.hook
         S.append((1, F(1.15), "wide", None))
         S.append((F(1.15), F(h["end"]), "hook_pan", None))
+        wide_gags = ("red_button", "globe_split", "charger")
         for tr in self.turns:
             n, L = tr["robot"], tr["lines"]
-            g = [ln.get("gag") or "" for ln in L]
-            fa, f2, f3, fe = F(tr["start"]), F(L[1]["start"]), F(L[2]["start"]), F(tr["end"])
-            S.append((fa, f2, "medium", n))
-            kind2 = ("holo" if g[1].startswith("screen:") and g[1] != "screen:off"
-                     else "medium" if g[1] == "red_button" else "close")
-            S.append((f2, f3, kind2, n))
-            fr = int(f3 + (F(L[2]["end"]) - f3) * 0.6)
-            kind3 = "medium" if g[2] in ("globe_split", "charger") else "close"
-            S.append((f3, fr, kind3, n))
-            if tr["reactor"] == "all_nod":
-                S.append((fr, fe, "group", None))
-            else:
-                S.append((fr, fe, "close", tr["reactor"]))
+            fe = F(tr["end"])
+            prev = None
+            for k, ln in enumerate(L):
+                g = gags(ln)
+                screen = any(x.startswith("screen:") and x != "screen:off" for x in g)
+                f0 = F(tr["start"]) if k == 0 else F(ln["start"])
+                f1 = F(L[k + 1]["start"]) if k + 1 < len(L) else fe
+                if k == 0:
+                    kind = "medium"
+                elif screen:
+                    kind = "holo"
+                elif any(x in wide_gags for x in g):
+                    kind = "medium"
+                else:
+                    kind = "close"
+                if kind == prev and kind != "holo":  # evita dos planos iguales seguidos
+                    kind = "medium" if kind == "close" else "close"
+                if k == len(L) - 1:  # última frase: plano + reacción
+                    fr = int(f0 + (F(ln["end"]) - f0) * 0.6)
+                    S.append((f0, fr, kind, n))
+                    if tr["reactor"] == "all_nod":
+                        S.append((fr, f1, "group", None))
+                    else:
+                        S.append((fr, f1, "close", tr["reactor"]))
+                else:
+                    S.append((f0, f1, kind, n))
+                prev = kind
         return S
 
     def anim_camera(self):

@@ -209,8 +209,11 @@ class Composer:
                 mask = Image.new("L", por.size, 0)
                 ImageDraw.Draw(mask).rounded_rectangle((0, 0, por.width - 1, por.height - 1), 20, fill=255)
                 im.paste(por, ((cw - por.width) // 2, 10), mask)
-            draw_centered(im, NAMES[robot], cw / 2, 228, font("InterDisplay-Black.otf", 34), fill=col + (255,))
-            draw_centered(im, label, cw / 2, 270, font("InterDisplay-ExtraBold.otf", 30), fill=(255, 255, 255, 255))
+            draw_centered(im, NAMES[robot], cw / 2, 226, font("InterDisplay-Black.otf", 32), fill=col + (255,))
+            lf = font("InterDisplay-ExtraBold.otf", 26)
+            rows = [" ".join(r) for r in wrap_words(label.split(), lf, cw - 30)]
+            draw_centered(im, "\n".join(rows), cw / 2, 268 if len(rows) > 1 else 262, lf,
+                          fill=(255, 255, 255, 255), line_gap=1.05)
             self.cache[key] = im
         return self.cache[key]
 
@@ -245,11 +248,14 @@ class Composer:
         if t >= o["start"]:
             to = t - o["start"]
             lay = self.text_layer(o["text"], 70, stroke=10)
-            paste_scaled(img, lay, SUB_CX, 380, ease_pop(to / 0.2))
+            paste_scaled(img, lay, SUB_CX, 360, ease_pop(to / 0.2))
+            if o.get("note"):
+                paste_scaled(img, self.text_layer(o["note"], 28, fill=(200, 210, 230, 255), stroke=4,
+                                                  fname="InterDisplay-ExtraBold.otf"), SUB_CX, 470, 1.0)
             for k, tr in enumerate(self.turns):
                 c = self.card(tr["robot"], o["labels"][tr["robot"]])
                 cx = 80 + (k % 2) * 420 + 200
-                cy = 600 + (k // 2) * 320 + 150
+                cy = 520 + (k // 2) * 320 + 150
                 paste_scaled(img, c, cx, cy, ease_pop((to - 0.25 - k * 0.12) / 0.22))
         return img
 
@@ -280,12 +286,13 @@ class Composer:
             add(fx, sfx.whoosh(0.4), tr["start"], 0.6)
             add(fx, sfx.pop(), tr["start"] + 0.05, 0.6)
             for ln in tr["lines"]:
-                g = ln.get("gag")
-                if g == "screen:slides":
-                    for k in range(5):
-                        add(fx, sfx.click(), ln["start"] + k * (ln["end"] - ln["start"]) / 5, 0.9)
-                elif g in sfx.GAG_SFX:
-                    add(fx, sfx.GAG_SFX[g](), ln["start"], 0.8)
+                gl = ln.get("gag") or []
+                for g in [gl] if isinstance(gl, str) else gl:
+                    if g == "screen:slides":
+                        for k in range(5):
+                            add(fx, sfx.click(), ln["start"] + k * (ln["end"] - ln["start"]) / 5, 0.9)
+                    elif g in sfx.GAG_SFX:
+                        add(fx, sfx.GAG_SFX[g](), ln["start"], 0.8)
         o = self.outro["start"]
         add(fx, sfx.chime(), o, 0.8)
         for k in range(6):

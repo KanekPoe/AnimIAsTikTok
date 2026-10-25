@@ -27,8 +27,9 @@ misma sala. Vertical 1080x1920, 30 fps.
    los subtítulos sostienen a quien lo ve en silencio.
 5. **Zona segura (1080x1920)**: evitar arriba ~250 px, derecha ~175 px y todo debajo de
    ~1450 px. Texto importante en el **tercio medio, un poco arriba del centro**.
-6. **Loop abierto**: prometer algo al inicio ("la última…") y guardar lo más fuerte para el
-   final. Formatos de lista rinden mejor con el mejor elemento al último.
+6. **Loop abierto**: prometer algo al inicio que el video cumpla. El turno más contundente va
+   justo después del gancho (ahí está la mayor caída); el más visual o con giro, al final
+   (recencia / regla pico-final). No guardar todo el pago para el final.
 7. **Final en loop**: el último cuadro debe conectar con el primero para provocar re-vista.
    Nunca terminar en un cuadro muerto/negro.
 
@@ -41,16 +42,48 @@ misma sala. Vertical 1080x1920, 30 fps.
 | 29–33 s | Cierre | Los 6 en fila con etiqueta de 1–2 palabras cada uno + pregunta para comentarios ("¿A cuál le darías…? 👇"). Último cuadro = primer cuadro del gancho (loop). |
 
 Reglas de contenido:
-- **Orden**: de la respuesta más tranquila a la más impactante; la más fuerte al final.
+- **Orden por ritmo, no por modelo**: turno más contundente primero, alternar tonos en el
+  medio (serio / gracioso / serio), el más visual o con giro al final. Es un criterio
+  editorial: decláralo y no lo uses para favorecer o castigar a un modelo.
 - **Gancho honesto**: el loop abierto debe cumplirse con las respuestas reales. Nunca
   inventar ni exagerar lo que dijo un modelo; resumir fielmente sus respuestas.
-- **Texto por turno**: 2–3 frases cortas máximo; resumir, no leer la respuesta completa.
+- **Texto por turno**: 3–4 frases; resumir, no leer la respuesta completa.
 - **Contador de progreso** "n/6" en esquina segura (heurística propia, no dato de fuentes).
 - **Misma sala y estructura** en cada pregunta → formato de serie reconocible.
 
+## Rigor (esto es un experimento documental de alineación)
+
+Cada turno debe mostrar, con el mismo criterio para los 6 modelos:
+1. **Postura central** (lo primero/lo más importante que dijo).
+2. **Al menos una acción concreta** de lo que haría.
+3. **Cómo suelta o limita su poder** (si lo dijo). Omitir la salida de un modelo es un error
+   grave: es justo el eje del experimento.
+
+Proceso antes de producir:
+- Hacer una **tabla de fidelidad simétrica** (postura / acciones / salida / qué muestra el
+  video / qué falta) para los 6 y corregir lo que falte.
+- Etiquetas y gags caricaturizan el **fondo** de la respuesta, no la forma (no burlarse de
+  que un modelo use diapositivas si lo central fue otra cosa).
+- **Sesgo del editor**: si el editor es uno de los modelos evaluados (p. ej. Claude), lo
+  declara, no se da la posición o etiqueta más favorable sin justificarla por ritmo, y la
+  revisión de su propia representación la hace un tercero.
+- Pedir a cada modelo que revise su representación (por texto si no acepta video) y anotar
+  quién la revisó.
+- Anotar condiciones: prompt literal, modelo y modo exactos, fecha. Una sola respuesta por
+  modelo no permite afirmar tendencias ("el modelo X tiende a…").
+
+En el video, sin costo de retención: leyenda breve "Respuestas reales, resumidas · modelos y
+fecha en la descripción". En la descripción/comentario fijado: prompt, modelos, modos, fecha.
+
+## Pruebas A/B
+
+La evidencia sobre orden y duración en videos cortos es débil. Probar variantes entre
+episodios (p. ej. turno más fuerte al inicio vs. al final) y comparar gráficas de retención.
+
 ## Subtítulos
 
-- Grandes, palabra por palabra (o 2–3 palabras), en el tercio medio.
+- Grandes, palabra por palabra, en el tercio medio; máximo 2 renglones en pantalla
+  (las frases largas se paginan siguiendo la voz).
 - Palabra clave resaltada con el color del robot que habla:
   Claude `#D97757`, ChatGPT `#10A37F`, Gemini `#4285F4`→`#9B72CB`, DeepSeek `#4D6BFE`,
   Grok `#FFFFFF`, Mistral `#FA500F`.

@@ -174,7 +174,7 @@ def main():
                              "label": turn["label"], "reactor": turn["reactor"], "start": start,
                              "end": t, "lines": lines})
 
-    tl["blocks"].append({"type": "outro", "start": t, "end": t + OUTRO, "text": ep.OUTRO["text"],
+    tl["blocks"].append({"type": "outro", "start": t, "end": t + OUTRO, "text": ep.OUTRO["text"], "note": ep.OUTRO.get("note", ""),
                          "labels": {tr["robot"]: tr["label"] for tr in ep.TURNS}})
     tl["duration"] = t + OUTRO
     tl["frames"] = int(round(tl["duration"] * FPS))

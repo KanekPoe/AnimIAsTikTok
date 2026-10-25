@@ -157,11 +157,111 @@ def tanks(state):
     return im
 
 
+# --- iconos simples ---------------------------------------------------------------
+def _ic_food(d, cx, cy):
+    d.chord((cx - 90, cy - 70, cx + 90, cy + 90), 0, 180, fill=(255, 190, 90, 255))
+    for k in (-40, 0, 40):
+        d.arc((cx + k - 18, cy - 110, cx + k + 18, cy - 30), 100, 260, fill=WHITE, width=8)
+
+
+def _ic_water(d, cx, cy):
+    d.ellipse((cx - 60, cy - 10, cx + 60, cy + 110), fill=(80, 170, 255, 255))
+    d.polygon([(cx, cy - 110), (cx - 55, cy + 30), (cx + 55, cy + 30)], fill=(80, 170, 255, 255))
+
+
+def _ic_med(d, cx, cy):
+    d.rounded_rectangle((cx - 85, cy - 85, cx + 85, cy + 85), 22, fill=WHITE)
+    d.rectangle((cx - 22, cy - 60, cx + 22, cy + 60), fill=RED)
+    d.rectangle((cx - 60, cy - 22, cx + 60, cy + 22), fill=RED)
+
+
+def _ic_energy(d, cx, cy):
+    d.polygon([(cx + 20, cy - 110), (cx - 60, cy + 15), (cx - 5, cy + 15), (cx - 25, cy + 110),
+               (cx + 60, cy - 20), (cx + 5, cy - 20)], fill=(255, 210, 40, 255))
+
+
+def _ic_flag(d, cx, cy):
+    d.rectangle((cx - 70, cy - 100, cx - 58, cy + 110), fill=DIM)
+    d.polygon([(cx - 58, cy - 100), (cx + 90, cy - 70), (cx - 58, cy - 10)], fill=WHITE)
+
+
+def _ic_vaccine(d, cx, cy):
+    s = Image.new("RGBA", (300, 120), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(s)
+    sd.rounded_rectangle((60, 30, 210, 90), 12, fill=WHITE)
+    sd.rectangle((90, 38, 180, 82), fill=(90, 220, 255, 255))
+    sd.rectangle((210, 52, 290, 62), fill=DIM)
+    sd.rectangle((10, 45, 60, 75), fill=DIM)
+    return s
+
+
+def _tiles(title, accent, items):
+    im, d = base(title, accent)
+    pos = [(480, 380), (1120, 380), (480, 740), (1120, 740)]
+    for (cx, cy), (icon, label) in zip(pos, items):
+        d.rounded_rectangle((cx - 290, cy - 160, cx + 290, cy + 160), 30, fill=(255, 255, 255, 18),
+                            outline=accent[:3] + (140,), width=4)
+        r = icon(d, cx, cy - 30)
+        if isinstance(r, Image.Image):
+            r = r.rotate(30, expand=True, resample=Image.BICUBIC)
+            im.alpha_composite(r, (int(cx - r.width / 2), int(cy - 30 - r.height / 2)))
+        draw_centered(im, label, cx, cy + 110, font(MONO, 56), fill=WHITE)
+    return im
+
+
+def urgent_ds():
+    return _tiles("PRIMERO, LO URGENTE", CYAN, [(_ic_flag, "ALTO EL FUEGO"), (_ic_vaccine, "VACUNAS"),
+                                              (_ic_water, "AGUA"), (_ic_food, "ALIMENTOS")])
+
+
+def urgent_claude():
+    orange = (217, 119, 87, 255)
+    return _tiles("LO URGENTE, SIN IMPONER", orange, [(_ic_food, "COMIDA"), (_ic_water, "AGUA"),
+                                                      (_ic_med, "MEDICINAS"), (_ic_energy, "ENERGÍA")])
+
+
+def oversight():
+    green = (16, 200, 150, 255)
+    im, d = base("SUPERVISIÓN HUMANA INDEPENDIENTE", green)
+    rows = ["AUDITARME", "REVOCARME", "DETENERME"]
+    for i, txt in enumerate(rows):
+        y = 300 + i * 220
+        cx = 330
+        if i == 0:  # lupa
+            d.ellipse((cx - 70, y - 70, cx + 50, y + 50), outline=WHITE, width=16)
+            d.line((cx + 35, y + 35, cx + 95, y + 95), fill=WHITE, width=22)
+        elif i == 1:  # X
+            d.line((cx - 70, y - 70, cx + 70, y + 70), fill=(255, 190, 40, 255), width=24)
+            d.line((cx + 70, y - 70, cx - 70, y + 70), fill=(255, 190, 40, 255), width=24)
+        else:  # señal de alto
+            pts = [(cx + 85 * math.cos(math.pi / 8 + k * math.pi / 4),
+                    y + 85 * math.sin(math.pi / 8 + k * math.pi / 4)) for k in range(8)]
+            d.polygon(pts, fill=RED)
+            draw_centered(im, "STOP", cx, y + 2, font(MONO, 40), fill=WHITE)
+        draw_text(im, (500, y - 55), txt, font(MONO, 104), fill=WHITE)
+    return im
+
+
+def expiry():
+    grad = (155, 114, 203, 255)
+    im, d = base("CLÁUSULA DE OBSOLESCENCIA", grad)
+    draw_centered(im, "CADUCA EN ~10 AÑOS", W / 2, 300, font(MONO, 110), fill=WHITE)
+    for x0, txt, col in ((150, "EJECUTIVO", grad), (930, "SISTEMA\nDE FONDO", (120, 220, 160, 255))):
+        d.rounded_rectangle((x0, 440, x0 + 520, 680), 30, outline=col, width=8)
+        draw_centered(im, txt, x0 + 260, 560, font(MONO, 66), fill=col)
+    d.line((690, 560, 900, 560), fill=WHITE, width=14)
+    d.polygon([(900, 520), (950, 560), (900, 600)], fill=WHITE)
+    draw_centered(im, "AUDITADO POR CONSEJOS CIUDADANOS", W / 2, 780, font(MONO, 54), fill=DIM)
+    draw_centered(im, "CULTURA Y LEYES: DE LA GENTE", W / 2, 880, font(MONO, 54), fill=DIM)
+    return im
+
+
 def main():
     out = os.path.join(sys.argv[1], "holo")
     os.makedirs(out, exist_ok=True)
     imgs = {"stamp": stamp(), "crossed": crossed(), "phase1": phases_mistral(), "mars": mars(),
-            "tanks_a": tanks("a"), "tanks_b": tanks("b")}
+            "tanks_a": tanks("a"), "tanks_b": tanks("b"), "urgent_ds": urgent_ds(),
+            "urgent_claude": urgent_claude(), "oversight": oversight(), "expiry": expiry()}
     for n in range(1, 6):
         imgs[f"slide{n}"] = slide(n)
     for k, im in imgs.items():
