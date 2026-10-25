@@ -70,8 +70,8 @@ def trim(x, sr, thr=0.015, pad=0.04):
     return x[a:b]
 
 
-def squeeze_silence(x, sr, thr=0.012, max_gap=0.09):
-    """Acorta las pausas internas a max_gap segundos (ritmo TikTok)."""
+def squeeze_silence(x, sr, thr=0.004, max_gap=0.22):
+    """Acorta solo las pausas largas (> max_gap s, casi silencio) sin tocar el habla."""
     hop = int(0.01 * sr)
     n = len(x) // hop
     loud = np.array([np.max(np.abs(x[i * hop:(i + 1) * hop])) > thr for i in range(n)])
@@ -116,7 +116,7 @@ def _synth_once(text, voice, out_path, tmp_dir, noise=0.5):
                    input=text.encode(), check=True, capture_output=True)
     x, sr = read_wav(raw)
     clean = os.path.join(tmp_dir, "clean.wav")
-    write_wav(clean, trim(x, sr), sr)
+    write_wav(clean, trim(x, sr, thr=0.008, pad=0.08), sr)
     p = voice["pitch"]
     tempo = voice.get("tempo", 1.0)  # acelera sin cambiar el tono
     af = (f"asetrate={int(sr * p)},aresample={SR},atempo={tempo / p:.4f},"
@@ -124,7 +124,7 @@ def _synth_once(text, voice, out_path, tmp_dir, noise=0.5):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", clean, "-af", af, "-ac", "1",
                     "-ar", str(SR), out_path], check=True)
     y, _ = read_wav(out_path)
-    y = squeeze_silence(trim(y, SR, thr=0.03), SR)
+    y = squeeze_silence(trim(y, SR, thr=0.01, pad=0.08), SR)
     y = y / (np.max(np.abs(y)) + 1e-6) * 0.89  # normaliza a -1 dB
     write_wav(out_path, y)
     return len(y) / SR

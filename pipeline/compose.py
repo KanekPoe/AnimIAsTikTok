@@ -133,6 +133,10 @@ class Composer:
         for row in lines:
             rows.append(list(range(idx, idx + len(row))))
             idx += len(row)
+        # máximo 2 renglones en pantalla: se muestra la "página" de la palabra actual
+        cur = max([i for i in range(len(words)) if t >= starts[i] - 0.02] or [0])
+        pages = [rows[i:i + 2] for i in range(0, len(rows), 2)]
+        rows = next(pg for pg in pages if any(cur in r for r in pg))
         lh = 88
         y0 = SUB_Y - lh * len(rows) / 2
         layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
