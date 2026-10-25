@@ -210,8 +210,8 @@ class Composer:
                 ImageDraw.Draw(mask).rounded_rectangle((0, 0, por.width - 1, por.height - 1), 20, fill=255)
                 im.paste(por, ((cw - por.width) // 2, 10), mask)
             draw_centered(im, NAMES[robot], cw / 2, 226, font("InterDisplay-Black.otf", 32), fill=col + (255,))
-            lf = font("InterDisplay-ExtraBold.otf", 26)
-            rows = [" ".join(r) for r in wrap_words(label.split(), lf, cw - 30)]
+            lf = font("InterDisplay-ExtraBold.otf", 23)
+            rows = [" ".join(r) for r in wrap_words(label.split(), lf, cw - 24)][:2]
             draw_centered(im, "\n".join(rows), cw / 2, 268 if len(rows) > 1 else 262, lf,
                           fill=(255, 255, 255, 255), line_gap=1.05)
             self.cache[key] = im
@@ -231,7 +231,7 @@ class Composer:
             split = 1.2
             i = 0 if t < split else 1
             t0 = 0 if i == 0 else split
-            lay = self.text_layer(texts[i], 66 if i == 0 else 56, stroke=10)
+            lay = self.text_layer(texts[i], 66 if i == 0 else 50, stroke=10)
             paste_scaled(img, lay, SUB_CX, 640, ease_pop((t - t0) / 0.18))
             return img
 
