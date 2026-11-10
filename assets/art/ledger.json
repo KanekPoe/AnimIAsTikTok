@@ -1,0 +1,18 @@
+[
+ {
+  "date": "2026-11-10T22:13:18",
+  "mode": "newton",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Full body, standing, holding a red apple in one hand and looking at it with curiosity, the other hand on his chin",
+  "out": "assets/art/raw/newton_manzana.jpg",
+  "tokens": 2083
+ },
+ {
+  "date": "2026-11-10T22:13:19",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "An English countryside garden with a large apple tree full of red apples on the right side, green rolling hills, blue sky with clouds, grass",
+  "out": "assets/art/raw/jardin_vertical.jpg",
+  "tokens": 1577
+ }
+]

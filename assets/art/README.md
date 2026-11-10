@@ -18,3 +18,13 @@ variantes de boca de cada pose para hablar, y Manzanita.
 Horizonte ≈ y 435; el escritorio (75 cm) mide ~225 px con las patas en y≈920. Para que Newton
 (175 cm) quede en proporción con los pies en `feet_y`:
 `altura = 525 * (feet_y - 435) / (920 - 435)` (≈1466 px con los pies en y=1790).
+
+## Generación automática (`pipeline/imagegen.py`)
+
+API de Gemini (modelo `gemini-3.1-flash-image`), con la clave inyectada por el entorno.
+Modos: `sticker` (piezas sobre verde), `fondo` (vertical sin personajes), `newton` (usa sus
+imágenes como referencia para mantener el personaje). Tope: 60 imágenes al mes
+(`IMAGEGEN_MAX_PER_MONTH`); cada generación queda en `ledger.json`. Generar de una en una
+(el registro no está pensado para procesos simultáneos).
+
+Generadas: `fondos/jardin_vertical.png`, `newton/pose_manzana_pensando.png`.
