@@ -1,3 +1,6 @@
 output/
 __pycache__/
 assets/voices/
+node_modules/
+tools/revideo/output/
+media/
