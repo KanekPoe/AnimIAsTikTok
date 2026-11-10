@@ -65,7 +65,9 @@ def cut(path, out_dir, keep_border=False):
         bg = strip_border(rgb, bg)
     bg = ndimage.binary_opening(bg, iterations=1)
     fg = ~bg
-    fg = ndimage.binary_fill_holes(fg)  # huecos internos (p. ej. brillos) siguen opacos
+    # huecos internos (brillos blancos) siguen opacos, pero los huecos verdes
+    # (p. ej. entre el brazo y el cuerpo) quedan transparentes
+    fg = ndimage.binary_fill_holes(fg) & ~bg
     alpha = (fg * 255).astype(np.uint8)
     alpha = np.array(Image.fromarray(alpha).filter(ImageFilter.GaussianBlur(0.8)))
     rgba = np.dstack([rgb, alpha])
