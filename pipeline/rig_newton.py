@@ -89,6 +89,22 @@ def regions(box):
     return mouth, eyes
 
 
+def diff_region(base, var, pad=10):
+    """Zona donde la variante cambia respecto a la base (la boca o los ojos), ya alineadas."""
+    d = np.abs(base[..., :3].astype(int) - var[..., :3].astype(int)).sum(axis=2)
+    both = (base[..., 3] > 200) & (var[..., 3] > 200)
+    m = ndimage.binary_opening((d > 60) & both, iterations=1)
+    m = ndimage.binary_dilation(m, iterations=6)
+    lab, n = ndimage.label(m)
+    if n == 0:
+        return None
+    sizes = ndimage.sum(m, lab, range(1, n + 1))
+    sl = ndimage.find_objects(lab)[int(np.argmax(sizes))]
+    h, w = m.shape
+    return (max(0, sl[0].start - pad), min(h, sl[0].stop + pad),
+            max(0, sl[1].start - pad), min(w, sl[1].stop + pad))
+
+
 def build(pose, base_path, closed, opened, blink):
     out_dir = os.path.join(ART, "newton", "rig", pose)
     os.makedirs(out_dir, exist_ok=True)
@@ -100,7 +116,8 @@ def build(pose, base_path, closed, opened, blink):
             continue
         base, var, box = fit_variant(base_img, Image.open(path).convert("RGBA"))
         mouth, eyes = regions(box)
-        res = graft(base, var, mouth if which == "mouth" else eyes)
+        region = diff_region(base, var) or (mouth if which == "mouth" else eyes)
+        res = graft(base, var, region, feather=4)
         Image.fromarray(res).save(os.path.join(out_dir, f"{name}.png"))
     print("rig:", pose)
 
