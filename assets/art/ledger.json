@@ -280,5 +280,13 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Te imaginabas que estábamos tan lejos? Cuéntamelo en los comentarios.",
   "tokens": 113
+ },
+ {
+  "date": "2026-11-11T02:47:03",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "add stylish black cartoon sunglasses on the character's eyes, with a small white shine on the lenses, matching the bold black outline style",
+  "out": "assets/art/raw/newton_lentes_prueba.jpg",
+  "tokens": 1718
  }
 ]
