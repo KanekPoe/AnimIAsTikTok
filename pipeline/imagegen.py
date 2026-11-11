@@ -19,6 +19,8 @@ import datetime
 import json
 import os
 import sys
+import time
+import urllib.error
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,8 +80,16 @@ def generate(mode, prompt, out, refs=None):
     body = {"contents": [{"parts": parts}],
             "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": aspect}}}
     req = urllib.request.Request(URL, json.dumps(body).encode(), {"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=300) as r:
-        data = json.load(r)
+    for attempt in range(4):  # 429/5xx de Google son temporales: reintentar con espera
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                data = json.load(r)
+            break
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 502, 503, 504) or attempt == 3:
+                raise
+            print(f"  Google respondió {e.code}; reintento en {15 * (attempt + 1)} s")
+            time.sleep(15 * (attempt + 1))
     img = next((p["inlineData"] for p in data["candidates"][0]["content"]["parts"]
                 if "inlineData" in p), None)
     if not img:

@@ -320,5 +320,237 @@
   "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue; keep the sunglasses exactly the same",
   "out": "assets/art/raw/newton_manzana_lentes_abierta.jpg",
   "tokens": 1649
+ },
+ {
+  "date": "2026-11-11T03:40:29",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Underwater ocean floor with sand, rocks, seaweed, colorful corals and bubbles, sunlight rays from the surface",
+  "out": "assets/art/raw/oceano_vertical.jpg",
+  "tokens": 1587
+ },
+ {
+  "date": "2026-11-11T03:40:36",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Four separate items: a cute cartoon purple octopus smiling; the same octopus waving one tentacle; the same octopus in x-ray view with its body semi-transparent showing three glowing red hearts inside; a single drop of blue blood",
+  "out": "assets/art/raw/objetos_pulpo.jpg",
+  "tokens": 1586
+ },
+ {
+  "date": "2026-11-11T03:40:44",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "A colorful science laboratory with a microscope, flasks with colorful liquids, a blackboard with simple drawings of cells and a brain, wooden floor",
+  "out": "assets/art/raw/laboratorio_vertical.jpg",
+  "tokens": 1523
+ },
+ {
+  "date": "2026-11-11T03:41:15",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Six separate items: five cute cartoon bacteria of different shapes and colors (rod, round, spiral, with little faces), and a big cute cartoon human cell with a nucleus",
+  "out": "assets/art/raw/objetos_bacterias.jpg",
+  "tokens": 1651
+ },
+ {
+  "date": "2026-11-11T03:41:24",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Five separate items: a cartoon planet Venus (yellow-orange with swirly clouds) with a cute face, a curved circular orbit arrow, a curved spinning arrow icon, a tear-off calendar page, a cartoon hourglass",
+  "out": "assets/art/raw/objetos_venus.jpg",
+  "tokens": 1623
+ },
+ {
+  "date": "2026-11-11T03:41:32",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "A Paris plaza with the Eiffel Tower in the background on a hot sunny summer day, cobblestone ground in the foreground",
+  "out": "assets/art/raw/paris_vertical.jpg",
+  "tokens": 1628
+ },
+ {
+  "date": "2026-11-11T03:41:40",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Five separate items: the Eiffel Tower standing upright, a thermometer showing hot red temperature, a thermometer showing cold blue temperature, a cute smiling sun, a snowflake",
+  "out": "assets/art/raw/objetos_eiffel.jpg",
+  "tokens": 1588
+ },
+ {
+  "date": "2026-11-11T03:41:48",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Four separate items: a cute cartoon pink human brain; the same brain with all its regions glowing in different bright colors; the same brain with only one tiny small part glowing; a magnifying glass",
+  "out": "assets/art/raw/objetos_cerebro.jpg",
+  "tokens": 1453
+ },
+ {
+  "date": "2026-11-11T03:43:53",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Este animal tiene tres corazones… ¡y sangre azul!",
+  "tokens": 111
+ },
+ {
+  "date": "2026-11-11T03:43:57",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El pulpo usa dos corazones para mandar sangre a sus branquias… y uno para el res",
+  "tokens": 172
+ },
+ {
+  "date": "2026-11-11T03:44:01",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y por qué azul? Porque su sangre lleva el oxígeno con cobre, no con hierro como",
+  "tokens": 167
+ },
+ {
+  "date": "2026-11-11T03:44:04",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué animal raro quieres que te explique? Escríbelo en los comentarios.",
+  "tokens": 112
+ },
+ {
+  "date": "2026-11-11T03:44:10",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿De verdad tienes diez veces más bacterias que células en tu cuerpo?",
+  "tokens": 120
+ },
+ {
+  "date": "2026-11-11T03:44:14",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Un estudio de dos mil dieciséis contó mejor: tienes unos treinta billones de cél",
+  "tokens": 166
+ },
+ {
+  "date": "2026-11-11T03:44:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "…y unos treinta y ocho billones de bacterias.",
+  "tokens": 103
+ },
+ {
+  "date": "2026-11-11T03:44:22",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Casi uno a uno: en número, eres más o menos mitad tú… y mitad bacterias.",
+  "tokens": 196
+ },
+ {
+  "date": "2026-11-11T03:44:25",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro mito del cuerpo quieres que desmienta? Escríbelo en los comentarios.",
+  "tokens": 117
+ },
+ {
+  "date": "2026-11-11T03:44:30",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "En Venus pasa algo rarísimo: tarda más en girar sobre sí mismo… que en darle la ",
+  "tokens": 159
+ },
+ {
+  "date": "2026-11-11T03:44:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Una vuelta completa sobre sí mismo le toma doscientos cuarenta y tres días terre",
+  "tokens": 150
+ },
+ {
+  "date": "2026-11-11T03:44:39",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿De verdad solo usamos el diez por ciento del cerebro?",
+  "tokens": 92
+ },
+ {
+  "date": "2026-11-11T03:44:41",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Falso!",
+  "tokens": 30
+ },
+ {
+  "date": "2026-11-11T03:44:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y una vuelta alrededor del Sol… solo doscientos veinticinco.",
+  "tokens": 131
+ },
+ {
+  "date": "2026-11-11T03:45:19",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "O sea: en Venus, girar una sola vez dura más que un año entero.",
+  "tokens": 141
+ },
+ {
+  "date": "2026-11-11T03:45:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Ah, y además… ¡gira al revés que casi todos los planetas!",
+  "tokens": 128
+ },
+ {
+  "date": "2026-11-11T03:45:26",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué planeta quieres que te explique después? Escríbelo en los comentarios.",
+  "tokens": 115
+ },
+ {
+  "date": "2026-11-11T03:45:30",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "La Torre Eiffel… ¡crece en verano!",
+  "tokens": 78
+ },
+ {
+  "date": "2026-11-11T03:45:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Está hecha de hierro… y el hierro se estira un poquito cuando se calienta.",
+  "tokens": 129
+ },
+ {
+  "date": "2026-11-11T03:45:37",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según estimaciones, con el calor puede ganar hasta unos quince centímetros de al",
+  "tokens": 143
+ },
+ {
+  "date": "2026-11-11T03:45:41",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y en invierno, con el frío… se encoge otra vez.",
+  "tokens": 106
+ },
+ {
+  "date": "2026-11-11T03:45:44",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro dato de física cotidiana quieres? Escríbelo en los comentarios.",
+  "tokens": 129
+ },
+ {
+  "date": "2026-11-11T03:45:49",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Los escáneres muestran actividad en casi todo el cerebro… incluso al hablar o ca",
+  "tokens": 191
+ },
+ {
+  "date": "2026-11-11T03:45:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y si sobrara el noventa por ciento, perder un pedacito no importaría… pero un da",
+  "tokens": 218
  }
 ]

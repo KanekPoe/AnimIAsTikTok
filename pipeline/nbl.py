@@ -421,6 +421,7 @@ def mix(tl, path, music=True):
     out = voice + fx * 0.55
     if music:
         bed = sfx.music_bed(n / sfx.SR)[:n]
+        bed = np.pad(bed, (0, n - len(bed)))  # el redondeo puede dejarla 1 muestra corta
         env = np.convolve(np.abs(voice), np.ones(7200) / 7200, mode="same")
         out += bed * (1 - 0.6 * np.clip(env * 8, 0, 1)) * 0.9
     out /= max(1e-6, np.max(np.abs(out))) / 0.89

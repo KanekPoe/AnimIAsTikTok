@@ -12,6 +12,8 @@ import json
 import os
 import subprocess
 import sys
+import time
+import urllib.error
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +29,21 @@ NEWTON_STYLE = ""
 TARGET_RATE = 5.5  # sílabas por segundo; si sale más lenta, se acelera sin cambiar el tono
 
 
+def post(url, body, tries=6):
+    """POST a la API de Gemini; espera y reintenta ante límites de frecuencia (429) o caídas (5xx)."""
+    req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
+    for k in range(tries):
+        try:
+            with urllib.request.urlopen(req, timeout=300) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 502, 503, 504) or k == tries - 1:
+                raise
+            wait = 20 * (k + 1)
+            print(f"  Google respondió {e.code}; espero {wait} s")
+            time.sleep(wait)
+
+
 def verify(text, wav, threshold=0.8, alt=None):
     """Transcribe el audio con Gemini y compara con el texto esperado (proporción de coincidencia)."""
     import difflib
@@ -36,9 +53,7 @@ def verify(text, wav, threshold=0.8, alt=None):
     body = {"contents": [{"parts": [{"inlineData": {"mimeType": "audio/wav", "data": b64}},
                                     {"text": "Transcribe exactamente todo lo que se escucha, sin comentarios."}]}]}
     url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent"
-    req = urllib.request.Request(url, json.dumps(body).encode(), {"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        heard = json.load(r)["candidates"][0]["content"]["parts"][0]["text"]
+    heard = post(url, body)["candidates"][0]["content"]["parts"][0]["text"]
     norm = lambda s: re.sub(r"[^a-záéíóúñü ]", "", s.lower()).split()
     ratio = max(difflib.SequenceMatcher(None, norm(c), norm(heard)).ratio() for c in (text, alt) if c)
     return ratio >= threshold, ratio, heard
@@ -70,10 +85,7 @@ def _synth(text, out, voice, style, alt=None):
                                      "speechConfig": {"voiceConfig": {
                                          "prebuiltVoiceConfig": {"voiceName": voice}}}}}
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
-        req = urllib.request.Request(url, json.dumps(body).encode(),
-                                     {"Content-Type": "application/json"})
-        with urllib.request.urlopen(req, timeout=300) as r:
-            data = json.load(r)
+        data = post(url, body)
         part = next(p["inlineData"] for p in data["candidates"][0]["content"]["parts"]
                     if "inlineData" in p)
         rate = 24000
