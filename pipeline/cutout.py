@@ -23,11 +23,16 @@ MIN_AREA = 2500   # piezas más pequeñas se descartan (ruido)
 PAD = 6
 
 
+STRICT = False  # --strict: solo el verde exacto del fondo (para objetos verdes, p. ej. pasto)
+
+
 def key_mask(rgb):
     """True donde hay fondo verde."""
     r, g, b = (rgb[..., i].astype(np.int32) for i in range(3))
     bg = np.median(rgb[:8, :8].reshape(-1, 3), axis=0).astype(np.int32)
     dist = np.sqrt((r - bg[0]) ** 2 + (g - bg[1]) ** 2 + (b - bg[2]) ** 2)
+    if STRICT:
+        return dist < 70
     greenish = (g > r + 40) & (g > b + 40)
     return (dist < 90) | (greenish & (g > 150))
 
@@ -119,4 +124,5 @@ def contact_sheet(out_dir, names):
 
 
 if __name__ == "__main__":
+    STRICT = "--strict" in sys.argv
     cut(sys.argv[1], sys.argv[2], "--keep-border" in sys.argv)

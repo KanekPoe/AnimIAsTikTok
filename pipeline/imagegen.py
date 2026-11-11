@@ -9,6 +9,7 @@ Modos:
     sticker  piezas sueltas sobre fondo verde (luego: pipeline/cutout.py)
     fondo    fondo vertical 9:16 sin personajes
     newton   Newton con sus imágenes de referencia, sobre verde (consistencia de personaje)
+    edit     edita una imagen dada como referencia (p. ej. cerrar bocas) sin cambiar lo demás
 
 La clave la inyecta el proxy del entorno (encabezado x-goog-api-key); no se lee de ningún archivo.
 Tope: MAX_PER_MONTH imágenes por mes, registradas en assets/art/ledger.json.
@@ -67,6 +68,10 @@ def generate(mode, prompt, out, refs=None):
     elif mode == "newton":
         text, aspect = f"{NEWTON}{prompt}. {STICKER}", "9:16"
         refs = (refs or []) + NEWTON_REFS
+    elif mode == "edit":  # edita la primera referencia y conserva todo lo demás
+        text = ("Edit this image: keep absolutely everything else identical (same characters, poses, "
+                "positions, sizes, outlines, colors and the solid green background), only " + prompt)
+        aspect = "9:16"
     else:
         raise SystemExit(f"Modo desconocido: {mode}")
     parts = [_inline(r) for r in refs] + [{"text": text}]
@@ -93,4 +98,5 @@ def generate(mode, prompt, out, refs=None):
 
 
 if __name__ == "__main__":
-    generate(sys.argv[1], sys.argv[2], sys.argv[3])
+    # python3 pipeline/imagegen.py MODO "prompt" salida.jpg [referencia1 referencia2 ...]
+    generate(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4:] or None)

@@ -14,5 +14,271 @@
   "prompt": "An English countryside garden with a large apple tree full of red apples on the right side, green rolling hills, blue sky with clouds, grass",
   "out": "assets/art/raw/jardin_vertical.jpg",
   "tokens": 1577
+ },
+ {
+  "date": "2026-11-11T01:24:16",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Dicen que una manzana me cayó en la cabeza y así descubrí la gravedad? ¡Mito!",
+  "tokens": 232
+ },
+ {
+  "date": "2026-11-11T01:24:40",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to closed, with a calm slight smile",
+  "out": "assets/art/raw/newton_poses_boca_cerrada.jpg",
+  "tokens": 1722
+ },
+ {
+  "date": "2026-11-11T01:24:47",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/newton_poses_boca_abierta.jpg",
+  "tokens": 1711
+ },
+ {
+  "date": "2026-11-11T01:24:54",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/newton_poses_ojos_cerrados.jpg",
+  "tokens": 1678
+ },
+ {
+  "date": "2026-11-11T01:25:01",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/newton_manzana_boca_abierta.jpg",
+  "tokens": 1655
+ },
+ {
+  "date": "2026-11-11T01:25:08",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/newton_manzana_ojos_cerrados.jpg",
+  "tokens": 1676
+ },
+ {
+  "date": "2026-11-11T01:25:32",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Deep outer space with many stars and a soft purple-blue nebula, a few small distant planets, a large empty dark area in the center",
+  "out": "assets/art/raw/espacio_vertical.jpg",
+  "tokens": 1480
+ },
+ {
+  "date": "2026-11-11T01:25:40",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Six separate items: a smiling cartoon Sun, a cartoon planet Earth, a cartoon Moon, a colorful striped beach ball, a single tiny black peppercorn shown large enough to see, and a soccer field seen from above",
+  "out": "assets/art/raw/objetos_escala.jpg",
+  "tokens": 1627
+ },
+ {
+  "date": "2026-11-11T01:29:52",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿De verdad una manzana me cayó en la cabeza y así descubrí la gravedad?",
+  "tokens": 493
+ },
+ {
+  "date": "2026-11-11T01:29:56",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Mito!",
+  "tokens": 364
+ },
+ {
+  "date": "2026-11-11T01:30:01",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según mi amigo William Stukeley, yo estaba en un jardín… y vi caer una manzana.",
+  "tokens": 521
+ },
+ {
+  "date": "2026-11-11T01:30:07",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y me pregunté: ¿por qué siempre cae derecho hacia el suelo, y nunca de lado o ha",
+  "tokens": 506
+ },
+ {
+  "date": "2026-11-11T01:30:13",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Esa pregunta me llevó a la idea de la gravedad: una fuerza que jala las cosas ha",
+  "tokens": 507
+ },
+ {
+  "date": "2026-11-11T01:30:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Así que la manzana sí existió… pero nunca me pegó en la cabeza.",
+  "tokens": 517
+ },
+ {
+  "date": "2026-11-11T01:30:24",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro mito quieres que desmienta? Escríbelo en los comentarios.",
+  "tokens": 506
+ },
+ {
+  "date": "2026-11-11T01:31:40",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según mi amigo William Stukeley, yo estaba en un jardín… y vi caer una manzana.",
+  "tokens": 274
+ },
+ {
+  "date": "2026-11-11T01:32:00",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según mi amigo William Stukeley, yo estaba en un jardín… y vi caer una manzana.",
+  "tokens": 263
+ },
+ {
+  "date": "2026-11-11T01:32:09",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿De verdad una manzana me cayó en la cabeza y así descubrí la gravedad?",
+  "tokens": 263
+ },
+ {
+  "date": "2026-11-11T01:32:50",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Es un mito!",
+  "tokens": 163
+ },
+ {
+  "date": "2026-11-11T01:32:53",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y me pregunté: ¿por qué siempre cae derecho hacia el suelo, y nunca de lado o ha",
+  "tokens": 284
+ },
+ {
+  "date": "2026-11-11T01:32:57",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Esa pregunta me llevó a la idea de la gravedad: una fuerza que jala las cosas ha",
+  "tokens": 293
+ },
+ {
+  "date": "2026-11-11T01:33:01",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Así que la manzana sí existió… pero nunca me pegó en la cabeza.",
+  "tokens": 253
+ },
+ {
+  "date": "2026-11-11T01:33:04",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro mito quieres que desmienta? Escríbelo en los comentarios.",
+  "tokens": 237
+ },
+ {
+  "date": "2026-11-11T01:33:38",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿De verdad una manzana me cayó en la cabeza y así descubrí la gravedad?",
+  "tokens": 132
+ },
+ {
+  "date": "2026-11-11T01:33:41",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Es un mito!",
+  "tokens": 43
+ },
+ {
+  "date": "2026-11-11T01:33:45",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según mi amigo William Stukeley, yo estaba en un jardín… y vi caer una manzana.",
+  "tokens": 163
+ },
+ {
+  "date": "2026-11-11T01:33:48",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y me pregunté: ¿por qué siempre cae derecho hacia el suelo, y nunca de lado o ha",
+  "tokens": 179
+ },
+ {
+  "date": "2026-11-11T01:33:53",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Esa pregunta me llevó a la idea de la gravedad: una fuerza que jala las cosas ha",
+  "tokens": 169
+ },
+ {
+  "date": "2026-11-11T01:33:57",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Así que la manzana sí existió… pero nunca me pegó en la cabeza.",
+  "tokens": 115
+ },
+ {
+  "date": "2026-11-11T01:34:00",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro mito quieres que desmienta? Escríbelo en los comentarios.",
+  "tokens": 104
+ },
+ {
+  "date": "2026-11-11T01:36:14",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Si el Sol fuera del tamaño de una pelota de playa… ¿qué tan grande sería la Tier",
+  "tokens": 133
+ },
+ {
+  "date": "2026-11-11T01:36:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Imagina el Sol como una pelota de sesenta centímetros.",
+  "tokens": 106
+ },
+ {
+  "date": "2026-11-11T01:36:22",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "La Tierra sería… ¡un granito de pimienta!",
+  "tokens": 116
+ },
+ {
+  "date": "2026-11-11T01:36:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y no estaría junto a la pelota: estaría a sesenta y cuatro metros.",
+  "tokens": 129
+ },
+ {
+  "date": "2026-11-11T01:36:38",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Más de media cancha de fútbol!",
+  "tokens": 79
+ },
+ {
+  "date": "2026-11-11T01:36:42",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El espacio está casi vacío… y nosotros vivimos en ese granito.",
+  "tokens": 140
+ },
+ {
+  "date": "2026-11-11T01:36:46",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Te imaginabas que estábamos tan lejos? Cuéntamelo en los comentarios.",
+  "tokens": 113
  }
 ]
