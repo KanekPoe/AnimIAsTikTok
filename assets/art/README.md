@@ -28,3 +28,10 @@ imágenes como referencia para mantener el personaje). Tope: 60 imágenes al mes
 (el registro no está pensado para procesos simultáneos).
 
 Generadas: `fondos/jardin_vertical.png`, `newton/pose_manzana_pensando.png`.
+
+## Newton con lentes de sol (rig actual)
+
+`newton/rig/<pose>/` = base (boca cerrada) + boca_abierta, todo con lentes. Sin parpadeo (los
+lentes tapan los ojos). La versión sin lentes quedó en `newton/rig_sin_lentes/`.
+Originales: `raw/newton_poses_lentes_*.jpg` y `raw/newton_manzana_lentes_*.jpg` (la boca abierta
+se generó editando la versión cerrada para que los lentes sean idénticos).

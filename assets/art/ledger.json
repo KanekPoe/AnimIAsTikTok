@@ -288,5 +288,37 @@
   "prompt": "add stylish black cartoon sunglasses on the character's eyes, with a small white shine on the lenses, matching the bold black outline style",
   "out": "assets/art/raw/newton_lentes_prueba.jpg",
   "tokens": 1718
+ },
+ {
+  "date": "2026-11-11T02:48:33",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "add stylish black cartoon sunglasses on the eyes of every character, with a small white shine on the lenses, matching the bold black outline style",
+  "out": "assets/art/raw/newton_poses_lentes_cerrada.jpg",
+  "tokens": 1682
+ },
+ {
+  "date": "2026-11-11T02:48:41",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue; keep the sunglasses exactly the same",
+  "out": "assets/art/raw/newton_poses_lentes_abierta.jpg",
+  "tokens": 1659
+ },
+ {
+  "date": "2026-11-11T02:48:48",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "add stylish black cartoon sunglasses on the eyes of the character, with a small white shine on the lenses, matching the bold black outline style",
+  "out": "assets/art/raw/newton_manzana_lentes_cerrada.jpg",
+  "tokens": 1681
+ },
+ {
+  "date": "2026-11-11T02:48:55",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue; keep the sunglasses exactly the same",
+  "out": "assets/art/raw/newton_manzana_lentes_abierta.jpg",
+  "tokens": 1649
  }
 ]
