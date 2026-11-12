@@ -552,5 +552,91 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Y si sobrara el noventa por ciento, perder un pedacito no importaría… pero un da",
   "tokens": 218
+ },
+ {
+  "date": "2026-11-12T06:01:30",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Four separate items: a short copper electrical cable with shiny exposed copper wires; the Statue of Liberty in shiny new copper-brown color; the Statue of Liberty in its current green-blue patina color; a rusty reddish-brown iron nail",
+  "out": "assets/art/raw/objetos_cobre_hierro.jpg",
+  "tokens": 1558
+ },
+ {
+  "date": "2026-11-12T06:01:37",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Four separate items: a human forearm seen from the inside with visible bluish veins; a bright red blood drop; a dark red blood drop; a nearly transparent colorless drop with a light outline",
+  "out": "assets/art/raw/objetos_sangre.jpg",
+  "tokens": 1553
+ },
+ {
+  "date": "2026-11-12T06:02:16",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Qué pedo, este animal tiene tres corazones… y sangre azul.",
+  "tokens": 130
+ },
+ {
+  "date": "2026-11-12T06:02:20",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Dos corazones los ocupa para sus branquias, y uno para el resto del cuerpo.",
+  "tokens": 139
+ },
+ {
+  "date": "2026-11-12T06:02:24",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y por qué azul? Porque su sangre lleva el oxígeno con cobre, símon, el mismo de",
+  "tokens": 179
+ },
+ {
+  "date": "2026-11-12T06:02:28",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Cuando ese cobre se une al oxígeno, la sangre se pone azul. Y sin oxígeno… es ca",
+  "tokens": 204
+ },
+ {
+  "date": "2026-11-12T06:02:33",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Es parecido a lo que pasó con la Estatua de la Libertad: era color cobre, y con ",
+  "tokens": 199
+ },
+ {
+  "date": "2026-11-12T06:02:37",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Nosotros usamos hierro. Con oxígeno, nuestra sangre es rojo brillante; sin oxíge",
+  "tokens": 209
+ },
+ {
+  "date": "2026-11-12T06:02:41",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Por eso un clavo oxidado se ve rojizo: también es hierro con oxígeno.",
+  "tokens": 131
+ },
+ {
+  "date": "2026-11-12T06:02:46",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y nel, nuestra sangre nunca es azul: las venas se ven azules por cómo pasa la lu",
+  "tokens": 197
+ },
+ {
+  "date": "2026-11-12T06:02:50",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y sabías que uno de sus corazones se detiene cuando nada? Por eso prefiere arra",
+  "tokens": 153
+ },
+ {
+  "date": "2026-11-12T06:02:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Te cuento en la segunda parte. ¿Qué otro animal raro quieres? Escríbelo en los c",
+  "tokens": 157
  }
 ]

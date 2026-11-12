@@ -51,7 +51,7 @@ def _ledger():
 
 def used_this_month():
     month = datetime.date.today().strftime("%Y-%m")
-    return sum(1 for e in _ledger() if e["date"].startswith(month))
+    return sum(1 for e in _ledger() if e["date"].startswith(month) and e.get("mode") != "tts")
 
 
 def _inline(path):
