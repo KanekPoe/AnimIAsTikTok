@@ -96,7 +96,10 @@ def holo_open():
 
 
 def click():
-    return lowpass(noise(0.03), 2) * env(0.03, 0.0005, 0.02) * 0.7
+    """Tic suave (antes era ruido blanco casi sin filtrar: sonaba áspero/metálico)."""
+    d = 0.04
+    t = _t(d)
+    return np.sin(2 * np.pi * 1800 * t) * np.sin(np.pi * t / d) ** 2 * 0.35
 
 
 def sparkle():

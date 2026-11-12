@@ -16,6 +16,9 @@ import time
 import urllib.error
 import urllib.request
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import audio_qc  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL = os.environ.get("TTS_MODEL", "gemini-3.8-flash-tts")
 CACHE = os.path.join(ROOT, "output", "_tts_cache")
@@ -59,6 +62,34 @@ def verify(text, wav, threshold=0.8, alt=None):
     return ratio >= threshold, ratio, heard
 
 
+def decode_to_wav(data, mime, out):
+    """Bytes de audio de Gemini -> WAV 48 kHz mono, sin silencios en los bordes y con fundidos.
+
+    OJO (lección 1, docs/LECCIONES.md): según el modelo, Gemini entrega un WAV COMPLETO
+    ("audio/wav", con encabezado RIFF y metadatos) o PCM crudo ("audio/L16;rate=24000").
+    Leer un WAV como PCM crudo mete el encabezado y la cola como chasquidos y ruido a todo
+    volumen. Por eso se detecta por el tipo Y por la firma "RIFF" de los bytes.
+    """
+    src_path = out + ".src"
+    with open(src_path, "wb") as f:
+        f.write(data)
+    if data[:4] == b"RIFF" or "wav" in mime.lower():
+        src = ["-f", "wav", "-i", src_path]
+    else:
+        rate = 24000
+        for kv in mime.split(";"):
+            if kv.strip().startswith("rate="):
+                rate = int(kv.split("=")[1])
+        src = ["-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", src_path]
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *src, "-ac", "1", "-af",
+                    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+                    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+                    "afade=t=in:d=0.01,areverse,afade=t=in:d=0.03,areverse",
+                    "-ar", "48000", out], check=True)
+    os.remove(src_path)
+    return out
+
+
 def syllables(text):
     import re
     return max(1, len(re.findall(r"[aeiouáéíóúü]+", text.lower())))
@@ -88,25 +119,7 @@ def _synth(text, out, voice, style, alt=None):
         data = post(url, body)
         part = next(p["inlineData"] for p in data["candidates"][0]["content"]["parts"]
                     if "inlineData" in p)
-        mime = part["mimeType"]
-        raw = cached + ".src"
-        with open(raw, "wb") as f:
-            f.write(base64.b64decode(part["data"]))
-        if "wav" in mime:  # algunos modelos entregan un WAV completo (con encabezado y metadatos)
-            src = ["-i", raw]
-        else:  # otros entregan PCM 16 bits crudo: audio/L16;rate=24000
-            rate = 24000
-            for kv in mime.split(";"):
-                if kv.strip().startswith("rate="):
-                    rate = int(kv.split("=")[1])
-            src = ["-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", raw]
-        # -> WAV 48 kHz mono, recortando silencios del inicio y del final
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *src, "-ac", "1", "-af",
-                        "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-                        "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-                        "afade=t=in:d=0.01,areverse,afade=t=in:d=0.03,areverse",
-                        "-ar", "48000", cached], check=True)
-        os.remove(raw)
+        decode_to_wav(base64.b64decode(part["data"]), part["mimeType"], cached)
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                                     "-of", "csv=p=0", cached], capture_output=True, text=True).stdout)
         tempo = min(1.6, max(1.0, TARGET_RATE / (syllables(text) / dur)))
@@ -121,6 +134,10 @@ def _synth(text, out, voice, style, alt=None):
         if dur > syllables(text) / 3.0 + 2.5:
             os.remove(cached)
             raise RuntimeError(f"Audio sospechoso ({dur:.1f}s para '{text[:40]}…'): revisar")
+        probs = audio_qc.check_voice(audio_qc.read(cached)[0], name=f"'{text[:30]}…'")
+        if probs:  # chasquidos, ruido o saturación: se descarta y se reintenta
+            os.remove(cached)
+            raise RuntimeError("; ".join(probs))
         ok, ratio, heard = verify(text, cached, alt=alt)  # alt: versión con cifras ("64 m")
         if not ok:
             os.remove(cached)

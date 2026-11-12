@@ -20,6 +20,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import audio_qc  # noqa: E402
 import sfx  # noqa: E402
 from textfx import draw_text, font, text_width, wrap_words  # noqa: E402
 from tts_gemini import synth  # noqa: E402
@@ -456,7 +457,13 @@ def main():
             r.frame(int(float(s) * FPS)).convert("RGB").save(p)
             print(p)
         return
+    # Control de audio obligatorio (lección 1): ninguna voz con chasquidos ni mezcla saturada.
+    probs = []
+    for ln in tl.lines:
+        probs += audio_qc.check_voice(read_wav(ln["wav"]), name=f"voz '{ln['say'][:30]}…'")
     audio = mix(tl, os.path.join(out, "mix.wav"))
+    probs += audio_qc.check_mix(read_wav(audio))
+    audio_qc.assert_ok(probs)
     video = os.path.join(out, "final.mp4")
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-i", audio, "-c:v", "libx264", "-preset", "medium", "-crf", "18",
