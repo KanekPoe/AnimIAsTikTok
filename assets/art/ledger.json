@@ -652,5 +652,84 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Qué otro animal raro quieres? Escríbelo en los comentarios.",
   "tokens": 101
+ },
+ {
+  "date": "2026-11-12T17:51:11",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "The surface of planet Venus: flat dark orange volcanic rocky plains, a dense yellow-orange hazy sky with thick clouds, a distant volcano, hot shimmering air",
+  "out": "assets/art/raw/venus_superficie_vertical.jpg",
+  "tokens": 1550
+ },
+ {
+  "date": "2026-11-12T17:51:19",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Four separate items: a cute cartoon grey elephant standing; a dull grey metal ingot labeled Pb melting into a puddle; a cartoon carbon dioxide molecule (one black carbon ball between two red oxygen balls); a cartoon person swimming",
+  "out": "assets/art/raw/objetos_venus2.jpg",
+  "tokens": 1593
+ },
+ {
+  "date": "2026-11-12T17:52:12",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Venus está re-loco: tarda más en girar sobre sí mismo… que en darle la vuelta al",
+  "tokens": 169
+ },
+ {
+  "date": "2026-11-12T17:52:17",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Tons: en Venus, girar una sola vez dura más que un año entero.",
+  "tokens": 159
+ },
+ {
+  "date": "2026-11-12T17:52:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Wacha: en su superficie hay, en promedio, unos cuatrocientos sesenta y cuatro gr",
+  "tokens": 161
+ },
+ {
+  "date": "2026-11-12T17:52:28",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Al plomo lo derrites a trescientos veintisiete… y todavía nos sobran ciento trei",
+  "tokens": 158
+ },
+ {
+  "date": "2026-11-12T17:52:33",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y su aire está pasado de lanza: la presión es noventa y dos veces la de la Tierr",
+  "tokens": 193
+ },
+ {
+  "date": "2026-11-12T17:52:38",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Si te acostaras ahí, sería como tener unos ochenta elefantes encima.",
+  "tokens": 129
+ },
+ {
+  "date": "2026-11-12T17:52:44",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Su atmósfera es casi pura de CO2, y está tan apretada y caliente, así bien machí",
+  "tokens": 340
+ },
+ {
+  "date": "2026-11-12T17:52:50",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Es unas cincuenta veces más densa que nuestro aire: moverte ahí se sentiría más ",
+  "tokens": 201
+ },
+ {
+  "date": "2026-11-12T17:52:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Te irías de vacaciones allá… o nel?",
+  "tokens": 82
  }
 ]
