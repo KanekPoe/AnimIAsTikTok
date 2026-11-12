@@ -638,5 +638,19 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Te cuento en la segunda parte. ¿Qué otro animal raro quieres? Escríbelo en los c",
   "tokens": 157
+ },
+ {
+  "date": "2026-11-12T06:11:57",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y para qué quiere tres corazones? La razón te va a volar la cabeza… en la parte",
+  "tokens": 162
+ },
+ {
+  "date": "2026-11-12T06:12:01",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué otro animal raro quieres? Escríbelo en los comentarios.",
+  "tokens": 101
  }
 ]

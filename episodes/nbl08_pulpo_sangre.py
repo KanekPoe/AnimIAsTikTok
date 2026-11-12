@@ -7,7 +7,8 @@ Datos verificados:
 - Hemoglobina (hierro): rojo brillante con oxígeno, rojo oscuro sin él; nunca azul. Las venas se ven
   azuladas por cómo la piel absorbe y dispersa la luz.
 - Estatua de la Libertad: cobre que con el aire formó una pátina verde azulada.
-- El corazón sistémico del pulpo deja de latir cuando nada; por eso prefiere arrastrarse. Smithsonian.
+- Cierre: gancho sin afirmación ("¿para qué tres corazones?"); la razón va en la parte 2 con el matiz
+  de que es la explicación más aceptada, no un hecho cerrado.
 """
 SLUG = "nbl08_pulpo_sangre"
 BADGE = "DATO ANIMAL"
@@ -66,14 +67,15 @@ SCENES = [
                      "rot": 10, "at": 0.12}]},
     ]},
     {"bg": "oceano_vertical", "newton": N, "lines": [
-        {"say": "¿Y sabías que uno de sus corazones se detiene cuando nada? Por eso prefiere arrastrarse.",
-         "pose": "pensando", "key": ["detiene", "nada", "arrastrarse"],
+        {"say": "¿Y para qué quiere tres corazones? La razón te va a volar la cabeza… en la parte 2.",
+         "text": "¿Y para qué quiere tres corazones? La razón te va a volar la cabeza… en la parte 2.",
+         "pose": "pensando", "key": ["tres", "corazones", "parte"],
          "cam": {"zoom": 1.1, "fx": 0.5, "fy": 0.4},
-         "events": [{"img": "objetos/pulpo_saludando", "h": 300, "anim": "pop", "x": 0.75, "y": 0.42,
-                     "at": 0.1}]},
-        {"say": "Te cuento en la segunda parte. ¿Qué otro animal raro quieres? Escríbelo en los comentarios.",
-         "pose": "senalando", "key": ["segunda", "parte"], "cam": {"zoom": 1.0},
-         "events": [{"kind": "stamp", "text": "PARTE 2 👀", "anim": "stamp", "x": 0.70, "y": 0.42,
-                     "size": 90, "rot": -6, "color": (120, 60, 200, 255)}]},
+         "events": [{"img": "objetos/pulpo_corazones", "h": 300, "anim": "pop", "x": 0.75, "y": 0.42,
+                     "at": 0.1},
+                    {"kind": "stamp", "text": "PARTE 2 👀", "anim": "stamp", "x": 0.70, "y": 0.27,
+                     "size": 90, "rot": -6, "color": (120, 60, 200, 255), "at": 0.7}]},
+        {"say": "¿Qué otro animal raro quieres? Escríbelo en los comentarios.",
+         "pose": "senalando", "key": ["animal"], "cam": {"zoom": 1.0}},
     ]},
 ]
