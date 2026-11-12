@@ -36,15 +36,32 @@ def tone(f, d, a=0.005, r=None):
 
 
 # --- efectos -----------------------------------------------------------------
-def whoosh(d=0.45, up=True):
-    n = noise(d)
-    k = np.linspace(40, 4, len(n)).astype(int) if up else np.linspace(4, 40, len(n)).astype(int)
-    out = np.empty_like(n)
-    for i in range(0, len(n), 512):  # filtro que se abre/cierra
-        kk = max(2, int(k[i]))
-        out[i:i + 512] = lowpass(n[i:i + 512 + kk], kk)[:len(n[i:i + 512])]
-    shape = np.sin(np.linspace(0, np.pi, len(n))) ** 1.5
-    return out * shape * 0.9
+def _pink(n):
+    """Ruido rosa (más suave y natural que el blanco)."""
+    f = np.fft.rfftfreq(n, 1 / SR)
+    spec = (rng.normal(size=len(f)) + 1j * rng.normal(size=len(f))) / np.sqrt(np.maximum(f, 20))
+    x = np.fft.irfft(spec, n)
+    return x / (np.max(np.abs(x)) + 1e-9)
+
+
+def whoosh(d=0.45, up=True, lo=250, hi=2600):
+    """Swish de aire: ruido rosa con un paso de banda que barre en el tiempo (STFT, sin cortes)."""
+    from scipy.signal import istft, stft
+    n = int(d * SR)
+    x = _pink(n + 2048)
+    f, t, Z = stft(x, SR, nperseg=1024, noverlap=768)
+    p = np.clip(t / d, 0, 1)
+    p = p if up else 1 - p
+    center = lo * (hi / lo) ** p                              # barrido logarítmico
+    bw = 0.9                                                  # ancho en octavas
+    oct_dist = np.log2(np.maximum(f[:, None], 1) / center[None, :])
+    Z *= np.exp(-0.5 * (oct_dist / bw) ** 2)
+    _, y = istft(Z, SR, nperseg=1024, noverlap=768)
+    y = y[:n]
+    tt = np.arange(n) / n
+    env = np.sin(np.pi * tt) ** 2 * (0.4 + 0.6 * np.sin(np.pi * np.clip(tt * 1.2, 0, 1)))
+    y = y * env
+    return y / (np.max(np.abs(y)) + 1e-9) * 0.6
 
 
 def impact():

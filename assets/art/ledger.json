@@ -731,5 +731,82 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Te irías de vacaciones allá… o nel?",
   "tokens": 82
+ },
+ {
+  "date": "2026-11-12T18:18:55",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Venus está re-loco: tarda más en girar sobre sí mismo… que en darle la vuelta al",
+  "tokens": 194
+ },
+ {
+  "date": "2026-11-12T18:18:59",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Una vuelta completa sobre sí mismo le toma doscientos cuarenta y tres días terre",
+  "tokens": 146
+ },
+ {
+  "date": "2026-11-12T18:19:04",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y una vuelta alrededor del Sol… solo doscientos veinticinco.",
+  "tokens": 128
+ },
+ {
+  "date": "2026-11-12T18:19:09",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Tons: en Venus, girar una sola vez dura más que un año entero.",
+  "tokens": 138
+ },
+ {
+  "date": "2026-11-12T18:19:13",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Wacha: en su superficie hay, en promedio, unos cuatrocientos sesenta y cuatro gr",
+  "tokens": 152
+ },
+ {
+  "date": "2026-11-12T18:19:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Al plomo lo derrites a trescientos veintisiete… y todavía nos sobran ciento trei",
+  "tokens": 147
+ },
+ {
+  "date": "2026-11-12T18:19:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y su aire está pasado de lanza: la presión es noventa y dos veces la de la Tierr",
+  "tokens": 157
+ },
+ {
+  "date": "2026-11-12T18:19:28",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Si te acostaras ahí, sería como tener unos ochenta elefantes encima.",
+  "tokens": 138
+ },
+ {
+  "date": "2026-11-12T18:19:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Su atmósfera es casi pura de CO2, y está tan apretada y caliente, así bien machí",
+  "tokens": 303
+ },
+ {
+  "date": "2026-11-12T18:19:39",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Es unas cincuenta veces más densa que nuestro aire: moverte ahí se sentiría más ",
+  "tokens": 197
+ },
+ {
+  "date": "2026-11-12T18:19:47",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Te irías de vacaciones allá… o nel?",
+  "tokens": 78
  }
 ]

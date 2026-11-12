@@ -76,7 +76,7 @@ def synth(text, out, voice=NEWTON_VOICE, style=NEWTON_STYLE, tries=3, alt=None):
 
 
 def _synth(text, out, voice, style, alt=None):
-    key = hashlib.sha1(f"{MODEL}|{voice}|{style}|{text}".encode()).hexdigest()[:16]
+    key = hashlib.sha1(f"v2|{MODEL}|{voice}|{style}|{text}".encode()).hexdigest()[:16]  # v2: lectura WAV correcta
     os.makedirs(CACHE, exist_ok=True)
     cached = os.path.join(CACHE, key + ".wav")
     if not os.path.exists(cached):
@@ -88,18 +88,23 @@ def _synth(text, out, voice, style, alt=None):
         data = post(url, body)
         part = next(p["inlineData"] for p in data["candidates"][0]["content"]["parts"]
                     if "inlineData" in p)
-        rate = 24000
-        for kv in part["mimeType"].split(";"):
-            if kv.strip().startswith("rate="):
-                rate = int(kv.split("=")[1])
-        raw = cached + ".pcm"
+        mime = part["mimeType"]
+        raw = cached + ".src"
         with open(raw, "wb") as f:
             f.write(base64.b64decode(part["data"]))
-        # PCM 16 bits -> WAV 48 kHz, recortando silencios del inicio y del final
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "s16le", "-ar", str(rate),
-                        "-ac", "1", "-i", raw, "-af",
+        if "wav" in mime:  # algunos modelos entregan un WAV completo (con encabezado y metadatos)
+            src = ["-i", raw]
+        else:  # otros entregan PCM 16 bits crudo: audio/L16;rate=24000
+            rate = 24000
+            for kv in mime.split(";"):
+                if kv.strip().startswith("rate="):
+                    rate = int(kv.split("=")[1])
+            src = ["-f", "s16le", "-ar", str(rate), "-ac", "1", "-i", raw]
+        # -> WAV 48 kHz mono, recortando silencios del inicio y del final
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", *src, "-ac", "1", "-af",
                         "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-                        "silenceremove=start_periods=1:start_threshold=-45dB,areverse",
+                        "silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+                        "afade=t=in:d=0.01,areverse,afade=t=in:d=0.03,areverse",
                         "-ar", "48000", cached], check=True)
         os.remove(raw)
         dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
