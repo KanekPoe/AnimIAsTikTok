@@ -31,6 +31,7 @@ GOLD = (255, 194, 26, 255)
 WHITE = (255, 255, 255, 255)
 BLACK = (0, 0, 0, 255)
 GAP, LEAD, OUTRO = 0.18, 0.25, 1.6
+MAX_ACCENTS = 3
 SUB_Y, SUB_CX, SUB_W = 1330, 500, 820
 rng = random.Random(4)
 
@@ -400,23 +401,32 @@ def mix(tl, path, music=True):
     for ln in tl.lines:
         add(voice, read_wav(ln["wav"]), ln["start"])
     for i, (a, _) in enumerate(tl.scenes[1:], 1):
-        add(fx, sfx.whoosh(0.35), a - 0.15, 0.5)
-    prev = None
-    for ln in tl.lines:
-        if ln.get("pose") and ln["pose"] != prev and prev is not None:
-            add(fx, sfx.pop(), ln["start"] - 0.05, 0.35)
-        prev = ln.get("pose") or prev
+        add(fx, sfx.whoosh(0.35), a - 0.15, 0.3)  # transición suave entre escenas
+    # Efectos de acento: máximo MAX_ACCENTS por video (pedido del creador: no saturar).
+    # Prioridad: sellos > caídas (una por grupo) > líneas > apariciones. Los cambios de pose no suenan.
+    cands, seen_drop = [], set()
     for ev in tl.events:
         a = ev.get("anim", "pop")
         if a == "stamp":
-            add(fx, sfx.stamp(), ev["t0"], 1.0)
+            cands.append((0, ev["t0"], "stamp", ev))
         elif a == "drop":
-            add(fx, sfx.whoosh(0.4, up=False), ev["t0"], 0.4)
-            add(fx, sfx.thud(), ev["t0"] + ev.get("fall", 0.55), 0.9)
+            key = round(ev["t0"] - ev.get("at", 0), 1)  # caídas de la misma frase = un solo sonido
+            if key not in seen_drop:
+                seen_drop.add(key)
+                cands.append((1, ev["t0"], "drop", ev))
         elif ev.get("kind") == "line":
-            add(fx, sfx.sweep(300, 900, ev.get("grow", 1.0)) * 0.15, ev["t0"], 1.0)
+            cands.append((2, ev["t0"], "line", ev))
         else:
-            add(fx, sfx.pop(), ev["t0"], 0.5)
+            cands.append((3, ev["t0"], "pop", ev))
+    for _, t0, kind, ev in sorted(sorted(cands)[:MAX_ACCENTS], key=lambda c: c[1]):
+        if kind == "stamp":
+            add(fx, sfx.stamp(), t0, 1.0)
+        elif kind == "drop":
+            add(fx, sfx.thud(), t0 + ev.get("fall", 0.55), 0.9)
+        elif kind == "line":
+            add(fx, sfx.sweep(300, 900, ev.get("grow", 1.0)) * 0.15, t0, 1.0)
+        else:
+            add(fx, sfx.pop(), t0, 0.5)
     add(fx, sfx.chime(), tl.lines[-1]["start"], 0.5)
     out = voice + fx * 0.55
     if music:
