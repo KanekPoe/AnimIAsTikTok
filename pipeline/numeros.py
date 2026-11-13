@@ -88,6 +88,7 @@ def a_palabras(text):
     text = re.sub(r"10([⁰¹²³⁴⁵⁶⁷⁸⁹]+)", lambda m: "diez a la " + entero(int(m.group(1).translate(_SUP))), text)
     text = text.translate(_SUP)
     text = re.sub(r"(\d)\s*[–-]\s*(\d)", r"\1 a \2", text)  # rangos "1665–1666"
+    text = re.sub(r"\b(\d+)([A-Z])\b", r"\1 \2", text)  # "5D" -> "cinco D", "3D" -> "tres D"
 
     def rep(m):
         sign, ent, dec, unit = m.group(1), m.group(2), m.group(3) or "", m.group(4)

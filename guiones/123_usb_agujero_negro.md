@@ -5,7 +5,7 @@ categoria: Grandes preguntas
 idea: Top 6 de medios para guardar información (agujeros negros USB)
 colega: turing
 badge: TOP 6
-cta: ¿Qué guardarías en el número 1? 👇
+cta: ¿Cabe el GTA 6 en el número 1? 👇
 estado: base
 duracion: larga
 prioridad: creador
@@ -14,34 +14,34 @@ prioridad: creador
 ## Guion
 
 1. [gancho] NEWTON (senalando) | fondo: estudio
-   DICE: ¡Pum! Top 6 para guardar información. Y el número 1… es otro rollo.
+   DICE: ¡Pum! Top 6 para guardar información. Y el número 1… está pasado de lanza, acá de aliens.
    PANTALLA: texto "TOP 6"
 2. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Número 6: la tarjeta perforada. Unos hoyitos: como 80 letras.
+   DICE: Número 6: la tarjeta perforada: hoyitos, como 80 letras.
    PANTALLA: objetos/tarjeta_perforada · texto "#6"
 3. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Número 5: la hoja de papel, unas 3 mil letras. Un libro: unas 200 páginas.
    PANTALLA: objetos/hoja_papel · texto "#5"
 4. [dato] COLEGA:turing (explicando) | fondo: estudio
-   DICE: Número 4: tu USB de un terabyte: más de un millón de libros.
+   DICE: Número 4: tu USB de un tera: más de un millón de libros.
    PANTALLA: objetos/memoria_usb · texto "#4"
 5. [dato] COLEGA:turing (senalando) | fondo: estudio
    DICE: Número 3: la cinta magnética. No te lo crees, yo tampoco, pero sigue viva en centros de datos.
    PANTALLA: objetos/cinta_magnetica · texto "#3"
 6. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Un cartucho guarda 40 terabytes: 40 de tus USBs.
+   DICE: Un cartucho: 40 terabytes, 40 de tus USBs.
    PANTALLA: objetos/cinta_magnetica · texto "= 40 USBs"
 7. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Número 2: ya es investigación, casi ciencia ficción. Cristal 5D: un láser graba dentro del vidrio.
    PANTALLA: objetos/cristal_5d · texto "#2"
 8. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: 360 terabytes por disco, por miles de millones de años. Eso sí: no se puede borrar.
+   DICE: 360 terabytes por disco, por miles de millones de años. Eso sí: no se borra.
    PANTALLA: objetos/cristal_5d · texto "360 TB"
 9. [giro] NEWTON (voz) | fondo: espacio
    DICE: Y ahora sí, lo mero chido. Número 1: un agujero negro de 2 cm: un 3 con 59 ceros de libros.
    PANTALLA: objetos/agujero_negro · texto "#1"
 10. [cierre] NEWTON (asustado) | fondo: estudio
-   DICE: Pero pesaría como toda la Tierra, y nadie sabe si los datos se pueden sacar. ¿Qué guardarías tú?
+   DICE: Pero pesaría como la Tierra, y sacar los datos… quién sabe. ¿Crees que ahí quepa el GTA 6?
    PANTALLA: objetos/tierra
 
 ## Datos que hay que verificar
@@ -66,5 +66,6 @@ prioridad: creador
 
 ## Notas
 
-- Versión 3 (13 nov 2026): borrador del creador ("¡Pum! Top 6…"), pulido respetando su estilo. Cambios: "otro pedo" -> "otro rollo" (si no se promociona, puede volver "otro pedo"); "millones y millones de años" -> "miles de millones" (lo que dicen los investigadores); "un millón de libros" -> "más de un millón" (con libros de 200 páginas salen 1.7 millones).
+- Versión 3 (13 nov 2026): borrador del creador ("¡Pum! Top 6…"), pulido respetando su estilo. Cambios: "otro pedo" -> "está pasado de lanza, acá de aliens" (frase del creador, versión 4); "millones y millones de años" -> "miles de millones" (lo que dicen los investigadores); "un millón de libros" -> "más de un millón" (con libros de 200 páginas salen 1.7 millones).
+- Cierre del creador: "¿Crees que ahí quepa el GTA 6?" (versión 4).
 - duracion: larga (~55 s) porque es un top; si se quiere de 45 s, quitar las líneas 6 y 8 y juntar datos.

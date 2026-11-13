@@ -30,6 +30,8 @@ class TestNumeros(unittest.TestCase):
         "99.8%": "noventa y nueve punto ocho por ciento",
         "10⁶⁶": "diez a la sesenta y seis",
         "1665–1666": "mil seiscientos sesenta y cinco a mil seiscientos sesenta y seis",
+        "Cristal 5D": "Cristal cinco D",
+        "el GTA 6?": "el GTA seis?",
     }
 
     def test_casos(self):

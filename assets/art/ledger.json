@@ -1723,5 +1723,75 @@
   "prompt": "Exactly 4 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a beige IBM-style computer punched card with rows of small rectangular holes and a cut corner; 2) a single sheet of white paper with lines of handwritten text; 3) a modern black data tape cartridge (LTO style), square with a small white label; 4) a small round transparent glass disc with tiny glowing blue data dots inside, light blue tint",
   "out": "assets/art/raw/objetos_lote6.jpg",
   "tokens": 1612
+ },
+ {
+  "date": "2026-11-13T15:56:41",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¡Pum! Top seis para guardar información. Y el número uno… está pasado de lanza, ",
+  "tokens": 196
+ },
+ {
+  "date": "2026-11-13T15:56:45",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Número seis: la tarjeta perforada: hoyitos, como ochenta letras.",
+  "tokens": 149
+ },
+ {
+  "date": "2026-11-13T15:56:50",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Número cinco: la hoja de papel, unas tres mil letras. Un libro: unas doscientos ",
+  "tokens": 191
+ },
+ {
+  "date": "2026-11-13T15:56:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Número cuatro: tu USB de un tera: más de un millón de libros.",
+  "tokens": 149
+ },
+ {
+  "date": "2026-11-13T15:56:59",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Número tres: la cinta magnética. No te lo crees, yo tampoco, pero sigue viva en ",
+  "tokens": 210
+ },
+ {
+  "date": "2026-11-13T15:57:03",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Un cartucho: cuarenta terabytes, cuarenta de tus USBs.",
+  "tokens": 133
+ },
+ {
+  "date": "2026-11-13T15:57:08",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Número dos: ya es investigación, casi ciencia ficción. Cristal cinco D: un láser",
+  "tokens": 239
+ },
+ {
+  "date": "2026-11-13T15:57:13",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "trescientos sesenta terabytes por disco, por miles de millones de años. Eso sí: ",
+  "tokens": 195
+ },
+ {
+  "date": "2026-11-13T15:57:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y ahora sí, lo mero chido. Número uno: un agujero negro de dos centímetros: un t",
+  "tokens": 291
+ },
+ {
+  "date": "2026-11-13T15:57:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Pero pesaría como la Tierra, y sacar los datos… quién sabe. ¿Crees que ahí quepa",
+  "tokens": 185
  }
 ]
