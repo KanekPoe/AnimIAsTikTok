@@ -880,5 +880,13 @@
   "prompt": "Rosalind Franklin as a 1950s British scientist woman: short dark wavy hair, white lab coat over a simple 1950s blouse; DISTINCTIVE TRAIT: holding up a photographic X-ray plate showing an X-shaped diffraction pattern (Photo 51), with a small DNA double helix floating beside her",
   "out": "assets/art/raw/colegas/franklin_v1.jpg",
   "tokens": 2153
+ },
+ {
+  "date": "2026-11-13T03:05:33",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "replace the brass cipher rotor wheel he is holding with an open modern laptop computer held in his hands, screen facing the viewer showing green code; keep his face, clothes, sneakers and pose the same",
+  "out": "assets/art/raw/colegas/turing_v2.jpg",
+  "tokens": 1766
  }
 ]
