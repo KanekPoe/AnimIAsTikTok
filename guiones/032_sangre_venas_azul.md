@@ -12,7 +12,7 @@ estado: base
 ## Guion
 
 1. [gancho] NEWTON (senalando) | fondo: estudio
-   DICE: Mira tu muñeca: esa vena se ve azul, pero la sangre que lleva es rojo oscuro. ¿Quién miente?
+   DICE: Mira tu muñeca: esa vena se ve azul, pero su sangre es rojo oscuro. ¿Quién miente?
    PANTALLA: texto "¿QUIÉN MIENTE?"
 2. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Culpable número uno: la piel. Dispersa la luz de forma desigual, y el azul rebota cerca de la superficie.
@@ -24,10 +24,10 @@ estado: base
    DICE: Esa sangre lleva menos oxígeno que la arterial, por eso es rojo oscuro.
    PANTALLA: objetos/gota_roja_oscura
 5. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Ojo: no es sangre vieja ni sucia. Solo soltó parte de su oxígeno en tus tejidos.
+   DICE: Ojo: no es sangre vieja. Solo soltó parte de su oxígeno en tus tejidos.
    PANTALLA: texto "NO ES VIEJA"
 6. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: Al llegar a los pulmones se recarga de oxígeno y vuelve a rojo brillante. Nunca es azul.
+   DICE: En los pulmones se recarga de oxígeno y vuelve a rojo brillante. Nunca es azul.
    PANTALLA: objetos/gota_roja
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Qué otro color de tu cuerpo crees que te engaña? Te leo en los comentarios.

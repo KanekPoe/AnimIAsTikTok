@@ -23,7 +23,7 @@ estado: base
 4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Parece que no se fijan en un detalle aislado, sino en la configuración general de la cara.
    PANTALLA: objetos/abeja
-5. [giro] NEWTON (asustado) | fondo: laboratorio
+5. [giro] NEWTON (voz) | fondo: laboratorio
    DICE: Pero ojo: esto se probó en condiciones controladas. No sabemos si en la naturaleza hacen lo mismo.
    PANTALLA: texto "EN LABORATORIO"
 6. [dato] NEWTON (voz) | fondo: jardin

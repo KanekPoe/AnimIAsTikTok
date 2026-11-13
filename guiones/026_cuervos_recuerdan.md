@@ -26,7 +26,7 @@ estado: base
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: ¿Y las caras humanas? Los cuervos las distinguen con bastante facilidad.
    PANTALLA: texto "¿TU CARA?"
-6. [dato] NEWTON (pensando) | fondo: jardin
+6. [dato] NEWTON (voz) | fondo: jardin
    DICE: Esto es memoria social: aprenden quién es peligroso y se lo cuentan a los demás.
    PANTALLA: objetos/cuervo
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio

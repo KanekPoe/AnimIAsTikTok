@@ -21,10 +21,10 @@ estado: base
    DICE: En estudios de laboratorio, también regenera partes de su cerebro.
    PANTALLA: objetos/cerebro
 4. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: ¿Cómo lo hace? Sus células vuelven a un estado juvenil y forman un bultito llamado blastema, que se convierte en la parte que falta.
+   DICE: ¿Cómo? Sus células regresan a un estado juvenil y forman un bultito, el blastema, que se vuelve la parte que falta.
    PANTALLA: texto "BLASTEMA"
 5. [dato] NEWTON (voz) | fondo: jardin
-   DICE: Por eso científicos de todo el mundo lo estudian: entender cómo regenera podría ayudar a la medicina humana.
+   DICE: Por eso lo estudian científicos de todo el mundo: podría ayudar a la medicina humana.
    PANTALLA: objetos/celula_humana
 6. [giro] NEWTON (asustado) | fondo: estudio
    DICE: El problema es que, en su hábitat natural, el ajolote está en peligro crítico de extinción.

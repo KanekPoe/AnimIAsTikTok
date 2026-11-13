@@ -20,7 +20,7 @@ estado: base
 3. [dato] COLEGA:hipatia (explicando) | fondo: estudio
    DICE: Para comparar volúmenes elevamos el radio al cubo: 109 × 109 × 109 es casi 1.3 millones.
    PANTALLA: texto "109 × 109 × 109"
-4. [dato] NEWTON (pensando) | fondo: espacio
+4. [dato] NEWTON (voz) | fondo: espacio
    DICE: Eso sí, en peso la cosa cambia: el Sol pesa unas 333,000 veces más que la Tierra.
    PANTALLA: texto "333,000 × MASA"
 5. [giro] NEWTON (asustado) | fondo: estudio

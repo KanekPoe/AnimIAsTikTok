@@ -21,10 +21,10 @@ estado: base
    DICE: Lo digieren, el pigmento viaja por la sangre y se queda en las plumas.
    PANTALLA: objetos/flamenco
 4. [dato] NEWTON (voz) | fondo: oceano
-   DICE: Si dejan de comer esos bichitos, poco a poco se ponen más pálidos. Eso lo han visto en zoológicos.
+   DICE: Si dejan de comer esos bichitos, se ponen pálidos. Eso se ha visto en zoológicos.
    PANTALLA: texto "PÁLIDOS"
 5. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: En la naturaleza, los más rosados suelen ser los que mejor comen, y eso influye al elegir pareja.
+   DICE: En la naturaleza, los más rosados suelen comer mejor, y eso influye al elegir pareja.
    PANTALLA: texto "MÁS ROSA = MEJOR"
 6. [giro] NEWTON (asustado) | fondo: estudio
    DICE: ¿Y si comen algo sin pigmento? Se vuelven blancos. Su rosa es literalmente lo que comen.

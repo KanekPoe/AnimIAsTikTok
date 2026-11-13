@@ -21,13 +21,13 @@ estado: base
    DICE: Casi todo el día solo hay mares, rocas y bacterias. Los dinosaurios llegan casi a las 11 de la noche.
    PANTALLA: objetos/bacteria_bacilo · texto "11 PM"
 4. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: Nuestra especie, Homo sapiens, tiene unos 300,000 años. En ese día, aparecemos unos 6 segundos antes de medianoche.
+   DICE: Homo sapiens tiene unos 300,000 años: aparecemos unos 6 segundos antes de medianoche.
    PANTALLA: objetos/reloj_arena
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Toda la historia escrita, unos 5,000 años, cabe en menos de un décimo de segundo. ¿A poco?
    PANTALLA: texto "0.1 SEGUNDOS"
 6. [cierre] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: Entonces, ¿en qué segundo de ese día crees que llegaron tus abuelos? Te leo en los comentarios.
+   DICE: ¿En qué segundo crees que llegaron tus abuelos? Te leo en los comentarios.
    PANTALLA: texto "¿QUÉ SEGUNDO?"
 
 ## Datos que hay que verificar

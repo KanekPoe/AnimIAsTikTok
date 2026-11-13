@@ -5,7 +5,7 @@ categoria: Animales
 idea: El tardígrado sobrevive al vacío del espacio
 colega: ninguno
 badge: DATO ANIMAL
-cta: ¿Cuánto aguantarías tú sin agua? 👇
+cta: ¿Qué animal te gustaría ver en el espacio? 👇
 estado: base
 ---
 
@@ -15,22 +15,22 @@ estado: base
    DICE: ¿Puede un animal sobrevivir al vacío del espacio, sin aire y con radiación? Sí, y se llama tardígrado.
    PANTALLA: texto "¿VACÍO?"
 2. [dato] NEWTON (voz) | fondo: espacio
-   DICE: Mide menos de un milímetro, tiene ocho patitas y parece un osito de peluche gordito.
+   DICE: Mide menos de un milímetro, tiene ocho patitas y parece un osito de peluche.
    PANTALLA: objetos/tardigrado
 3. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Cuando se deshidrata, se encoge, pierde casi toda el agua de su cuerpo y entra en pausa: es la criptobiosis.
    PANTALLA: objetos/tardigrado · texto "PAUSA"
 4. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: En ese estado deshidratado aguanta temperaturas extremas y radiación que mataría a la mayoría de los animales.
+   DICE: Así aguanta temperaturas extremas y radiación que mataría a la mayoría de animales.
    PANTALLA: texto "EN PAUSA"
 5. [dato] NEWTON (voz) | fondo: espacio
-   DICE: En 2007, una misión espacial los expuso al vacío y al Sol en órbita. Algunos sobrevivieron y volvieron a la vida al rehidratarse.
+   DICE: En 2007, una misión espacial los expuso al vacío y al Sol. Algunos sobrevivieron y volvieron a la vida.
    PANTALLA: texto "2007"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: ¿Y cuánto tiempo aguantan así? Hay registros de tardígrados revividos después de décadas en musgo seco.
+   DICE: ¿Y cuánto tiempo aguantan? Hay registros de tardígrados revividos tras décadas en musgo seco.
    PANTALLA: texto "¿DÉCADAS?"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: ¿Y tú cuánto aguantarías sin agua, un día o unos años? Cuéntame en comentarios.
+   DICE: ¿Y tú cuánto aguantarías sin agua? Cuéntame en comentarios.
    PANTALLA: texto "¿CUÁNTO?"
 
 ## Datos que hay que verificar
