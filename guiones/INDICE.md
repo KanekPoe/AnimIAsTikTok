@@ -125,3 +125,4 @@
 | 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
 | 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
 | 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
+| 124 | ¿Qué onda con los agujeros negros? | 118 | hipatia | 0 | `124_que_onda_agujeros_negros.md` |
