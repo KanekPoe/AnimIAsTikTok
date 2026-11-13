@@ -6,24 +6,22 @@ SLUG = 'nbl082_everest_marianas'
 BADGE = 'COMPARACIÓN EXTREMA'
 SOURCE = None
 CTA = '¿Qué montaña te gustaría ver bajo el agua? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'oceano_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': '¿Te imaginas meter el Everest en la parte más profunda del océano? Pues cabe, y sobra '
                     'agua.',
-             'pose': 'senalando',
              'key': ['cabe'],
              'events': [{'kind': 'label',
                          'text': '¿CABE?',
                          'size': 100,
                          'color': (255, 194, 26, 255),
-                         'anim': 'pop',
-                         'x': 0.6,
-                         'y': 0.2405,
-                         'at': 0.12}]}]},
- {'bg': 'oceano_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.2505,
+                         'at': 0,
+                         'dt': -1.0}]},
+            {'who': 'newton',
              'say': 'El Everest mide unos ocho mil ochocientos cuarenta y nueve metros sobre el nivel del '
                     'mar. Es la montaña más alta de la Tierra.',
              'text': 'El Everest mide unos 8,849 metros sobre el nivel del mar. Es la montaña más alta de la '

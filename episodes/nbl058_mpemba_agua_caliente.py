@@ -6,25 +6,29 @@ SLUG = 'nbl058_mpemba_agua_caliente'
 BADGE = '¿VERDAD O MITO?'
 SOURCE = None
 CTA = 'Vota en los comentarios 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'laboratorio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': '¿Agua caliente o agua fría: cuál se congela primero? La respuesta divide a los '
                     'científicos.',
-             'pose': 'senalando',
              'key': [],
-             'events': [{'kind': 'stamp',
+             'events': [{'img': 'objetos/termometro_caliente',
+                         'h': 640,
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0,
+                         'dt': -1.0},
+                        {'kind': 'stamp',
                          'text': '¿VERDAD O MITO?',
                          'anim': 'stamp',
                          'size': 74,
                          'rot': -6,
                          'x': 0.5,
-                         'y': 0.39,
+                         'y': 0.4,
                          'at': 0.45,
-                         'color': (220, 30, 45, 255)}]}]},
- {'bg': 'laboratorio_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'color': (220, 30, 45, 255)}]},
+            {'who': 'newton',
              'say': 'En mil novecientos sesenta y tres, un estudiante de Tanzania, Erasto Mpemba, notó algo '
                     'raro con su mezcla de helado.',
              'text': 'En 1963, un estudiante de Tanzania, Erasto Mpemba, notó algo raro con su mezcla de '

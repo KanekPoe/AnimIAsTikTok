@@ -6,16 +6,23 @@ SLUG = 'nbl005_sol_8_minutos'
 BADGE = 'DATO ESPACIAL'
 SOURCE = None
 CTA = '¿Qué otra cosa del cielo crees que ves en el pasado? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.26, 'feet': 1790, 'h': 1180}],
-           ['hipatia', {'x': 0.75, 'feet': 1790, 'h': 1180}]],
+SCENES = [{'bg': 'espacio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'El Sol que ves ahorita ya es pasado. Lo que te llega de él salió hace unos ocho '
                     'minutos.',
-             'pose': 'senalando',
              'key': [],
-             'events': [{'img': 'objetos/sol', 'h': 264, 'anim': 'pop', 'x': 0.5, 'y': 0.2625, 'at': 0.05}]},
-            {'who': 'hipatia',
+             'events': [{'img': 'objetos/sol',
+                         'h': 640,
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0,
+                         'dt': -1.0}]}]},
+ {'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.26, 'feet': 1790, 'h': 1180}],
+           ['hipatia', {'x': 0.75, 'feet': 1790, 'h': 1180}]],
+  'lines': [{'who': 'hipatia',
              'say': 'La luz viaja a unos trescientos mil kilómetros por segundo. Y el Sol está a unos ciento '
                     'cincuenta millones de kilómetros.',
              'text': 'La luz viaja a unos 300 mil kilómetros por segundo. Y el Sol está a unos 150 millones '

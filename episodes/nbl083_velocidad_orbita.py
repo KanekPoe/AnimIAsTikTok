@@ -6,26 +6,31 @@ SLUG = 'nbl083_velocidad_orbita'
 BADGE = 'MOVIMIENTO'
 SOURCE = None
 CTA = '¿Te mareas de solo pensarlo? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'espacio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'Mientras lees esto, la Tierra te lleva alrededor del Sol a unos ciento siete mil '
                     'kilómetros por hora. ¿Y tú no lo sentiste?',
              'text': 'Mientras lees esto, la Tierra te lleva alrededor del Sol a unos 107,000 km/h. ¿Y tú no '
                      'lo sentiste?',
-             'pose': 'senalando',
              'key': ['107,000', 'km/h'],
              'events': [{'kind': 'label',
                          'text': '107,000 KM/H',
-                         'size': 68,
+                         'size': 96,
                          'color': (255, 194, 26, 255),
-                         'anim': 'pop',
-                         'x': 0.6,
-                         'y': 0.2264,
-                         'at': 0.12}]}]},
- {'bg': 'espacio_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.2487,
+                         'at': 0,
+                         'dt': -1.0},
+                        {'img': 'objetos/flecha_orbita',
+                         'h': 551,
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.4488,
+                         'at': 0,
+                         'dt': -1.0}]},
+            {'who': 'newton',
              'say': 'Eso son unos treinta kilómetros por segundo. Una vuelta completa dura un año, unos '
                     'trescientos sesenta y cinco días.',
              'text': 'Eso son unos 30 kilómetros por segundo. Una vuelta completa dura un año, unos 365 '

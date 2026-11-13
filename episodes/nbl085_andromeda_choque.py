@@ -6,23 +6,21 @@ SLUG = 'nbl085_andromeda_choque'
 BADGE = 'DATO ESPACIAL'
 SOURCE = None
 CTA = '¿Quién crees que vería ese choque? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'espacio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'Nuestra galaxia, la Vía Láctea, va a chocar con Andrómeda. Tranqui, no será pronto.',
-             'pose': 'senalando',
              'key': [],
              'events': [{'kind': 'label',
                          'text': '¡CHOQUE!',
-                         'size': 96,
+                         'size': 100,
                          'color': (255, 194, 26, 255),
-                         'anim': 'pop',
-                         'x': 0.6,
-                         'y': 0.2387,
-                         'at': 0.12}]}]},
- {'bg': 'espacio_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.2505,
+                         'at': 0,
+                         'dt': -1.0}]},
+            {'who': 'newton',
              'say': 'Andrómeda está a unos dos punto cinco millones de años luz y se acerca hacia nosotros a '
                     'unos ciento diez kilómetros por segundo.',
              'text': 'Andrómeda está a unos 2.5 millones de años luz y se acerca hacia nosotros a unos 110 '

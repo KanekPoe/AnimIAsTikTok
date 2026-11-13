@@ -6,22 +6,20 @@ SLUG = 'nbl110_tortugas_marinas'
 BADGE = 'DATO ANIMAL'
 SOURCE = None
 CTA = '¿Qué otro animal te gustaría que explicáramos? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'oceano_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'Una tortuga marina nada miles de kilómetros y regresa a la playa donde nació. ¿Cómo '
                     'sabe el camino?',
-             'pose': 'senalando',
              'key': [],
              'events': [{'img': 'objetos/tortuga_marina',
-                         'h': 318,
-                         'anim': 'pop',
-                         'x': 0.69,
-                         'y': 0.39,
-                         'at': 0.05}]}]},
- {'bg': 'oceano_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'h': 640,
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0,
+                         'dt': -1.0}]},
+            {'who': 'newton',
              'say': 'Parte de la respuesta: el campo magnético de la Tierra funciona como un mapa con '
                     'coordenadas.',
              'key': ['magnético', 'mapa'],

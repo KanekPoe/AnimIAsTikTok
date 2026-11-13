@@ -6,21 +6,23 @@ SLUG = 'nbl013_urano_acostado'
 BADGE = 'DATO ESPACIAL'
 SOURCE = None
 CTA = '¿Cómo crees que se tumbó Urano? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.26, 'feet': 1790, 'h': 1180}],
-           ['hipatia', {'x': 0.75, 'feet': 1790, 'h': 1180}]],
+SCENES = [{'bg': 'espacio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'Urano gira como si estuviera acostado. Su eje está casi horizontal, como si rodara de '
                     'lado.',
-             'pose': 'senalando',
              'key': [],
              'events': [{'img': 'objetos/urano',
-                         'h': 264,
-                         'anim': 'pop',
-                         'x': 0.5,
-                         'y': 0.2625,
-                         'at': 0.05}]},
-            {'who': 'hipatia',
+                         'h': 590,
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0,
+                         'dt': -1.0}]}]},
+ {'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.26, 'feet': 1790, 'h': 1180}],
+           ['hipatia', {'x': 0.75, 'feet': 1790, 'h': 1180}]],
+  'lines': [{'who': 'hipatia',
              'say': 'Su inclinación es de unos noventa y ocho grados. La mayoría de los planetas tiene una '
                     'inclinación mucho menor.',
              'text': 'Su inclinación es de unos 98 grados. La mayoría de los planetas tiene una inclinación '

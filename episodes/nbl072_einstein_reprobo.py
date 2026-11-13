@@ -6,23 +6,21 @@ SLUG = 'nbl072_einstein_reprobo'
 BADGE = '¿VERDAD O MITO?'
 SOURCE = None
 CTA = '¿De qué materia te sentías el más reprobado? 👇'
-SCENES = [{'bg': 'estudio_vertical',
-  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+SCENES = [{'bg': 'laboratorio_vertical',
+  'cast': [],
   'lines': [{'who': 'newton',
              'say': 'Dicen que Einstein reprobó matemáticas. ¿A poco el de la relatividad?',
-             'pose': 'pensando',
              'key': ['reprobó'],
              'events': [{'kind': 'label',
                          'text': '¿REPROBÓ?',
-                         'size': 80,
+                         'size': 100,
                          'color': (255, 194, 26, 255),
-                         'anim': 'pop',
-                         'x': 0.6,
-                         'y': 0.2317,
-                         'at': 0.12}]}]},
- {'bg': 'laboratorio_vertical',
-  'cast': [],
-  'lines': [{'who': 'newton',
+                         'anim': 'static',
+                         'x': 0.46,
+                         'y': 0.2505,
+                         'at': 0,
+                         'dt': -1.0}]},
+            {'who': 'newton',
              'say': 'Desde chavo le iba muy bien en matemáticas. A los quince ya estudiaba cálculo por su '
                     'cuenta.',
              'text': 'Desde chavo le iba muy bien en matemáticas. A los 15 ya estudiaba cálculo por su '
