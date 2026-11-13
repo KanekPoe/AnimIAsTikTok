@@ -155,8 +155,9 @@ def validate(path):
         errs.append(f"el colega tiene {colega_lines} líneas (máximo 2)")
     if stamps > 1:
         errs.append(f"{stamps} sellos (máximo 1)")
-    if lines and not MIN_WORDS <= total <= MAX_WORDS:
-        errs.append(f"{total} palabras en total (deben ser {MIN_WORDS}–{MAX_WORDS})")
+    max_words = 150 if meta.get("duracion") == "larga" else MAX_WORDS  # tops y similares (~55 s), con permiso del creador
+    if lines and not MIN_WORDS <= total <= max_words:
+        errs.append(f"{total} palabras en total (deben ser {MIN_WORDS}–{max_words})")
     first = lines[0]["dice"].lower() if lines and lines[0]["dice"] else ""
     if re.match(r"^(hola|qué onda,? (amigos|banda|gente)|hoy (les|te) (traigo|voy))", first):
         errs.append("el gancho empieza con saludo/presentación")
