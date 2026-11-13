@@ -122,3 +122,5 @@
 | 118 | ¿Por qué los pájaros no se electrocutan en los cables? | 110 | ninguno | 0 | `118_pajaros_cables.md` |
 | 119 | Una brújula funciona porque la Tierra es un imán gigante | 106 | ninguno | 1 | `119_brujula_tierra_iman.md` |
 | 120 | Tesla vs Edison: ¿por qué en tu casa hay corriente alterna? | 106 | tesla | 2 | `120_tesla_edison_corriente.md` |
+| 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
+| 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
