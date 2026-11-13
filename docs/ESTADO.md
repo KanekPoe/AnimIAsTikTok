@@ -50,7 +50,12 @@ truncado a 3 s.
   sin punta; primera persona), #30 (hemocianina: menos eficiente, no "espesa").
 - **Decisiones pendientes del creador**: #80 núcleo = "grano de pimienta" en vez de "canica";
   #84 "unos 75,000 años (a la velocidad de la Voyager)" en vez de "miles de años".
-- El Excel (hoja Ideas) marca las 120 como "Guion base".
+- El Excel (hoja Ideas) marca las ideas como "Guion base".
+- **★ Prioridad (ideas del creador)**: #121–126 (realidad, fin del universo, USB de agujero negro,
+  agujeros negros, mono drogado, pináculo de la evolución). Van hasta arriba en el Excel (categoría
+  "★ Prioridad (creador)", resaltadas) y primero en `guiones/INDICE.md`; en los guiones llevan
+  `prioridad: creador`. **Se producen antes que las demás.** Toda idea nueva del creador entra
+  igual: siguiente número, categoría de prioridad, guion base y objetos que necesite.
 
 ## Imágenes
 

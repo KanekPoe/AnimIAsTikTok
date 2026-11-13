@@ -7,6 +7,7 @@ colega: ninguno
 badge: GRAN PREGUNTA
 cta: ¿Lo que vemos es la realidad… o nuestra versión? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

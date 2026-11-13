@@ -7,6 +7,7 @@ colega: hipatia
 badge: DATO ESPACIAL
 cta: ¿Te asomarías a un agujero negro? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

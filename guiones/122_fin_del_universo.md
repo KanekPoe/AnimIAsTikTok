@@ -7,6 +7,7 @@ colega: hipatia
 badge: GRAN PREGUNTA
 cta: ¿Frío eterno, desgarrón o apachurrón? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

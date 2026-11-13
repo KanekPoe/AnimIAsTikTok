@@ -7,6 +7,7 @@ colega: turing
 badge: DATO ESPACIAL
 cta: ¿Qué guardarías en una USB de agujero negro? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

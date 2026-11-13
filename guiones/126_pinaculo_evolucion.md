@@ -7,6 +7,7 @@ colega: darwin
 badge: ¿VERDAD O MITO?
 cta: ¿Qué superpoder animal te gustaría tener? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

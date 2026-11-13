@@ -7,6 +7,7 @@ colega: darwin
 badge: ¿VERDAD O MITO?
 cta: ¿Qué crees que nos hizo humanos? 👇
 estado: base
+prioridad: creador
 ---
 
 ## Guion

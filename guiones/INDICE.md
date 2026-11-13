@@ -1,5 +1,19 @@
 # Índice de guiones base
 
+## ★ Prioridad (ideas del creador)
+
+
+| # | Idea | Palabras | Colega | Datos media/baja | Archivo |
+| 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
+| 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
+| 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
+| 124 | ¿Qué onda con los agujeros negros? | 118 | hipatia | 0 | `124_que_onda_agujeros_negros.md` |
+| 125 | ¿Nos hicimos humanos por comer hongos? (mono drogado) | 110 | darwin | 1 | `125_simios_hongos.md` |
+| 126 | ¿Somos el pináculo de la escala evolutiva? Nel, carnal | 117 | darwin | 1 | `126_pinaculo_evolucion.md` |
+
+## Ideas generales
+
+
 | # | Idea | Palabras | Colega | Datos media/baja | Archivo |
 |---|---|---|---|---|---|
 | 1 | Un día en Mercurio dura dos de sus años | 114 | ninguno | 2 | `001_mercurio_dia_dos_anios.md` |
@@ -122,9 +136,3 @@
 | 118 | ¿Por qué los pájaros no se electrocutan en los cables? | 110 | ninguno | 0 | `118_pajaros_cables.md` |
 | 119 | Una brújula funciona porque la Tierra es un imán gigante | 106 | ninguno | 1 | `119_brujula_tierra_iman.md` |
 | 120 | Tesla vs Edison: ¿por qué en tu casa hay corriente alterna? | 106 | tesla | 2 | `120_tesla_edison_corriente.md` |
-| 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
-| 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
-| 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
-| 124 | ¿Qué onda con los agujeros negros? | 118 | hipatia | 0 | `124_que_onda_agujeros_negros.md` |
-| 125 | ¿Nos hicimos humanos por comer hongos? (mono drogado) | 110 | darwin | 1 | `125_simios_hongos.md` |
-| 126 | ¿Somos el pináculo de la escala evolutiva? Nel, carnal | 117 | darwin | 1 | `126_pinaculo_evolucion.md` |
