@@ -2,6 +2,7 @@
 
 Canal de datos curiosos científicos (TikTok / YouTube Shorts) presentado por Newton en 2D.
 Motor: `pipeline/nbl.py` (episodios en `episodes/nbl*.py`). Plan: `docs/PLAN_CANAL.md`.
+**Al iniciar una sesión, lee `docs/ESTADO.md`** (qué está hecho, qué falta y decisiones pendientes).
 
 ## Antes de tocar audio o renderizar
 
