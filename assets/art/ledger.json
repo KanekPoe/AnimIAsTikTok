@@ -1793,5 +1793,26 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Pero pesaría como la Tierra, y sacar los datos… quién sabe. ¿Crees que ahí quepa",
   "tokens": 185
+ },
+ {
+  "date": "2026-11-13T16:08:56",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y si nada de lo que ves fuera exactamente como es? Neta.",
+  "tokens": 128
+ },
+ {
+  "date": "2026-11-13T16:09:00",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El color no está en las cosas: la luz solo trae ondas de distintos tamaños.",
+  "tokens": 153
+ },
+ {
+  "date": "2026-11-13T16:09:05",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Es tu cerebro el que convierte esas ondas en rojo, verde o azul.",
+  "tokens": 127
  }
 ]
