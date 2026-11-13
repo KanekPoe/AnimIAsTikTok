@@ -123,7 +123,7 @@ def layout_events(its, zone):
         cell_w = zw / len(objs)
         for i, o in enumerate(objs):
             im = Image.open(os.path.join(ART, o + ".png"))
-            h = min(rest * 0.95, (cell_w * 0.92) * im.height / im.width, 460)
+            h = min(rest * 0.95, (cell_w * 0.92) * im.height / im.width, 640 if len(objs) == 1 else 460)
             evs.append({"img": o, "h": int(h), "anim": "pop", "x": round((x0 + cell_w * (i + 0.5)) / W, 4),
                         "y": round((y + rest / 2) / H, 4), "at": 0.05 + 0.25 * i})
     for t in stamps:
@@ -184,6 +184,8 @@ def convert(path):
                 ln["pose"] = l["pose"]
             ln["key"] = keys_for(l["dice"], its)
             zone = ZONES.get(mode, ZONES["solo_side"]) if mode != "solo_center" else ZONES["voz"]
+            if mode == "solo_side" and its and all(k == "texto" for k, _ in its):
+                zone = (0.34, 0.19, 0.86, 0.30)  # solo texto: ancho completo arriba de la cabeza de Newton
             ln["events"] = layout_events(its, zone)
             out_lines.append(ln)
         scenes.append({"bg": bg + "_vertical", "cast": cast, "lines": out_lines})

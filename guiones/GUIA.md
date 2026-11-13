@@ -67,7 +67,7 @@ propia vida.
 
 ## Fondos disponibles
 
-`estudio`, `jardin`, `espacio`, `oceano`, `laboratorio`, `paris`, `venus_superficie`.
+`estudio`, `jardin`, `espacio`, `oceano` (arrecife tropical), `mar_antartico` (mar helado bajo el agua), `laboratorio`, `paris`, `venus_superficie`.
 Newton y los colegas solo aparecen de cuerpo entero en `estudio` (o en un fondo nuevo que lo
 permita). En los demás fondos la línea es "voz en off" con objetos en pantalla: escribe
 `NEWTON (voz)`.

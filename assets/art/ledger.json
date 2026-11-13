@@ -2188,5 +2188,13 @@
   "model": "gemini-3.8-flash-lite-tts",
   "prompt": "¿Qué otro animal se ve chistoso por una buena razón? Te leo.",
   "tokens": 108
+ },
+ {
+  "date": "2026-11-13T23:20:03",
+  "mode": "fondo",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "underwater view of the cold Antarctic sea: deep blue icy water, floating ice floes and an iceberg seen from below at the surface, soft light rays, a few small bubbles, dark rocky sea floor at the bottom, no animals, no fish, no corals",
+  "out": "assets/art/raw/mar_antartico_vertical.jpg",
+  "tokens": 1600
  }
 ]

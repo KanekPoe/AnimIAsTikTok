@@ -41,7 +41,7 @@ SCENES = [{'bg': 'estudio_vertical',
              'say': 'Por eso, en cada época del año, un polo mira al Sol casi todo el tiempo, mientras el '
                     'otro se queda en la noche.',
              'key': [],
-             'events': [{'img': 'objetos/sol', 'h': 460, 'anim': 'pop', 'x': 0.46, 'y': 0.4, 'at': 0.05}]}]},
+             'events': [{'img': 'objetos/sol', 'h': 640, 'anim': 'pop', 'x': 0.46, 'y': 0.4, 'at': 0.05}]}]},
  {'bg': 'estudio_vertical',
   'cast': [['newton', {'x': 0.26, 'feet': 1790, 'h': 1180}],
            ['hipatia', {'x': 0.75, 'feet': 1790, 'h': 1180}]],

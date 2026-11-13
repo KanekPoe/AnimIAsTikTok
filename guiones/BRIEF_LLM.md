@@ -49,7 +49,7 @@ Nunca pongas a un colega a decir algo falso de su propia vida.
 
 ## Fondos
 
-`estudio`, `jardin`, `espacio`, `oceano`, `laboratorio`, `paris`, `venus_superficie`.
+`estudio`, `jardin`, `espacio`, `oceano` (arrecife tropical), `mar_antartico` (mar helado bajo el agua), `laboratorio`, `paris`, `venus_superficie`.
 
 - Los personajes solo se ven de cuerpo entero en `estudio`.
 - En los demás fondos la línea es voz en off: escribe `NEWTON (voz)`.

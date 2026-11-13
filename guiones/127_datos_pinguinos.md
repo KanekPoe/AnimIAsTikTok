@@ -17,25 +17,25 @@ prioridad: creador
    PANTALLA: objetos/pinguino_parado · texto "¿POR QUÉ ASÍ?"
 2. [dato] NEWTON (asustado) | fondo: estudio
    DICE: Pues estás mal: ese look es para sobrevivir.
-   PANTALLA: texto "PARA SOBREVIVIR"
-3. [dato] NEWTON (voz) | fondo: oceano
+   PANTALLA: texto "SOBREVIVIR"
+3. [dato] NEWTON (voz) | fondo: mar_antartico
    DICE: Pasan hasta el 75% de su vida en el agua.
    PANTALLA: objetos/pinguino_nadando · texto "75 % EN EL AGUA"
-4. [dato] NEWTON (voz) | fondo: oceano
+4. [dato] NEWTON (voz) | fondo: mar_antartico
    DICE: Su grasa y sus plumas apretaditas son su chamarra contra el frío.
    PANTALLA: objetos/termometro_frio · texto "GRASA + PLUMAS"
-5. [dato] NEWTON (voz) | fondo: oceano
+5. [dato] NEWTON (voz) | fondo: mar_antartico
    DICE: Y ese cuerpo es un torpedo: con sus alitas vuelan bajo el agua.
    PANTALLA: objetos/pinguino_nadando · texto "TORPEDO"
-6. [dato] NEWTON (voz) | fondo: oceano
+6. [dato] NEWTON (voz) | fondo: mar_antartico
    DICE: ¿Lloran sal? Casi: una glándula sobre sus ojos filtra la sal del mar, pero la sacan por el pico.
    PANTALLA: objetos/sal_cristales · texto "¿LLORAN SAL?"
 7. [dato] COLEGA:darwin (explicando) | fondo: estudio
    DICE: Su traje es camuflaje: panza blanca para no verse desde abajo, espalda negra desde arriba.
    PANTALLA: objetos/pinguino_parado
-8. [giro] NEWTON (asustado) | fondo: estudio
+8. [giro] NEWTON (voz) | fondo: laboratorio
    DICE: ¿Y sus piernitas? Son largas: traen las rodillas escondidas adentro.
-   PANTALLA: objetos/pinguino_rodillas · texto "¡RODILLAS OCULTAS!"
+   PANTALLA: objetos/pinguino_rodillas
 9. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Qué otro animal se ve chistoso por una buena razón? Te leo.
    PANTALLA: texto "¿CUÁL OTRO?"
@@ -60,4 +60,5 @@ prioridad: creador
 - Versión 2 (13 nov 2026): borrador del propio creador (reemplaza la versión del otro LLM). Se respetaron su gancho y su "pues estás mal"; se rellenó con datos (grasa+plumas, torpedo, camuflaje de Darwin, rodillas escondidas).
 - Correcciones: "80 % de su vida" -> "hasta el 75 %" (la cifra más citada; varía por especie); "aguas antárticas" -> "muchos en mares helados" (no todos son antárticos: hay pingüinos hasta en el ecuador); "blancos para que no los vean desde abajo" se completó con el negro visto desde arriba.
 - Versión 3: el creador pidió "que lloran sal". Se dice "¿Lloran sal? Casi…": la glándula está sobre los ojos, pero la sal sale por la nariz y el pico, no en lágrimas.
+- Versión 4: fondos de agua -> mar_antartico (los pingüinos viven en el hemisferio sur, no en el Ártico); el remate de las rodillas va a pantalla completa en el laboratorio.
 - "Cagados" (= chistosos) es mexicanismo coloquial; si el video se promociona y TikTok lo marca, cambiar por "chistosos".
