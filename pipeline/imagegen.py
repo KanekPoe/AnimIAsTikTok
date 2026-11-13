@@ -7,6 +7,7 @@ Uso:
 
 Modos:
     sticker  piezas sueltas sobre fondo verde (luego: pipeline/cutout.py)
+    sticker_magenta  igual, sobre magenta (objetos verdes; cutout --strict)
     fondo    fondo vertical 9:16 sin personajes
     newton   Newton con sus imágenes de referencia, sobre verde (consistencia de personaje)
     colega   personaje nuevo con el estilo de Newton (sus imágenes como referencia de estilo)
@@ -67,6 +68,10 @@ def generate(mode, prompt, out, refs=None):
         raise SystemExit(f"Tope mensual alcanzado ({MAX_PER_MONTH} imágenes). No se generó nada.")
     if mode == "sticker":
         text, aspect, refs = f"{prompt}. {STICKER}", "9:16", refs or []
+    elif mode == "sticker_magenta":  # para objetos verdes: fondo magenta (recortar con cutout --strict)
+        text = f"{prompt}. " + STICKER.replace("solid pure green background (#00FF00)",
+                                               "solid pure magenta background (#FF00FF)")
+        aspect, refs = "9:16", refs or []
     elif mode == "fondo":
         text, aspect, refs = f"{prompt}. {BACKGROUND}", "9:16", refs or []
     elif mode == "newton":

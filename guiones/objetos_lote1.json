@@ -1,0 +1,358 @@
+[
+ {
+  "hoja": "animales1",
+  "fondo": "verde",
+  "items": [
+   [
+    "abeja",
+    "a cartoon honeybee, yellow and black stripes, round body, friendly face"
+   ],
+   [
+    "ajolote",
+    "a cute pink axolotl with feathery external gills, cartoon style, side view"
+   ],
+   [
+    "arana",
+    "cartoon spider hanging on a thin thread, friendly, simple flat colors"
+   ],
+   [
+    "avestruz",
+    "cartoon ostrich lying on sand with its neck stretched flat, side view, simple flat colors"
+   ],
+   [
+    "ballena_azul",
+    "a blue whale swimming, side view, cartoon style, friendly"
+   ],
+   [
+    "camello",
+    "cartoon camel with one big hump, side view, sandy colors, simple flat style"
+   ]
+  ]
+ },
+ {
+  "hoja": "animales2",
+  "fondo": "verde",
+  "items": [
+   [
+    "cuervo",
+    "a black cartoon crow perched on a branch, eyes narrowed, mischievous look"
+   ],
+   [
+    "delfin",
+    "a friendly cartoon dolphin jumping out of the water, side view"
+   ],
+   [
+    "flamenco",
+    "a pink flamingo standing on one leg, cartoon style, friendly"
+   ],
+   [
+    "hormiga",
+    "a cartoon ant, black, side view, small and friendly"
+   ],
+   [
+    "jirafa",
+    "a cartoon giraffe head and long neck, friendly expression, side view"
+   ],
+   [
+    "lechuza",
+    "cartoon owl with big round eyes, side view, simple flat colors"
+   ]
+  ]
+ },
+ {
+  "hoja": "animales3",
+  "fondo": "verde",
+  "items": [
+   [
+    "murcielago",
+    "cartoon bat hanging upside down with big bright eyes, simple flat colors"
+   ],
+   [
+    "nutria_marina",
+    "a cartoon sea otter floating on its back, holding its paws, wrapped in kelp"
+   ],
+   [
+    "perro",
+    "cartoon dog sitting, side view, friendly, simple flat colors"
+   ],
+   [
+    "pez_arquero",
+    "a cartoon archerfish with a thin jet of water shooting from its mouth, pointing up"
+   ],
+   [
+    "pez_dorado",
+    "cartoon orange goldfish swimming, side view, simple flat colors"
+   ],
+   [
+    "tardigrado",
+    "a chubby translucent water bear (tardigrade) with eight short legs, cartoon style, friendly face"
+   ]
+  ]
+ },
+ {
+  "hoja": "animales4",
+  "fondo": "verde",
+  "items": [
+   [
+    "toro",
+    "a calm cartoon bull standing in a grassy field, side view, friendly, no weapons, simple flat colors"
+   ],
+   [
+    "vaca",
+    "a friendly cartoon cow with spots, standing, calm expression"
+   ],
+   [
+    "wombat",
+    "a round, chubby cartoon wombat sitting, friendly face, short legs"
+   ],
+   [
+    "anguila_electrica",
+    "an electric knifefish with a long eel-like body and small yellow sparks along it, friendly cartoon style"
+   ],
+   [
+    "pajaro_en_cable",
+    "a cartoon small bird perched on a power line, simple flat style"
+   ],
+   [
+    "paloma",
+    "a cartoon pigeon with a small glowing magnetic field line around its head, friendly style"
+   ]
+  ]
+ },
+ {
+  "hoja": "verdes",
+  "fondo": "magenta",
+  "items": [
+   [
+    "colibri",
+    "a cartoon hummingbird hovering in flight, wings blurred, bright green and red feathers"
+   ],
+   [
+    "tortuga_marina",
+    "a cartoon sea turtle swimming with a small compass-like glow on its shell, friendly style"
+   ],
+   [
+    "aurora_boreal",
+    "green and purple aurora curtains glowing over a small dark-blue night sky panel with rounded corners"
+   ],
+   [
+    "moho_placa",
+    "a round glass petri dish with green fuzzy mold and a clear ring of empty space around it, cartoon style"
+   ],
+   [
+    "rayos_luz_colores",
+    "three colorful wavy light rays (red, green, blue) bouncing off small grey round air molecules"
+   ]
+  ]
+ },
+ {
+  "hoja": "espacio",
+  "fondo": "verde",
+  "items": [
+   [
+    "jupiter",
+    "planet Jupiter with orange and cream horizontal bands and a big red oval storm, cartoon style"
+   ],
+   [
+    "marte",
+    "small red-orange planet Mars with a dusty surface and a thin pale atmosphere, cartoon style"
+   ],
+   [
+    "saturno",
+    "ringed planet Saturn with golden bands and wide pale rings, cartoon style"
+   ],
+   [
+    "urano",
+    "pale cyan planet Uranus tilted on its side with a thin faint ring, cartoon style"
+   ],
+   [
+    "estrella_neutrones",
+    "a tiny intensely bright white-blue glowing star ball with light rays, on a small round dark space patch"
+   ],
+   [
+    "volcan_marte",
+    "a huge gentle shield volcano with a wide dome shape on a red planet surface, cartoon style"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas1",
+  "fondo": "verde",
+  "items": [
+   [
+    "banera_agua",
+    "a cartoon bathtub full of water with a small splash, plain background"
+   ],
+   [
+    "barra_chocolate",
+    "a chocolate bar partly melted and glossy, cartoon style, plain background"
+   ],
+   [
+    "bobina_tesla",
+    "a Tesla coil with small electric sparks, cartoon style, plain background"
+   ],
+   [
+    "bombilla_encendida",
+    "a glowing incandescent light bulb, cartoon style, plain background"
+   ],
+   [
+    "brujula",
+    "a classic cartoon magnetic compass with a red needle, friendly style"
+   ],
+   [
+    "caja_plomo",
+    "a closed lead-lined storage box with a small radiation warning sticker on the front, cartoon style, plain background"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas2",
+  "fondo": "verde",
+  "items": [
+   [
+    "cebolla",
+    "a whole cartoon onion next to a half-sliced one, simple style"
+   ],
+   [
+    "coche",
+    "a cartoon car seen from the side with a metal body and windows, friendly style"
+   ],
+   [
+    "corazon",
+    "a cute cartoon heart organ (anatomical shape, simple, not gory), red and pink, friendly style"
+   ],
+   [
+    "corona_oro",
+    "a golden royal crown with a few sparkles, cartoon style, plain background"
+   ],
+   [
+    "enchufe_pared",
+    "a cartoon electrical wall outlet with two flat slots, friendly style"
+   ],
+   [
+    "foliculo_pelo",
+    "cartoon cross-section of a hair follicle in skin, simple friendly flat colors"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas3",
+  "fondo": "verde",
+  "items": [
+   [
+    "grano_arena",
+    "small pile of golden sand grains, cartoon style"
+   ],
+   [
+    "iceberg",
+    "a cartoon iceberg floating on blue water, mostly hidden underwater"
+   ],
+   [
+    "iman_barra",
+    "a shiny cartoon bar magnet, red and silver, simple flat style"
+   ],
+   [
+    "lata_refresco_dieta",
+    "a generic silver soda can with a black-and-white design, no logos, cartoon style"
+   ],
+   [
+    "lata_refresco_normal",
+    "a generic silver soda can with red stripes, no logos, cartoon style"
+   ],
+   [
+    "manija_puerta",
+    "a metal door handle with a tiny yellow spark next to it, cartoon style"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas4",
+  "fondo": "verde",
+  "items": [
+   [
+    "martillo",
+    "a cartoon hammer, simple style"
+   ],
+   [
+    "medalla_oro",
+    "a gold Nobel-style medal hanging from a blue ribbon, cartoon style, plain background"
+   ],
+   [
+    "microondas",
+    "a cartoon microwave oven with its door open and a bowl of soup inside"
+   ],
+   [
+    "pila_9v",
+    "a cartoon 9-volt battery with two terminals, friendly style"
+   ],
+   [
+    "placa_metal_luz",
+    "a metal plate hit by beams of light, with tiny electron sparks flying off, cartoon style, plain background"
+   ],
+   [
+    "pluma",
+    "a cartoon white feather, simple style"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas5",
+  "fondo": "verde",
+  "items": [
+   [
+    "radar_antena",
+    "a rotating radar dish on a small tower, cartoon style, plain background"
+   ],
+   [
+    "rascacielos_rayo",
+    "cartoon tall skyscraper at night with a lightning bolt hitting its antenna, simple flat colors"
+   ],
+   [
+    "rayo",
+    "a bright cartoon lightning bolt, yellow-white with a soft glow"
+   ],
+   [
+    "rebanada_pan",
+    "a single slice of bread with butter on top, butter side up, cartoon style"
+   ],
+   [
+    "sal_cristales",
+    "a small pile of coarse white salt crystals, cartoon style"
+   ],
+   [
+    "sombrero_bicornio",
+    "cartoon bicorn hat (two-pointed military hat), side view, simple flat colors"
+   ]
+  ]
+ },
+ {
+  "hoja": "cosas6",
+  "fondo": "verde",
+  "items": [
+   [
+    "tetera",
+    "a cartoon metal kettle with a steam whistle on the spout and steam coming out"
+   ],
+   [
+    "torre_pisa",
+    "cartoon leaning tower of Pisa, side view, simple flat colors"
+   ],
+   [
+    "tren_levitacion",
+    "a cartoon bullet train floating above a glowing rail, with small magnetic sparks under it"
+   ],
+   [
+    "vaso_agua",
+    "a glass of water drawn opaque in cartoon style: light blue water, white highlights, thick outline"
+   ],
+   [
+    "atardecer",
+    "a small orange and red sunset over a hill"
+   ],
+   [
+    "avion",
+    "a small cartoon airplane flying with a white vapor trail behind it"
+   ]
+  ]
+ }
+]
