@@ -26,6 +26,20 @@ LEDGER = os.path.join(ROOT, "assets", "art", "ledger.json")
 
 # Voz fija de Newton: un sabio teatral y divertido.
 NEWTON_VOICE = "Puck"
+# Voces de los colegas (voces prediseñadas de Gemini TTS). Elegidas por carácter; el creador
+# las aprueba al oírlas en los videos. Si cambias una, la caché se regenera sola (la voz va en la clave).
+VOICES = {
+    "newton": NEWTON_VOICE,
+    "darwin": "Charon",     # informativo, grave: naturalista mayor
+    "tesla": "Fenrir",      # emocionado
+    "curie": "Kore",        # firme
+    "turing": "Iapetus",    # claro
+    "godel": "Algenib",     # rasposo, serio
+    "ada": "Leda",          # juvenil
+    "hipatia": "Aoede",     # ligera, serena
+    "anning": "Autonoe",    # brillante
+    "franklin": "Erinome",  # clara
+}
 # Sin instrucciones de estilo: este modelo las lee en voz alta (en español o en inglés) y no
 # admite instrucciones de sistema. El ritmo se ajusta después (TARGET_RATE) y cada frase se verifica.
 NEWTON_STYLE = ""

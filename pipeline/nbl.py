@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import audio_qc  # noqa: E402
 import sfx  # noqa: E402
 from textfx import draw_text, font, text_width, wrap_words  # noqa: E402
-from tts_gemini import synth  # noqa: E402
+from tts_gemini import VOICES, synth  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ART = os.path.join(ROOT, "assets", "art")
@@ -112,7 +112,8 @@ def arrow(length=260, width=40, color=(255, 194, 26, 255), down=True):
 # Línea de tiempo
 # ----------------------------------------------------------------------------
 class Timeline:
-    def __init__(self, ep, out):
+    def __init__(self, ep, out, fake=False):
+        """fake=True: sin voces (duración estimada por palabras), para revisar acomodo sin gastar."""
         self.ep = ep
         self.out = out
         os.makedirs(os.path.join(out, "audio"), exist_ok=True)
@@ -121,14 +122,18 @@ class Timeline:
         for si, sc in enumerate(ep.SCENES):
             for li, ln in enumerate(sc["lines"]):
                 wav = os.path.join(out, "audio", f"{si:02d}_{li:02d}.wav")
-                synth(ln["say"], wav, alt=ln.get("text"))
-                x = read_wav(wav)
+                if fake:
+                    x = np.zeros(int(48000 * max(1.5, len(ln["say"].split()) / 2.6)), np.float32)
+                else:
+                    synth(ln["say"], wav, voice=VOICES[ln.get("who", "newton")], alt=ln.get("text"))
+                    x = read_wav(wav)
                 d = len(x) / 48000
                 hop = 48000 // FPS
                 env = np.array([np.sqrt(np.mean(x[i:i + hop] ** 2)) for i in range(0, len(x), hop)])
                 env = np.clip(env / (np.percentile(env, 95) + 1e-6), 0, 1)
                 self.lines.append({**ln, "scene": si, "start": t, "end": t + d, "wav": wav, "env": env})
-                print(f"  {d:4.1f}s  {ln['say']}")
+                if not fake:
+                    print(f"  {d:4.1f}s  {ln['say']}")
                 t += d + GAP
             t += 0.1
         self.duration = t + OUTRO
@@ -174,46 +179,68 @@ class Timeline:
 # Render
 # ----------------------------------------------------------------------------
 class Renderer:
+    """Dibuja cada cuadro. Personajes: Newton y colegas (rig en assets/art/.../rig/<pose>/).
+
+    Cada frase lleva "who" (por defecto "newton"): solo ese personaje mueve la boca y su "pose"
+    cambia; los demás conservan la última pose. Una escena pone personajes con "newton": cfg
+    (formato viejo) o "cast": [[nombre, cfg], ...].
+    """
+
     def __init__(self, ep, tl):
         self.ep, self.tl = ep, tl
-        self.blinks = []
-        t = 1.0
-        while t < tl.duration:
-            self.blinks.append(t)
-            t += rng.uniform(2.3, 4.2)
-        self.pose_changes = []
-        prev = None
-        for ln in tl.lines:
-            if ln.get("pose") and ln["pose"] != prev:
-                self.pose_changes.append((ln["start"] - 0.05, ln["pose"]))
-                prev = ln["pose"]
+        chars = {ln.get("who", "newton") for ln in tl.lines}
+        for sc in ep.SCENES:
+            chars |= {c for c, _ in self.cast(sc)}
+        self.blinks, self.pose_changes = {}, {}
+        for k, ch in enumerate(sorted(chars)):
+            r = random.Random(4 + k)
+            t, bl = 1.0 + 0.7 * k, []
+            while t < tl.duration:
+                bl.append(t)
+                t += r.uniform(2.3, 4.2)
+            self.blinks[ch] = bl
+            changes, prev = [], None
+            for ln in tl.lines:
+                if ln.get("who", "newton") == ch and ln.get("pose") and ln["pose"] != prev:
+                    changes.append((ln["start"] - 0.05, ln["pose"]))
+                    prev = ln["pose"]
+            if not changes:
+                changes = [(0.0, "senalando" if ch == "newton" else "presentando")]
+            self.pose_changes[ch] = changes
 
-    # --- Newton -----------------------------------------------------------------
-    def pose_at(self, t):
-        pose, since = self.pose_changes[0][1], -9
-        for tc, p in self.pose_changes:
+    @staticmethod
+    def cast(sc):
+        if sc.get("cast"):
+            return [tuple(c) for c in sc["cast"]]
+        return [("newton", sc["newton"])] if sc.get("newton") else []
+
+    # --- personajes ---------------------------------------------------------------
+    def pose_at(self, t, ch="newton"):
+        changes = self.pose_changes[ch]
+        pose, since = changes[0][1], -9
+        for tc, p in changes:
             if t >= tc:
                 pose, since = p, tc
         return pose, t - since
 
-    def newton(self, frame, t, cfg):
-        pose, age = self.pose_at(t)
-        rig = f"newton/rig/{pose}"
+    def character(self, frame, t, ch, cfg):
+        pose, age = self.pose_at(t, ch)
+        rig = f"newton/rig/{pose}" if ch == "newton" else f"colegas/{ch}/rig/{pose}"
         ln = self.tl.line_at(t)
         talking = 0.0
-        if ln and ln["start"] <= t < ln["end"]:
+        if ln and ln.get("who", "newton") == ch and ln["start"] <= t < ln["end"]:
             i = int((t - ln["start"]) * FPS)
             env = ln["env"]
             talking = float(np.mean(env[max(0, i - 1):i + 1])) if i < len(env) else 0
         state = "boca_abierta" if talking > 0.28 else "boca_cerrada"
-        if any(0 <= t - b < 0.1 for b in self.blinks):
+        if any(0 <= t - b < 0.1 for b in self.blinks[ch]):
             state = "ojos_cerrados"
         if not os.path.exists(os.path.join(ART, rig, state + ".png")):
             state = "base"
         h = cfg["h"]
         base = img(f"{rig}/{state}", h)
-        # respiración, rebote al hablar y "pop" al cambiar de pose
-        s = 1 + 0.008 * math.sin(t * 2.4)
+        # respiración (desfasada por personaje), rebote al hablar y "pop" al cambiar de pose
+        s = 1 + 0.008 * math.sin(t * 2.4 + (0 if ch == "newton" else 1.7))
         if age < 0.3:
             s *= 0.9 + 0.1 * ease_out_back(age / 0.3)
         sy = s * (1 + 0.012 * talking)
@@ -228,6 +255,9 @@ class Renderer:
         frame.alpha_composite(sh.filter(ImageFilter.GaussianBlur(10)),
                               (int(cfg["x"] * W - sh.width / 2), int(cfg["feet"] - 34)))
         frame.alpha_composite(sp, (x, y))
+
+    def newton(self, frame, t, cfg):  # compatibilidad
+        self.character(frame, t, "newton", cfg)
 
     # --- eventos -----------------------------------------------------------------
     def event_image(self, ev):
@@ -367,8 +397,8 @@ class Renderer:
         for ev in self.tl.events:  # eventos detrás de Newton
             if ev["scene"] == si and ev.get("behind"):
                 self.draw_event(frame, ev, t)
-        if sc.get("newton"):
-            self.newton(frame, t, sc["newton"])
+        for ch, cfg in self.cast(sc):
+            self.character(frame, t, ch, cfg)
         for ev in self.tl.events:
             if (ev["scene"] == si or ev.get("until") == "end") and not ev.get("behind"):
                 self.draw_event(frame, ev, t)
@@ -457,6 +487,12 @@ def main():
             r.frame(int(float(s) * FPS)).convert("RGB").save(p)
             print(p)
         return
+    # Control visual obligatorio: nada fuera de la zona segura, encimado ni duración rara.
+    import qa_visual
+    vprobs = qa_visual.check(r, tl)
+    print("Hoja de revisión:", qa_visual.sheet(r, os.path.join(out, "qa_hoja.png")))
+    if vprobs:
+        raise SystemExit("QA visual falló, no se exporta:\n  " + "\n  ".join(vprobs))
     # Control de audio obligatorio (lección 1): ninguna voz con chasquidos ni mezcla saturada.
     probs = []
     for ln in tl.lines:
