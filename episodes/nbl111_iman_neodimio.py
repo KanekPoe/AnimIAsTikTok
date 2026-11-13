@@ -1,0 +1,78 @@
+"""Generado automáticamente desde guiones/111_iman_neodimio.md por pipeline/guion2ep.py.
+
+No editar a mano: corrige el guion y vuelve a convertir.
+"""
+SLUG = 'nbl111_iman_neodimio'
+BADGE = 'DATO FUERTE'
+SOURCE = None
+CTA = '¿Qué otro imán quieres que te explique? 👇'
+SCENES = [{'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': '¿Sabías que hay imanes tan fuertes que se pueden astillar al chocar? Neta, así de '
+                    'frágiles.',
+             'pose': 'senalando',
+             'key': [],
+             'events': [{'kind': 'label',
+                         'text': '¡CUIDADO!',
+                         'size': 56,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.231,
+                         'at': 0.12}]}]},
+ {'bg': 'laboratorio_vertical',
+  'cast': [],
+  'lines': [{'who': 'newton',
+             'say': 'Los imanes de neodimio son los imanes permanentes más fuertes que se venden '
+                    'comercialmente.',
+             'key': [],
+             'events': [{'img': 'objetos/iman_barra',
+                         'h': 460,
+                         'anim': 'pop',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0.05}]},
+            {'who': 'newton',
+             'say': 'Están hechos de neodimio, hierro y boro. Son duros, pero también muy quebradizos.',
+             'key': [],
+             'events': [{'img': 'objetos/iman_barra',
+                         'h': 460,
+                         'anim': 'pop',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0.05}]}]},
+ {'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': 'Si dos chocan a toda velocidad, pueden saltar astillas o partirse. Y pellizcan los '
+                    'dedos con mucha fuerza.',
+             'pose': 'asustado',
+             'key': ['dedos'],
+             'events': [{'kind': 'label',
+                         'text': '¡OJO CON LOS DEDOS!',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]},
+            {'who': 'newton',
+             'say': 'Por eso no son juguete. Si un niño se traga dos o más, pueden atraerse dentro del '
+                    'cuerpo y perforar el intestino.',
+             'pose': 'pensando',
+             'key': [],
+             'events': [{'kind': 'label',
+                         'text': 'NO LOS TRAGUES',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]},
+            {'who': 'newton',
+             'say': '¿Tienes un imán de nevera en casa? Cuéntame en los comentarios cuál es el más fuerte '
+                    'que tengas.',
+             'pose': 'explicando_pluma',
+             'key': [],
+             'events': []}]}]

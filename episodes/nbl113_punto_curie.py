@@ -1,0 +1,83 @@
+"""Generado automáticamente desde guiones/113_punto_curie.md por pipeline/guion2ep.py.
+
+No editar a mano: corrige el guion y vuelve a convertir.
+"""
+SLUG = 'nbl113_punto_curie'
+BADGE = 'CIENCIA CALIENTE'
+SOURCE = None
+CTA = '¿Qué objeto de tu casa crees que se "apaga" con calor? 👇'
+SCENES = [{'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': 'Un imán puede perder su magnetismo sin que lo rompas. Solo hay que calentarlo lo '
+                    'suficiente.',
+             'pose': 'asustado',
+             'key': [],
+             'events': [{'kind': 'label',
+                         'text': '¿CUÁNTO CALOR?',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]}]},
+ {'bg': 'laboratorio_vertical',
+  'cast': [],
+  'lines': [{'who': 'newton',
+             'say': 'Cada material ferromagnético tiene una temperatura límite, llamada punto de Curie. '
+                    'Arriba de ella, sus imanes internos se desordenan.',
+             'key': [],
+             'events': [{'img': 'objetos/termometro_caliente',
+                         'h': 460,
+                         'anim': 'pop',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0.05}]},
+            {'who': 'newton',
+             'say': 'El hierro lo tiene cerca de setecientos setenta grados. El níquel, unos trescientos '
+                    'cincuenta. Los imanes de neodimio, alrededor de trescientos y tantos.',
+             'text': 'El hierro lo tiene cerca de 770 °C. El níquel, unos 350. Los imanes de neodimio, '
+                     'alrededor de 300 y tantos.',
+             'key': ['770', '350', '300'],
+             'events': [{'kind': 'label',
+                         'text': '770 °C',
+                         'size': 100,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.46,
+                         'y': 0.2505,
+                         'at': 0.12}]}]},
+ {'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': 'El nombre viene de Pierre Curie, que estudió este efecto a mediados de la década de mil '
+                    'ochocientos noventa. No de su esposa, Marie.',
+             'text': 'El nombre viene de Pierre Curie, que estudió este efecto a mediados de la década de '
+                     '1890. No de su esposa, Marie.',
+             'pose': 'pensando',
+             'key': ['pierre', '1890', 'marie'],
+             'events': [{'kind': 'label',
+                         'text': 'PIERRE, NO MARIE',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]},
+            {'who': 'newton',
+             'say': 'Y al enfriarse, el imán no se vuelve a imantar solo. Hay que magnetizarlo otra vez.',
+             'pose': 'asustado',
+             'key': [],
+             'events': [{'kind': 'label',
+                         'text': '¡NO LO INTENTES!',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]},
+            {'who': 'newton',
+             'say': '¿Sabías que un imán se podía apagar con calor? Cuéntame en los comentarios.',
+             'pose': 'explicando_pluma',
+             'key': [],
+             'events': []}]}]

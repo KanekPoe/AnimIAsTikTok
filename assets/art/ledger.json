@@ -1400,5 +1400,40 @@
   "prompt": "Exactly 1 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon tree of life with many branches, small animal silhouettes at the tips of the branches (fish, bird, monkey, human, dog, insect), friendly style",
   "out": "assets/art/raw/objetos_lote5.jpg",
   "tokens": 1466
+ },
+ {
+  "date": "2026-11-13T15:12:25",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y si nada de lo que ves fuera exactamente como es? Neta.",
+  "tokens": 119
+ },
+ {
+  "date": "2026-11-13T15:12:29",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El color no está en las cosas: la luz solo trae ondas de distintos tamaños.",
+  "tokens": 147
+ },
+ {
+  "date": "2026-11-13T15:12:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Es tu cerebro el que convierte esas ondas en rojo, verde o azul.",
+  "tokens": 121
+ },
+ {
+  "date": "2026-11-13T15:12:38",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Al tocar una mesa, tus átomos y los de ella se repelen: lo que sientes es esa fu",
+  "tokens": 168
+ },
+ {
+  "date": "2026-11-13T15:12:42",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y casi todo el volumen de un átomo es espacio vacío. Tú incluido, compa.",
+  "tokens": 142
  }
 ]

@@ -1,0 +1,81 @@
+"""Generado automáticamente desde guiones/001_mercurio_dia_dos_anios.md por pipeline/guion2ep.py.
+
+No editar a mano: corrige el guion y vuelve a convertir.
+"""
+SLUG = 'nbl001_mercurio_dia_dos_anios'
+BADGE = 'DATO ESPACIAL'
+SOURCE = None
+CTA = '¿Qué harías con un día de dos años? 👇'
+SCENES = [{'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': '¿Cuánto dura un día en Mercurio? Neta, más que dos de sus años.',
+             'pose': 'senalando',
+             'key': [],
+             'events': [{'kind': 'label',
+                         'text': '¿UN DÍA?',
+                         'size': 64,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.2346,
+                         'at': 0.12}]}]},
+ {'bg': 'espacio_vertical',
+  'cast': [],
+  'lines': [{'who': 'newton',
+             'say': 'Mercurio gira sobre sí mismo cada cincuenta y nueve días terrestres. Pero también '
+                    'avanza en su órbita.',
+             'text': 'Mercurio gira sobre sí mismo cada 59 días terrestres. Pero también avanza en su '
+                     'órbita.',
+             'key': ['59'],
+             'events': [{'img': 'objetos/sol', 'h': 460, 'anim': 'pop', 'x': 0.46, 'y': 0.4, 'at': 0.05}]},
+            {'who': 'newton',
+             'say': 'Por eso, de amanecer a amanecer, un día de Mercurio dura ciento setenta y seis días '
+                    'terrestres.',
+             'text': 'Por eso, de amanecer a amanecer, un día de Mercurio dura 176 días terrestres.',
+             'key': ['176'],
+             'events': [{'img': 'objetos/reloj_arena',
+                         'h': 460,
+                         'anim': 'pop',
+                         'x': 0.46,
+                         'y': 0.4,
+                         'at': 0.05}]}]},
+ {'bg': 'estudio_vertical',
+  'cast': [['newton', {'x': 0.31, 'feet': 1790, 'h': 1300}]],
+  'lines': [{'who': 'newton',
+             'say': 'Su año dura unos ochenta y ocho días. Así que un solo día mercuriano equivale a dos de '
+                    'sus años.',
+             'text': 'Su año dura unos 88 días. Así que un solo día mercuriano equivale a dos de sus años.',
+             'pose': 'pensando',
+             'key': ['88'],
+             'events': [{'img': 'objetos/calendario',
+                         'h': 370,
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.39,
+                         'at': 0.05}]},
+            {'who': 'newton',
+             'say': 'Y el calor no perdona: de día llega a unos cuatrocientos treinta grados, y de noche '
+                    'baja a unos menos ciento ochenta grados.',
+             'text': 'Y el calor no perdona: de día llega a unos 430 °C, y de noche baja a unos -180 °C.',
+             'pose': 'asustado',
+             'key': ['430', '-180'],
+             'events': [{'kind': 'label',
+                         'text': '430 °C / -180 °C',
+                         'size': 40,
+                         'color': (255, 194, 26, 255),
+                         'anim': 'pop',
+                         'x': 0.69,
+                         'y': 0.224,
+                         'at': 0.12}]},
+            {'who': 'newton',
+             'say': 'Cada día dura unos tres meses de luz y otros tres de oscuridad, al menos cerca del '
+                    'ecuador.',
+             'pose': 'pensando',
+             'key': [],
+             'events': [{'img': 'objetos/luna', 'h': 350, 'anim': 'pop', 'x': 0.69, 'y': 0.39, 'at': 0.05}]},
+            {'who': 'newton',
+             'say': 'Si tu día durara dos años, ¿qué harías con tanto tiempo? Te leo en los comentarios.',
+             'pose': 'explicando_pluma',
+             'key': [],
+             'events': []}]}]
