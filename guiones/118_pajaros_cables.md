@@ -12,25 +12,25 @@ estado: base
 ## Guion
 
 1. [gancho] NEWTON (asustado) | fondo: estudio
-   DICE: Un pájaro se posa sobre un cable de alta tensión y ni se inmuta. ¿Por qué no le pasa nada?
+   DICE: Un pájaro se posa en un cable de alta tensión y ni se inmuta. ¿Por qué?
    PANTALLA: texto "¿POR QUÉ?"
 2. [dato] NEWTON (voz) | fondo: jardin
-   DICE: La corriente necesita un camino, y una diferencia de voltaje entre dos puntos del cuerpo para pasar.
+   DICE: La corriente necesita un camino: una diferencia de voltaje entre dos puntos del cuerpo.
    PANTALLA: objetos/pajaro_en_cable
 3. [dato] NEWTON (voz) | fondo: jardin
-   DICE: Con las dos patas en el mismo cable, esos puntos tienen el mismo voltaje. Por eso no circula corriente por el pájaro.
+   DICE: Con las dos patas en el mismo cable no hay diferencia de voltaje, y no circula corriente.
    PANTALLA: objetos/pajaro_en_cable
-4. [giro] NEWTON (asustado) | fondo: jardin
-   DICE: El problema llega cuando toca dos cables distintos a la vez, con las alas abiertas, o un cable y un poste con tierra.
+4. [giro] NEWTON (asustado) | fondo: estudio
+   DICE: El peligro: tocar dos cables distintos a la vez, con las alas abiertas, o un cable y un poste con tierra.
    PANTALLA: texto "¡PELIGRO!"
-5. [dato] NEWTON (pensando) | fondo: jardin
-   DICE: Así el pájaro une dos puntos con distinto voltaje, y ahí sí pasa corriente por su cuerpo.
+5. [dato] NEWTON (voz) | fondo: jardin
+   DICE: Así une dos puntos con distinto voltaje, y ahí sí pasa corriente por su cuerpo.
    PANTALLA: objetos/cable_cobre
 6. [dato] NEWTON (senalando) | fondo: estudio
-   DICE: Tú eres distinto: si tocas un cable y el suelo a la vez, la corriente te atraviesa. No te subas a postes ni toques cables caídos.
+   DICE: Tú eres distinto: tocar un cable y el suelo a la vez te electrocuta. No te subas a postes.
    PANTALLA: texto "NO LO INTENTES"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: ¿Pensabas que los pájaros se achicharraban en los cables? Cuéntame en los comentarios.
+   DICE: ¿Pensabas que los pájaros se achicharraban? Cuéntame en los comentarios.
    PANTALLA: texto "¿LOS VISTE?"
 
 ## Datos que hay que verificar

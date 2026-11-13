@@ -15,15 +15,15 @@ estado: base
    DICE: Tu corazón no necesita que nadie le diga cuándo latir. Trae su propio marcapasos.
    PANTALLA: texto "¡MARCAPASOS!"
 2. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Se llama nodo sinusal. Es un grupito de células en la parte de arriba del corazón que genera la señal.
+   DICE: Se llama nodo sinusal: un grupito de células arriba del corazón que genera la señal.
    PANTALLA: objetos/corazon
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Cada pulso eléctrico recorre el tejido del corazón y hace que las cámaras se contraigan en orden.
+   DICE: Cada pulso recorre el corazón y hace que sus cámaras se contraigan en orden.
    PANTALLA: objetos/corazon
 4. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: En reposo, el ritmo normal de un adulto va de unos 60 a 100 latidos por minuto.
    PANTALLA: texto "60 A 100 LPM"
-5. [dato] NEWTON (pensando) | fondo: laboratorio
+5. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Si ese marcapasos natural falla, a veces se coloca uno artificial. Es un aparato pequeño, con batería.
    PANTALLA: objetos/corazon
 6. [giro] NEWTON (senalando) | fondo: estudio

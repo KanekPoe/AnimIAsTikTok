@@ -15,22 +15,22 @@ estado: base
    DICE: Imagina que cortas un imán por la mitad. ¿Ahora sí tienes un norte y un sur separados? ¿A poco no?
    PANTALLA: texto "¿NORTE Y SUR?"
 2. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Lo intuitivo sería que una mitad quedara solo con norte y la otra solo con sur. Pero no pasa.
+   DICE: Lo intuitivo sería una mitad solo norte y otra solo sur. Pero no pasa.
    PANTALLA: objetos/iman_barra
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Cada pedazo sale con su propio norte y su propio sur. Cada mitad es un imán nuevo y completo.
+   DICE: Cada pedazo sale con su propio norte y sur. Cada mitad es un imán nuevo y completo.
    PANTALLA: objetos/iman_barra
-4. [dato] NEWTON (pensando) | fondo: laboratorio
-   DICE: Un polo norte aislado, llamado monopolo, no ha sido confirmado por ningún experimento hasta hoy.
+4. [dato] NEWTON (pensando) | fondo: estudio
+   DICE: Un polo norte aislado, llamado monopolo, no ha sido confirmado por ningún experimento.
    PANTALLA: texto "¿POLO SOLO?"
 5. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Y aunque lo partas en pedacitos microscópicos, cada uno sigue teniendo norte y sur. ¡Siempre salen en pareja!
+   DICE: Y aunque lo partas en pedacitos microscópicos, cada uno sigue teniendo norte y sur.
    PANTALLA: texto "¡SIEMPRE DOS!"
 6. [dato] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: El magnetismo viene en pares. Nunca has visto un norte suelto, y por ahora nadie lo ha logrado.
+   DICE: El magnetismo viene en pares. Nunca has visto un norte suelto, y nadie lo ha logrado.
    PANTALLA: texto "NORTE + SUR"
 7. [cierre] NEWTON (senalando) | fondo: estudio
-   DICE: ¿Crees que algún día encuentren un norte suelto? Te leo en los comentarios.
+   DICE: ¿Crees que algún día encuentren un norte suelto? Te leo en comentarios.
    PANTALLA: texto "¿MONOPOLO?"
 
 ## Datos que hay que verificar

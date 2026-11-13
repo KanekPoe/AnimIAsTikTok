@@ -12,25 +12,25 @@ estado: base
 ## Guion
 
 1. [gancho] NEWTON (senalando) | fondo: estudio
-   DICE: ¿La electricidad viaja a la velocidad de la luz? Sí y no. Depende de qué te refieras.
+   DICE: ¿La electricidad viaja a la velocidad de la luz? Sí y no, depende de qué mides.
    PANTALLA: texto "¿SÍ Y NO?"
 2. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Lo que viaja casi a la velocidad de la luz es la señal: el campo eléctrico que empuja a los electrones del cable.
+   DICE: Lo que viaja casi a la luz es la señal, el campo que empuja a los electrones.
    PANTALLA: objetos/cable_cobre
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Los electrones mismos se mueven muy despacio. Con corrientes normales avanzan apenas unos milímetros por segundo.
+   DICE: Los electrones mismos se mueven despacio: con corrientes normales, apenas milímetros por segundo.
    PANTALLA: texto "MILÍMETROS/s"
 4. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Es como un tubo lleno de canicas: si empujas una desde un extremo, la del otro sale casi al instante.
+   DICE: Es como un tubo lleno de canicas: empujas una y la del otro extremo sale al instante.
    PANTALLA: objetos/cable_cobre
-5. [dato] NEWTON (pensando) | fondo: laboratorio
+5. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Ninguna canica recorre el tubo entero. Cada una se mueve poquito y avisa a la siguiente.
    PANTALLA: texto "POCO A POCO"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: ¿Entonces por qué tu lámpara prende casi al instante? Porque la señal llega rápido, aunque cada electrón camina como caracol.
+   DICE: ¿Y por qué tu lámpara prende casi al instante? La señal llega rápido, aunque cada electrón camina como caracol.
    PANTALLA: texto "¡CARACOL!"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: ¿Te imaginabas electrones tan lentos? Cuéntame en los comentarios qué más te suena rápido y no lo es.
+   DICE: ¿Te imaginabas electrones tan lentos? Cuéntame qué más te suena rápido y no lo es.
    PANTALLA: texto "¿LENTOS?"
 
 ## Datos que hay que verificar

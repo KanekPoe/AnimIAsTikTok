@@ -20,10 +20,10 @@ estado: base
 3. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Están hechos de neodimio, hierro y boro. Son duros, pero también muy quebradizos.
    PANTALLA: objetos/iman_barra
-4. [dato] NEWTON (asustado) | fondo: laboratorio
+4. [dato] NEWTON (asustado) | fondo: estudio
    DICE: Si dos chocan a toda velocidad, pueden saltar astillas o partirse. Y pellizcan los dedos con mucha fuerza.
    PANTALLA: texto "¡OJO CON LOS DEDOS!"
-5. [giro] NEWTON (pensando) | fondo: laboratorio
+5. [giro] NEWTON (pensando) | fondo: estudio
    DICE: Por eso no son juguete. Si un niño se traga dos o más, pueden atraerse dentro del cuerpo y perforar el intestino.
    PANTALLA: texto "NO LOS TRAGUES"
 6. [cierre] NEWTON (explicando_pluma) | fondo: estudio

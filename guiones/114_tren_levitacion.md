@@ -18,16 +18,16 @@ estado: base
    DICE: No hay un solo sistema. Hay varios, y no todos funcionan igual.
    PANTALLA: objetos/tren_levitacion
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Unos usan electroimanes que atraen el riel desde abajo, y lo sostienen con una separación de apenas un centímetro.
+   DICE: Unos usan electroimanes que atraen el riel desde abajo, a apenas un centímetro de distancia.
    PANTALLA: objetos/tren_levitacion
 4. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Otros usan imanes que se repelen. Necesitan velocidad para flotar, así que a baja velocidad van sobre ruedas.
    PANTALLA: texto "REPELER"
-5. [dato] NEWTON (pensando) | fondo: laboratorio
+5. [dato] NEWTON (pensando) | fondo: estudio
    DICE: El tren japonés de prueba superó los 600 kilómetros por hora. Usa imanes superconductores, enfriados a temperaturas extremas.
    PANTALLA: texto "600+ km/h"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: El de Shanghái, en cambio, usa atracción y opera comercialmente hasta 431 kilómetros por hora. Dos sistemas, dos trucos.
+   DICE: El de Shanghái usa atracción y llega a 431 kilómetros por hora. Dos sistemas, dos trucos.
    PANTALLA: texto "431 km/h"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Te subirías a un tren que flota? Cuéntame en los comentarios cuál sistema elegirías.

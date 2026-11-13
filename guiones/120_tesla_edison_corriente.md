@@ -12,22 +12,22 @@ estado: base
 ## Guion
 
 1. [gancho] NEWTON (senalando) | fondo: estudio
-   DICE: Hubo una pelea famosa entre Edison y Tesla. ¿Y sabes qué corriente llega hoy a tu casa?
+   DICE: Edison y Tesla tuvieron una rivalidad famosa. ¿Y sabes qué corriente llega hoy a tu casa?
    PANTALLA: texto "¿ALTERNA O DIRECTA?"
 2. [dato] COLEGA:tesla (presentando) | fondo: estudio
-   DICE: Yo defendí la corriente alterna. Con transformadores puedes subir el voltaje y llevarla lejos con menos pérdidas.
+   DICE: Yo defendí la corriente alterna. Con transformadores puedes subir el voltaje y perder menos energía.
    PANTALLA: objetos/cable_cobre
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Edison fue un inventor genial, y apostó por la corriente directa, la que sale de una pila. Tenía intereses comerciales enormes.
+   DICE: Edison fue un inventor genial, pero apostó por la directa, la de las pilas, y tenía mucho en juego.
    PANTALLA: texto "CD"
 4. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: El problema de la corriente directa es que pierde mucha energía en cables largos. Necesitaba centrales cada pocos kilómetros.
+   DICE: La directa pierde mucha energía en cables largos. Necesitaba centrales cada pocos kilómetros.
    PANTALLA: objetos/cable_cobre
 5. [dato] COLEGA:tesla (explicando) | fondo: estudio
-   DICE: A finales de la década de 1890, la planta de las Cataratas del Niágara ya enviaba corriente alterna a Búfalo.
+   DICE: A finales de la década de 1890, la planta de Niágara ya enviaba alterna a Búfalo.
    PANTALLA: texto "NIÁGARA"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: En México la casa usa 127 volts a 60 hertz. Y la directa no murió: tu celular se carga con ella.
+   DICE: En México la casa usa 127 volts a 60 hertz. La directa no murió: tu celular se carga con ella.
    PANTALLA: texto "127 V"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Quién crees que merece más mérito, Edison o Tesla? Cuéntame en los comentarios.

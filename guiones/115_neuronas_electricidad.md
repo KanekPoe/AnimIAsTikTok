@@ -18,16 +18,16 @@ estado: base
    DICE: Cada neurona se comunica con pulsos eléctricos llamados potenciales de acción.
    PANTALLA: objetos/cerebro
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Ojo, no es como un cable. Lo que se mueve son iones, átomos cargados como el sodio y el potasio, cruzando la membrana.
+   DICE: Ojo, no es como un cable: se mueven iones, átomos cargados como el sodio y el potasio.
    PANTALLA: objetos/celula_humana
 4. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: El pulso viaja por el axón, la cola de la neurona. En las fibras con mielina, puede pasar de cien metros por segundo.
+   DICE: El pulso viaja por el axón, la cola de la neurona. Con mielina, pasa de cien metros por segundo.
    PANTALLA: texto "+100 m/s"
-5. [dato] NEWTON (pensando) | fondo: laboratorio
-   DICE: Y tienes alrededor de 86 mil millones de neuronas. Cada una puede disparar varias decenas de pulsos por segundo.
+5. [dato] NEWTON (pensando) | fondo: estudio
+   DICE: Tienes unas 86 mil millones de neuronas, y cada una dispara decenas de pulsos por segundo.
    PANTALLA: texto "86 MIL MILLONES"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Tus pensamientos y tus ganas de tacos viajan, en buena parte, como señales eléctricas por tu cuerpo.
+   DICE: Tus pensamientos y tus ganas de tacos viajan, en buena parte, como señales eléctricas.
    PANTALLA: texto "¡TACOS!"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Te late la idea de que tu cabeza funciona con pulsos? Cuéntame en los comentarios.

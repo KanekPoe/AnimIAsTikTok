@@ -20,7 +20,7 @@ estado: base
 3. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: El hierro lo tiene cerca de 770 °C. El níquel, unos 350. Los imanes de neodimio, alrededor de 300 y tantos.
    PANTALLA: texto "770 °C"
-4. [dato] NEWTON (pensando) | fondo: laboratorio
+4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: El nombre viene de Pierre Curie, que estudió este efecto a mediados de la década de 1890. No de su esposa, Marie.
    PANTALLA: texto "PIERRE, NO MARIE"
 5. [giro] NEWTON (asustado) | fondo: estudio
