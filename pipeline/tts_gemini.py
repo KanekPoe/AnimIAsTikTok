@@ -43,7 +43,8 @@ VOICES = {
 # Sin instrucciones de estilo: este modelo las lee en voz alta (en español o en inglés) y no
 # admite instrucciones de sistema. El ritmo se ajusta después (TARGET_RATE) y cada frase se verifica.
 NEWTON_STYLE = ""
-TARGET_RATE = 5.5  # sílabas por segundo; si sale más lenta, se acelera sin cambiar el tono
+TARGET_RATE = 6.9  # sílabas por segundo (5.5 × 1.25, pedido del creador); si sale más lenta, se acelera sin cambiar el tono
+MAX_TEMPO = 2.0   # aceleración máxima (atempo conserva el tono)
 
 
 def post(url, body, tries=6):
@@ -120,8 +121,15 @@ def synth(text, out, voice=NEWTON_VOICE, style=NEWTON_STYLE, tries=3, alt=None):
             print("  reintento:", e)
 
 
+def _dur(path):
+    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                 "-of", "csv=p=0", path], capture_output=True, text=True).stdout)
+
+
 def _synth(text, out, voice, style, alt=None):
-    key = hashlib.sha1(f"v2|{MODEL}|{voice}|{style}|{text}".encode()).hexdigest()[:16]  # v2: lectura WAV correcta
+    # v3: la caché guarda la voz SIN acelerar; la velocidad (TARGET_RATE) se aplica al copiarla,
+    # así cambiar la velocidad no obliga a pagar las voces otra vez.
+    key = hashlib.sha1(f"v3|{MODEL}|{voice}|{style}|{text}".encode()).hexdigest()[:16]
     os.makedirs(CACHE, exist_ok=True)
     cached = os.path.join(CACHE, key + ".wav")
     if not os.path.exists(cached):
@@ -134,18 +142,9 @@ def _synth(text, out, voice, style, alt=None):
         part = next(p["inlineData"] for p in data["candidates"][0]["content"]["parts"]
                     if "inlineData" in p)
         decode_to_wav(base64.b64decode(part["data"]), part["mimeType"], cached)
-        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-                                    "-of", "csv=p=0", cached], capture_output=True, text=True).stdout)
-        tempo = min(1.6, max(1.0, TARGET_RATE / (syllables(text) / dur)))
-        if tempo > 1.02:
-            tmp = cached + ".tmp.wav"
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cached, "-af",
-                            f"atempo={tempo:.3f}", tmp], check=True)
-            os.replace(tmp, cached)
         # control: si dura mucho más de lo esperado (lee instrucciones o repite), se rechaza
-        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-                                    "-of", "csv=p=0", cached], capture_output=True, text=True).stdout)
-        if dur > syllables(text) / 3.0 + 2.5:
+        dur = _dur(cached)
+        if dur > syllables(text) / 2.5 + 2.5:
             os.remove(cached)
             raise RuntimeError(f"Audio sospechoso ({dur:.1f}s para '{text[:40]}…'): revisar")
         probs = audio_qc.check_voice(audio_qc.read(cached)[0], name=f"'{text[:30]}…'")
@@ -162,7 +161,15 @@ def _synth(text, out, voice, style, alt=None):
                     "tokens": data.get("usageMetadata", {}).get("totalTokenCount")})
         with open(LEDGER, "w") as f:
             json.dump(led, f, indent=1, ensure_ascii=False)
-    subprocess.run(["cp", cached, out], check=True)
+    tempo = min(MAX_TEMPO, max(1.0, TARGET_RATE / (syllables(text) / _dur(cached))))
+    if tempo > 1.02:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cached, "-af",
+                        f"atempo={tempo:.3f}", out], check=True)
+        probs = audio_qc.check_voice(audio_qc.read(out)[0], name=f"'{text[:30]}…' acelerada")
+        if probs:  # la aceleración no debe meter ruidos (lección 1)
+            raise RuntimeError("; ".join(probs))
+    else:
+        subprocess.run(["cp", cached, out], check=True)
     return out
 
 

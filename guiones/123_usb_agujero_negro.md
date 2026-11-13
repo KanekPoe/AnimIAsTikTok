@@ -26,20 +26,20 @@ prioridad: creador
    DICE: Número 4: tu USB de un tera: más de un millón de libros.
    PANTALLA: objetos/memoria_usb · texto "#4"
 5. [dato] COLEGA:turing (senalando) | fondo: estudio
-   DICE: Número 3: la cinta magnética. No te lo crees, yo tampoco, pero sigue viva en centros de datos.
-   PANTALLA: objetos/cinta_magnetica · texto "#3"
+   DICE: Número 3: la cinta magnética. No te lo crees, yo tampoco, pero sigue viva: un cartucho, 40 terabytes, 40 USBs.
+   PANTALLA: objetos/cinta_magnetica · texto "#3 = 40 USBs"
 6. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Un cartucho: 40 terabytes, 40 de tus USBs.
-   PANTALLA: objetos/cinta_magnetica · texto "= 40 USBs"
-7. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Número 2: ya es investigación, casi ciencia ficción. Cristal 5D: un láser graba dentro del vidrio.
    PANTALLA: objetos/cristal_5d · texto "#2"
-8. [dato] NEWTON (voz) | fondo: laboratorio
+7. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: 360 terabytes por disco, por miles de millones de años. Eso sí: no se borra.
    PANTALLA: objetos/cristal_5d · texto "360 TB"
-9. [giro] NEWTON (voz) | fondo: espacio
-   DICE: Y ahora sí, lo mero chido. Número 1: un agujero negro de 2 cm: un 3 con 59 ceros de libros.
+8. [giro] NEWTON (voz) | fondo: espacio
+   DICE: Y ahora sí, lo mero chido. Número 1: el agujero negro. Bekenstein y Hawking propusieron que guarda información en su superficie.
    PANTALLA: objetos/agujero_negro · texto "#1"
+9. [dato] NEWTON (voz) | fondo: espacio
+   DICE: Uno de 2 cm guardaría un 3 con 59 ceros de libros.
+   PANTALLA: objetos/agujero_negro · texto "3 × 10⁵⁹ LIBROS"
 10. [cierre] NEWTON (asustado) | fondo: estudio
    DICE: Pero pesaría como la Tierra, y sacar los datos… quién sabe. ¿Crees que ahí quepa el GTA 6?
    PANTALLA: objetos/tierra
@@ -55,6 +55,7 @@ prioridad: creador
 - Libro de 200 páginas (dato del creador; los libros comunes van de ~200 a 300 páginas) × 3,000 letras ≈ 600,000 caracteres ≈ 0.6 MB. 1 TB ≈ 1.7 millones de libros ("más de un millón"); 40 TB ≈ 67 millones ("unos 60 millones"). Cálculo propio. Confianza: media (orden de magnitud).
 - Cinta LTO-10: cartuchos de 30 TB y 40 TB nativos (40 TB a la venta desde enero de 2026). Fuente: lto.org/lto-10; Tom's Hardware. Confianza: alta.
 - Cristal 5D (Universidad de Southampton): datos grabados con láser de femtosegundos en cuarzo fundido; capacidad proyectada de 360 TB por disco; estabilidad estimada de 13,800 millones de años a 190 °C (extrapolación de los autores). Sigue en etapa de investigación; lo demostrado fueron archivos pequeños. Se llama "5D" (3 dimensiones de posición + tamaño + orientación de la nanoestructura), no "4D". Fuente: Universidad de Southampton (2013, 2016); The Register (2016). Confianza: alta (que lo dicen); media (que la capacidad y la duración se alcancen).
+- Jacob Bekenstein (1972–1973) propuso que la entropía (información) de un agujero negro es proporcional al área de su horizonte; Stephen Hawking (1974–1975) lo confirmó con la radiación que lleva su nombre y fijó la constante. Fuente: Bekenstein, Phys. Rev. D 7, 2333 (1973); Hawking, Nature 248 (1974) y Commun. Math. Phys. 43 (1975). Confianza: alta.
 - Agujero negro de 1 cm de radio (2 cm de diámetro): ≈ 1.7×10⁶⁶ bits = 2.1×10⁶⁵ bytes ≈ 3.5×10⁵⁹ libros de 0.6 MB ("un 3 con 59 ceros") (cálculo de Bekenstein–Hawking, ver versión anterior en el registro). Masa ≈ 6.7×10²⁴ kg ≈ 1.1 Tierras. Confianza: alta (teoría).
 
 ## Imágenes nuevas
@@ -67,5 +68,6 @@ prioridad: creador
 ## Notas
 
 - Versión 3 (13 nov 2026): borrador del creador ("¡Pum! Top 6…"), pulido respetando su estilo. Cambios: "otro pedo" -> "está pasado de lanza, acá de aliens" (frase del creador, versión 4); "millones y millones de años" -> "miles de millones" (lo que dicen los investigadores); "un millón de libros" -> "más de un millón" (con libros de 200 páginas salen 1.7 millones).
+- Versión 5: se menciona a Bekenstein y Hawking (pedido del creador); la cinta va en una sola línea.
 - Cierre del creador: "¿Crees que ahí quepa el GTA 6?" (versión 4).
 - duracion: larga (~55 s) porque es un top; si se quiere de 45 s, quitar las líneas 6 y 8 y juntar datos.

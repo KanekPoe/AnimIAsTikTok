@@ -20,7 +20,7 @@ Si el validador marca errores, corrígelos hasta que diga OK.
    "hola", "hoy les traigo" ni presentaciones.
 2. **Duración 30–45 s**: entre **70 y 120 palabras** en total sumando todas las líneas `DICE`.
    Excepción solo si el creador lo pide (tops, listas): `duracion: larga` en el encabezado permite
-   hasta 150 palabras (~55 s).
+   hasta 165 palabras (~50 s).
    **6 a 10 líneas**, cada una de **máximo 25 palabras**.
 3. **Lo más fuerte justo después del gancho**; el giro o la imagen más loca, cerca del final.
 4. **Cierre**: la última línea es una pregunta para comentarios o un gancho a otro video. Si

@@ -57,3 +57,12 @@ API se vio `audio/wav` y amplitud 1.0 en la cola.
 
 **Pendiente:** los episodios 1–4 y 6–8 se renderizaron con voces dañadas. Al regenerarlos, la
 caché `v2` y el control de audio harán que salgan limpios automáticamente.
+
+---
+
+## Nota — velocidad de la voz (noviembre 2026)
+
+El creador pidió los videos 25 % más rápidos. Se subió `TARGET_RATE` de 5.5 a 6.9 sílabas/s
+(`pipeline/tts_gemini.py`). Desde entonces la caché de voces (`v3`) guarda la voz **sin acelerar**
+y la aceleración se aplica al copiarla: cambiar la velocidad ya no cuesta volver a pedir voces.
+La voz acelerada también pasa por `audio_qc.check_voice`.
