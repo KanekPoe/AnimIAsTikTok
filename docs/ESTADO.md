@@ -68,6 +68,17 @@ truncado a 3 s.
 - Gasto Google: límite mensual de 300 MXN puesto por el creador (cuenta uso bruto aunque lo
   cubran créditos); hay ~1.27K MXN de créditos.
 
+## Producción en lote (13 nov 2026)
+
+- Pipeline listo: `python3 pipeline/producir.py guiones/NNN_*.md ...` o `--prioridad`.
+  Hace: validar_guion -> guion2ep (acomodo automático, números a palabras) -> nbl.py (voces con
+  audio_qc + verificación, QA visual obligatoria, mezcla, export). ~1.5 min por video.
+  Revisión offline sin gastar: `python3 pipeline/qa_visual.py episodes/<ep>.py` (hoja de cuadros).
+  Pruebas: `tests/test_audio.py` y `tests/test_pipeline.py`.
+- Voces de colegas en `tts_gemini.VOICES` (elegidas por Claude, **pendiente que el creador las apruebe al oírlas**).
+- Primera prueba: las 6 ideas del creador (121–126) producidas y enviadas. Esperan su opinión
+  (voces, ritmo, acomodo) antes de producir más.
+
 ## Siguiente (aún sin orden de ejecutar)
 
 Plan acordado: producir los 120 con una sesión multiagente de Haiku sobre un pipeline robusto.

@@ -1456,5 +1456,264 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Vemos la realidad… o solo nuestra versión? Te leo.",
   "tokens": 127
+ },
+ {
+  "date": "2026-11-13T15:13:52",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El universo se va a acabar. Y quizá no con una explosión… sino con un frío etern",
+  "tokens": 200
+ },
+ {
+  "date": "2026-11-13T15:13:57",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Desde hace unos trece mil ochocientos millones de años el universo se expande. Y",
+  "tokens": 189
+ },
+ {
+  "date": "2026-11-13T15:14:01",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Si sigue así, las demás galaxias se alejarán tanto que ya no se podrán ver.",
+  "tokens": 154
+ },
+ {
+  "date": "2026-11-13T15:14:06",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Las estrellas se irán apagando. En unos cien billones de años casi ya no nacerán",
+  "tokens": 200
+ },
+ {
+  "date": "2026-11-13T15:14:10",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Al final quedarían agujeros negros… y hasta ellos se evaporarían, poquito a poqu",
+  "tokens": 169
+ },
+ {
+  "date": "2026-11-13T15:14:15",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Los físicos le dicen muerte térmica: todo frío, oscuro y parejo. Pero ojo: no es",
+  "tokens": 207
+ },
+ {
+  "date": "2026-11-13T15:15:09",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Datos recientes sugieren que la energía oscura podría cambiar. Y el final podría",
+  "tokens": 171
+ },
+ {
+  "date": "2026-11-13T15:15:13",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Tranqui: falta muchísimo tiempo. ¿Qué final crees que nos toca?",
+  "tokens": 128
+ },
+ {
+  "date": "2026-11-13T15:16:21",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Y si tu próxima USB fuera un agujero negro? Sería la memoria más brutal del uni",
+  "tokens": 184
+ },
+ {
+  "date": "2026-11-13T15:16:25",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Bekenstein y Hawking descubrieron algo loquísimo: un agujero negro guarda inform",
+  "tokens": 198
+ },
+ {
+  "date": "2026-11-13T15:16:30",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Uno del tamaño de una USB, de unos dos centímetros, guardaría un uno con sesenta",
+  "tokens": 222
+ },
+ {
+  "date": "2026-11-13T15:16:34",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Tu USB de un terabyte tiene unos ocho billones. Le gana por un uno con cincuenta",
+  "tokens": 207
+ },
+ {
+  "date": "2026-11-13T15:16:38",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "El detalle: así de chiquito pesaría lo mismo que toda la Tierra. No te cabe en l",
+  "tokens": 192
+ },
+ {
+  "date": "2026-11-13T15:16:42",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y sacar los datos tampoco es fácil: si la información se puede recuperar todavía",
+  "tokens": 168
+ },
+ {
+  "date": "2026-11-13T15:16:46",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Nadie la va a fabricar, pero marca el límite: nada de ese tamaño puede guardar m",
+  "tokens": 207
+ },
+ {
+  "date": "2026-11-13T15:18:09",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué onda con los agujeros negros? Son tan tragones que ni la luz se les escapa.",
+  "tokens": 149
+ },
+ {
+  "date": "2026-11-13T15:18:13",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Muchos nacen cuando una estrella gigante se apaga y se derrumba sobre sí misma.",
+  "tokens": 151
+ },
+ {
+  "date": "2026-11-13T15:18:18",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Toda esa masa queda tan apachurrada que su gravedad ya no deja salir nada.",
+  "tokens": 144
+ },
+ {
+  "date": "2026-11-13T15:18:22",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Su borde se llama horizonte de eventos. Si lo cruzas, no hay vuelta atrás.",
+  "tokens": 159
+ },
+ {
+  "date": "2026-11-13T15:18:26",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Si caes de pies, la gravedad jala tus pies más que tu cabeza: te estira como esp",
+  "tokens": 155
+ },
+ {
+  "date": "2026-11-13T15:18:30",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "En el centro de nuestra galaxia hay uno de unos cuatro millones de soles.",
+  "tokens": 132
+ },
+ {
+  "date": "2026-11-13T15:18:35",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y no son cuento: en dos mil diecinueve salió la primera imagen de uno, y en dos ",
+  "tokens": 192
+ },
+ {
+  "date": "2026-11-13T15:18:39",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Te asomarías a uno desde lejitos… o nel? Te leo.",
+  "tokens": 114
+ },
+ {
+  "date": "2026-11-13T15:19:49",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Nos volvimos humanos por ponernos bien locos con hongos? Hay una teoría que dic",
+  "tokens": 140
+ },
+ {
+  "date": "2026-11-13T15:19:53",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Se llama la teoría del \"mono drogado\", y la propuso el escritor Terence McKenna ",
+  "tokens": 191
+ },
+ {
+  "date": "2026-11-13T15:19:58",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Según él, esos hongos nos dieron mejor vista para cazar, más ganas de reproducir",
+  "tokens": 209
+ },
+ {
+  "date": "2026-11-13T15:20:02",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Suena machín, pero no hay pruebas: ni fósiles, ni restos de hongos, ni experimen",
+  "tokens": 192
+ },
+ {
+  "date": "2026-11-13T15:20:07",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Lo que sí tiene evidencia: comer carne, cocinar, usar herramientas y vivir en gr",
+  "tokens": 222
+ },
+ {
+  "date": "2026-11-13T15:20:11",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y ojo: no venimos de los simios de hoy. Compartimos un ancestro con los chimpanc",
+  "tokens": 163
+ },
+ {
+  "date": "2026-11-13T15:20:16",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Tú qué crees que nos hizo humanos? Te leo en los comentarios.",
+  "tokens": 93
+ },
+ {
+  "date": "2026-11-13T15:21:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Somos el pináculo de la evolución? Nel, carnal. Y te explico por qué.",
+  "tokens": 147
+ },
+ {
+  "date": "2026-11-13T15:21:28",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "La evolución no es una escalera con nosotros hasta arriba. Es un árbol con muchí",
+  "tokens": 184
+ },
+ {
+  "date": "2026-11-13T15:21:33",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Todas las especies vivas llevan el mismo tiempo evolucionando. Una bacteria de h",
+  "tokens": 189
+ },
+ {
+  "date": "2026-11-13T15:21:37",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Evolucionar no es mejorar: es adaptarse a donde vives. Lo que sirve en el mar no",
+  "tokens": 218
+ },
+ {
+  "date": "2026-11-13T15:21:42",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y en muchas cosas nos ganan: un perro huele miles de veces mejor, y un ajolote r",
+  "tokens": 186
+ },
+ {
+  "date": "2026-11-13T15:21:47",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y en peso, todas las bacterias de la Tierra pesan unas treinta y cinco veces más",
+  "tokens": 197
+ },
+ {
+  "date": "2026-11-13T15:21:51",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Qué superpoder animal te gustaría tener? Te leo en los comentarios.",
+  "tokens": 120
  }
 ]
