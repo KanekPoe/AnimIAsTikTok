@@ -1392,5 +1392,13 @@
   "prompt": "Exactly 2 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) three small cartoon brown mushrooms growing together on a tiny patch of grass, simple friendly style; 2) a friendly cartoon chimpanzee sitting, side view, curious expression",
   "out": "assets/art/raw/objetos_lote4.jpg",
   "tokens": 1474
+ },
+ {
+  "date": "2026-11-13T14:54:35",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 1 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon tree of life with many branches, small animal silhouettes at the tips of the branches (fish, bird, monkey, human, dog, insect), friendly style",
+  "out": "assets/art/raw/objetos_lote5.jpg",
+  "tokens": 1466
  }
 ]
