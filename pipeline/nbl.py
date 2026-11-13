@@ -300,6 +300,8 @@ class Renderer:
         if anim == "pop":
             s = ease_out_back(age / 0.28)
             oy = 8 * math.sin(age * 2.5)
+        elif anim == "static":  # visible desde el primer cuadro (portada del video)
+            oy = 8 * math.sin(age * 2.5)
         elif anim == "stamp":
             s = 1 + 1.6 * (1 - ease(age / 0.16))
         elif anim == "drop":

@@ -123,4 +123,5 @@ Detalles del formato:
 - `n`: número de la idea. `slug`: minúsculas, sin acentos, con guiones bajos.
 - `badge`: 1–3 palabras en mayúsculas (DATO ESPACIAL, DATO ANIMAL, ¿VERDAD O MITO?, TOP 6…).
 - `cta`: texto corto que sale arriba al final, con 👇.
+- `portada` (opcional): `portada: espacio objetos/agujero_negro` elige el fondo y el objeto del primer cuadro (la miniatura del perfil). Si no se pone, se usa el primer fondo que no sea el estudio.
 - Entrega un solo bloque por guion, sin texto extra antes ni después.

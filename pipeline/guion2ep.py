@@ -150,6 +150,21 @@ def convert(path):
         raise SystemExit(f"{path}: el guion no pasa el validador:\n  " + "\n  ".join(errs))
     meta, lines = parse(path)
     colega = meta.get("colega", "ninguno")
+    # Portada: TikTok usa el primer cuadro como miniatura. Para que cada video se distinga en el
+    # perfil, el gancho abre en el fondo del tema (el primer fondo que no es el estudio), con su
+    # objeto y su texto visibles desde el cuadro 0; Newton aparece desde la segunda frase.
+    # Se desactiva con "portada: estudio" en el encabezado del guion.
+    # "portada: <fondo> [objetos/<x>]" elige el fondo y el objeto de la portada a mano.
+    port = meta.get("portada", "").split()
+    alt = port[0] if port else next((l["bg"] for l in lines if l["bg"] != "estudio"), None)
+    if alt != "estudio" and alt and lines[0]["bg"] == "estudio" and lines[0]["who"] == "newton":
+        first = dict(lines[0], bg=alt, pose="voz")
+        if not any(k == "obj" for k, _ in items(first["pantalla"])):
+            obj = port[1] if len(port) > 1 else next(
+                (o for l in lines for k, o in items(l["pantalla"]) if k == "obj"), None)
+            if obj:
+                first["pantalla"] = obj + (" · " + first["pantalla"] if first["pantalla"] else "")
+        lines = [first] + lines[1:]
     # escenas: líneas seguidas con el mismo fondo
     groups = []
     for ln in lines:
@@ -187,6 +202,10 @@ def convert(path):
             if mode == "solo_side" and its and all(k == "texto" for k, _ in its):
                 zone = (0.34, 0.19, 0.86, 0.30)  # solo texto: ancho completo arriba de la cabeza de Newton
             ln["events"] = layout_events(its, zone)
+            if l is lines[0]:  # portada: todo visible desde el primer cuadro
+                for ev in ln["events"]:
+                    if ev.get("anim") == "pop":
+                        ev["anim"], ev["at"], ev["dt"] = "static", 0, -1.0  # ya está en el cuadro 0
             out_lines.append(ln)
         scenes.append({"bg": bg + "_vertical", "cast": cast, "lines": out_lines})
     n = int(meta["n"])

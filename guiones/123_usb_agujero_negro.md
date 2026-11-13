@@ -9,6 +9,7 @@ cta: ¿Cabe el GTA 6 en el número 1? 👇
 estado: base
 duracion: larga
 prioridad: creador
+portada: espacio objetos/agujero_negro
 ---
 
 ## Guion

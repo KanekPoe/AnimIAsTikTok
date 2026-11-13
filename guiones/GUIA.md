@@ -146,3 +146,6 @@ Campos:
 - `QUIÉN`: `NEWTON (pose)`, `NEWTON (voz)` o `COLEGA:<nombre> (pose)`, p. ej. `COLEGA:darwin (senalando)`.
 - `badge`: 1–3 palabras en mayúsculas (DATO ESPACIAL, DATO ANIMAL, ¿VERDAD O MITO?, etc.).
 - `cta`: texto corto que aparece en pantalla al final, con 👇.
+- `portada` (opcional): el primer cuadro es la miniatura del perfil. Por defecto el gancho abre en el
+  primer fondo del guion que no es el estudio, con el primer objeto; para elegirlo a mano:
+  `portada: espacio objetos/agujero_negro`. `portada: estudio` deja el gancho en la oficina.
