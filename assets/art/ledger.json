@@ -2094,5 +2094,12 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Todas las especies vivas llevan el mismo tiempo evolucionando. Una bacteria de h",
   "tokens": 198
+ },
+ {
+  "date": "2026-11-13T16:33:35",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Tú qué crees que nos hizo humanos? Te leo en los comentarios.",
+  "tokens": 92
  }
 ]

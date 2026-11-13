@@ -182,6 +182,8 @@ def _synth(text, out, voice, style, alt=None):
         with open(LEDGER, "w") as f:
             json.dump(led, f, indent=1, ensure_ascii=False)
     tempo = min(MAX_TEMPO, max(1.0, TARGET_RATE / (syllables(text) / _dur(cached))))
+    with open(out + ".json", "w") as f:  # nbl.py lo lee para revisar la voz con la ventana correcta
+        json.dump({"tempo": tempo if tempo > 1.02 else 1.0}, f)
     if tempo > 1.02:
         acelerar(cached, out, tempo)
         probs = audio_qc.check_voice(audio_qc.read(out)[0], name=f"'{text[:30]}…' acelerada", speed=tempo)

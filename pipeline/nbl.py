@@ -9,6 +9,7 @@ palabras clave, cámara y eventos (objetos que aparecen, caen, sellos, líneas..
 Salida: output/<slug>/final.mp4
 """
 import importlib.util
+import json
 import math
 import os
 import random
@@ -496,7 +497,9 @@ def main():
     # Control de audio obligatorio (lección 1): ninguna voz con chasquidos ni mezcla saturada.
     probs = []
     for ln in tl.lines:
-        probs += audio_qc.check_voice(read_wav(ln["wav"]), name=f"voz '{ln['say'][:30]}…'")
+        meta = ln["wav"] + ".json"
+        speed = json.load(open(meta))["tempo"] if os.path.exists(meta) else 1.0  # voz acelerada (lección 2)
+        probs += audio_qc.check_voice(read_wav(ln["wav"]), name=f"voz '{ln['say'][:30]}…'", speed=speed)
     audio = mix(tl, os.path.join(out, "mix.wav"))
     probs += audio_qc.check_mix(read_wav(audio))
     audio_qc.assert_ok(probs)
