@@ -1435,5 +1435,26 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Y casi todo el volumen de un átomo es espacio vacío. Tú incluido, compa.",
   "tokens": 142
+ },
+ {
+  "date": "2026-11-13T15:12:46",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Y lo que ves ya pasó: tu cerebro tarda una fracción de segundo en armar la image",
+  "tokens": 164
+ },
+ {
+  "date": "2026-11-13T15:12:51",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Entonces, ¿qué es la realidad? Los físicos y los filósofos todavía lo discuten.",
+  "tokens": 164
+ },
+ {
+  "date": "2026-11-13T15:12:55",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "¿Vemos la realidad… o solo nuestra versión? Te leo.",
+  "tokens": 127
  }
 ]
