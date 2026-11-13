@@ -11,23 +11,23 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: Siempre vemos la misma cara de la Luna. Pero, ¿sabías que no es exactamente así?
    PANTALLA: texto "¿MISMA CARA?"
 2. [dato] NEWTON (voz) | fondo: espacio
-   DICE: La Luna gira sobre sí misma en el mismo tiempo que tarda en dar la vuelta a la Tierra: unos 27 días.
+   DICE: Gira sobre sí misma en 27 días, lo mismo que tarda en orbitar la Tierra.
    PANTALLA: objetos/flecha_giro
 3. [dato] NEWTON (voz) | fondo: espacio
    DICE: Por eso le damos siempre casi la misma cara. A esto le dicen acoplamiento de marea.
    PANTALLA: objetos/flecha_orbita
 4. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Pero ojo: la Luna se mece un poco mientras orbita. Con el tiempo vemos cerca de 59 por ciento de su superficie.
+   DICE: Pero ojo: la Luna se mece un poco. Con el tiempo vemos cerca del 59 por ciento de su superficie.
    PANTALLA: texto "59 %"
 5. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: El resto nunca se ve desde la Tierra. Lo fotografió por primera vez la sonda soviética Luna 3, en 1959.
+   DICE: El resto nunca se ve desde la Tierra. Luna 3, de la URSS, lo fotografió en 1959.
    PANTALLA: texto "1959"
 6. [dato] NEWTON (voz) | fondo: espacio
-   DICE: Su cara oculta no es oscura: recibe luz del Sol igual que la otra, porque la Luna tiene días y noches en cada lado.
+   DICE: Su cara oculta no es oscura: también recibe luz del Sol, con sus días y noches.
    PANTALLA: objetos/luna
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Ya lo sabías, o te acaba de cambiar la idea? Te leo en los comentarios.

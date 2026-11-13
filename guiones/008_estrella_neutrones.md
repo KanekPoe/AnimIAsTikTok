@@ -15,10 +15,10 @@ estado: base
    DICE: Una cucharadita de estrella de neutrones pesaría del orden de mil millones de toneladas. ¿Neta?
    PANTALLA: texto "¿MIL MILLONES?"
 2. [dato] NEWTON (voz) | fondo: espacio
-   DICE: Una estrella de neutrones es lo que queda cuando una estrella gigante explota como supernova.
+   DICE: Es lo que queda cuando una estrella gigante explota como supernova.
    PANTALLA: objetos/estrella_neutrones
 3. [dato] NEWTON (voz) | fondo: espacio
-   DICE: Tiene más o menos una vez y media la masa del Sol, pero cabe en una ciudad de unos 20 kilómetros de ancho.
+   DICE: Tiene unas 1.4 veces la masa del Sol, pero cabe en una ciudad de 20 kilómetros.
    PANTALLA: objetos/sol
 4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Esa materia está tan apretada que su densidad es cientos de billones de veces la del agua.
@@ -26,7 +26,7 @@ estado: base
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Si la Tierra tuviera esa densidad, cabría en unos 300 metros, más o menos lo que mide un rascacielos.
    PANTALLA: texto "~300 m"
-6. [dato] NEWTON (pensando) | fondo: espacio
+6. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Por eso los astrónomos dicen "unos" y no una cifra exacta: depende del modelo de la estrella.
    PANTALLA: texto "ÓRDENES DE MAGNITUD"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio

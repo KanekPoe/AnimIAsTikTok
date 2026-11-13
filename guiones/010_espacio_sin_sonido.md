@@ -11,20 +11,20 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: En las películas, las explosiones en el espacio suenan. ¿Sabías que en realidad no?
    PANTALLA: texto "¿SONIDO?"
 2. [dato] NEWTON (voz) | fondo: espacio
    DICE: El sonido es una vibración que necesita un medio para viajar: aire, agua o algo sólido.
    PANTALLA: texto "VIBRACIÓN"
 3. [dato] NEWTON (voz) | fondo: espacio
-   DICE: El espacio es casi vacío. Hay tan pocas partículas que una onda sonora no tiene con qué avanzar.
+   DICE: El espacio es casi vacío: una onda sonora no tiene con qué avanzar.
    PANTALLA: texto "CASI VACÍO"
 4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Por eso, aunque algo explote cerca, en el vacío no escucharías nada. Ni en la Luna.
    PANTALLA: objetos/luna
 5. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Pero ojo: la NASA sí ha grabado ondas de plasma y las convirtió en audio. Eso no es lo mismo que oírlo con tus oídos.
+   DICE: Pero ojo: la NASA convirtió ondas de plasma en audio. Eso no es oírlo con tus oídos.
    PANTALLA: texto "PERO..."
 6. [dato] NEWTON (voz) | fondo: espacio
    DICE: Así que en las películas el sonido es un truco para el público. No es la realidad.

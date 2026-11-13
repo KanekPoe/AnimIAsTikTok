@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: ¿Cuánto dura un día en Mercurio? Neta, más que dos de sus años.
    PANTALLA: texto "¿UN DÍA?"
 2. [dato] NEWTON (voz) | fondo: espacio
@@ -26,7 +26,7 @@ estado: base
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Y el calor no perdona: de día llega a unos 430 °C, y de noche baja a unos -180 °C.
    PANTALLA: texto "430 °C / -180 °C"
-6. [dato] NEWTON (pensando) | fondo: espacio
+6. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Cada día dura unos tres meses de luz y otros tres de oscuridad, al menos cerca del ecuador.
    PANTALLA: objetos/luna
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio

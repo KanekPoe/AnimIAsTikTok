@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: Urano gira como si estuviera acostado. Su eje está casi horizontal, como si rodara de lado.
    PANTALLA: objetos/urano
 2. [dato] COLEGA:hipatia (explicando) | fondo: estudio

@@ -11,8 +11,8 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
-   DICE: En Marte los atardeceres son azules. ¿A poco? Si de día el cielo es naranja-café, suena al revés.
+1. [gancho] NEWTON (senalando) | fondo: estudio
+   DICE: En Marte los atardeceres son azules. ¿A poco? Suena al revés, ¿no?
    PANTALLA: texto "¿AZUL?"
 2. [dato] NEWTON (voz) | fondo: espacio
    DICE: La culpa es del polvo. Marte está cubierto de partículas finas que flotan en su atmósfera.
@@ -21,12 +21,12 @@ estado: base
    DICE: Ese polvo dispersa la luz azul hacia adelante. Por eso, cerca del Sol, el cielo se tiñe de azul.
    PANTALLA: objetos/sol
 4. [dato] NEWTON (pensando) | fondo: estudio
-   DICE: En la Tierra pasa al revés: el atardecer se pone rojo y naranja porque el aire dispersa el azul.
+   DICE: En la Tierra, el atardecer se pone rojo porque el aire dispersa el azul.
    PANTALLA: objetos/tierra
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Pero ojo: el color depende del polvo que haya en el aire. Si hay tormenta, el cielo cambia de tono.
    PANTALLA: texto "¡DEPENDE DEL POLVO!"
-6. [dato] NEWTON (pensando) | fondo: espacio
+6. [dato] NEWTON (pensando) | fondo: estudio
    DICE: El rover Curiosity de la NASA ha fotografiado estos atardeceres azules más de una vez.
    PANTALLA: objetos/marte
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio

@@ -15,13 +15,13 @@ estado: base
    DICE: Para estudiar la luz, yo hice algo que hoy no te recomiendo ni en broma.
    PANTALLA: texto "¿EN SERIO?"
 2. [dato] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: Está en mis notas: usé una aguja para presionar mi propio ojo.
+   DICE: Está en mis notas: usé una aguja gruesa y sin punta para presionar mi propio ojo.
    PANTALLA: texto "EN MIS NOTAS"
 3. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Quería entender cómo el ojo produce los colores, y anoté que veía círculos de colores.
    PANTALLA: objetos/cerebro_colores
 4. [dato] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: Lo dejó escrito con detalle, y por eso hoy lo sabemos.
+   DICE: Lo dejé escrito con detalle, con todo y dibujito, y por eso hoy lo sabes.
    PANTALLA: texto "ESCRITO"
 5. [giro] NEWTON (asustado) | fondo: estudio
    DICE: No lo intentes en casa. Ni tú, ni nadie.

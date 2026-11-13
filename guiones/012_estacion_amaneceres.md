@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: ¿Cuántos amaneceres crees que ve un astronauta en un día? Son unos 16. Neta.
    PANTALLA: texto "16 AL DÍA"
 2. [dato] NEWTON (voz) | fondo: espacio

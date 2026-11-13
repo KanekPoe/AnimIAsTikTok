@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: Hay un planeta donde se cree que llueve vidrio, y llueve de lado. ¿Neta?
    PANTALLA: texto "¿VIDRIO?"
 2. [dato] NEWTON (voz) | fondo: espacio

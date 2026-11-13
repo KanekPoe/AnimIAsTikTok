@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: Los astronautas crecen en el espacio, hasta unos 5 centímetros. ¿Neta?
    PANTALLA: texto "+5 CM"
 2. [dato] NEWTON (voz) | fondo: espacio

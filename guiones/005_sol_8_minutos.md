@@ -11,23 +11,23 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: El Sol que ves ahorita ya es pasado. Lo que te llega de él salió hace unos ocho minutos.
    PANTALLA: objetos/sol
 2. [dato] COLEGA:hipatia (explicando) | fondo: estudio
    DICE: La luz viaja a unos 300 mil kilómetros por segundo. Y el Sol está a unos 150 millones de kilómetros.
    PANTALLA: texto "150 MILLONES KM"
 3. [dato] NEWTON (voz) | fondo: espacio
-   DICE: Hagamos la cuenta: 150 millones entre 300 mil da unos 500 segundos, o sea, unos ocho minutos.
+   DICE: Cuenta rápida: 150 millones entre 300 mil da unos 500 segundos, ocho minutos.
    PANTALLA: texto "8 MIN"
-4. [dato] NEWTON (pensando) | fondo: espacio
+4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Eso significa que si el Sol se apagara hoy, no lo notarías hasta dentro de ocho minutos.
    PANTALLA: objetos/reloj_arena
 5. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Y ojo: cada cosa del cielo tiene su propio pasado. La Luna, hace poco más de un segundo. Júpiter, más de media hora.
+   DICE: Y ojo: la Luna es de hace un segundo; Júpiter, de hace más de media hora.
    PANTALLA: texto "¿CUÁNDO?"
-6. [dato] NEWTON (pensando) | fondo: espacio
-   DICE: La estrella más cercana después del Sol, Próxima Centauri, está a unos 4 años luz. Su luz tarda 4 años en llegar.
+6. [dato] NEWTON (pensando) | fondo: estudio
+   DICE: Próxima Centauri, la vecina más cercana después del Sol, está a unos 4 años luz.
    PANTALLA: texto "4 AÑOS LUZ"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Cuánto del cielo crees que estás viendo en el pasado? Te leo en los comentarios.

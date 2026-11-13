@@ -11,23 +11,23 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
-   DICE: La Luna se está alejando de nosotros. Poquito, pero se aleja. ¿A poco no lo sabías?
+1. [gancho] NEWTON (senalando) | fondo: estudio
+   DICE: La Luna se aleja de nosotros. Poquito, pero se aleja. ¿A poco no lo sabías?
    PANTALLA: objetos/luna
 2. [dato] NEWTON (voz) | fondo: espacio
    DICE: Cada año se aleja unos 3.8 centímetros. Suena poco, ¿verdad?
    PANTALLA: texto "3.8 CM / AÑO"
 3. [dato] NEWTON (voz) | fondo: espacio
-   DICE: ¿Cómo lo sabemos? Desde 1969, los astronautas del Apolo dejaron espejos que reflejan láseres lanzados desde la Tierra.
+   DICE: ¿Cómo lo sabemos? Desde 1969, el Apolo dejó espejos que reflejan láseres lanzados desde la Tierra.
    PANTALLA: objetos/telescopio
-4. [dato] NEWTON (pensando) | fondo: espacio
+4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Se mide el tiempo que tarda el láser en ir y volver. Con eso se calcula la distancia con precisión de milímetros.
    PANTALLA: texto "IDA Y VUELTA"
 5. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: ¿Y por qué pasa? Las mareas frenan un poquito la rotación de la Tierra, y esa energía empuja a la Luna hacia afuera.
+   DICE: Las mareas frenan un poco la rotación de la Tierra, y esa energía empuja a la Luna hacia afuera.
    PANTALLA: texto "MAREAS"
-6. [dato] NEWTON (pensando) | fondo: espacio
-   DICE: Por eso los días se alargan muy poquito, unas milésimas de segundo cada siglo.
+6. [dato] NEWTON (pensando) | fondo: estudio
+   DICE: Lo mismo hace que los días se alarguen unas milésimas de segundo por siglo.
    PANTALLA: objetos/reloj_arena
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Crees que algún día la Luna se verá más chiquita desde aquí? Te leo en los comentarios.

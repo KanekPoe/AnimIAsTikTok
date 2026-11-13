@@ -18,7 +18,7 @@ estado: base
    DICE: Los científicos creen que dos de sus corazones solo bombean sangre a las branquias.
    PANTALLA: objetos/pulpo_corazones
 3. [dato] NEWTON (voz) | fondo: oceano
-   DICE: Es un camino largo, y su sangre azul, espesa por el cobre, necesita mucha presión para pasar.
+   DICE: Su sangre azul, con cobre, lleva el oxígeno con menos eficiencia, así que necesita un empujón extra.
    PANTALLA: objetos/pulpo_corazones
 4. [dato] NEWTON (voz) | fondo: oceano
    DICE: El tercer corazón, el principal, manda la sangre al resto del cuerpo.

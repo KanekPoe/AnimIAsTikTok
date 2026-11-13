@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: Las huellas de los astronautas siguen en la Luna. ¿Y cuánto crees que duren? Neta, más de lo que piensas.
    PANTALLA: texto "¿CUÁNTO?"
 2. [dato] NEWTON (voz) | fondo: espacio

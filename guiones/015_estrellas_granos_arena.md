@@ -11,7 +11,7 @@ estado: base
 
 ## Guion
 
-1. [gancho] NEWTON (senalando) | fondo: espacio
+1. [gancho] NEWTON (senalando) | fondo: estudio
    DICE: ¿Hay más estrellas en el universo que granos de arena en la Tierra? Suena exagerado, ¿verdad?
    PANTALLA: texto "¿MÁS?"
 2. [dato] NEWTON (voz) | fondo: espacio
@@ -23,7 +23,7 @@ estado: base
 4. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Ojo: las dos cifras son estimaciones, con mucho margen. No es un conteo exacto.
    PANTALLA: texto "ESTIMACIÓN"
-5. [dato] NEWTON (pensando) | fondo: espacio
+5. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Nadie ha contado los granos de todas las playas. Y solo vemos las estrellas que la luz ya alcanzó.
    PANTALLA: objetos/telescopio
 6. [dato] NEWTON (voz) | fondo: espacio

@@ -20,7 +20,7 @@ estado: base
 3. [dato] NEWTON (voz) | fondo: espacio
    DICE: La Tierra mide unos 12 mil 700 kilómetros de diámetro. La mancha la supera de lado a lado.
    PANTALLA: objetos/tierra
-4. [giro] NEWTON (asustado) | fondo: espacio
+4. [giro] NEWTON (asustado) | fondo: estudio
    DICE: Pero ojo: hoy es más chica que hace un siglo. Hacia 1880 medía unos 40 mil kilómetros.
    PANTALLA: texto "HOY: MÁS CHICA"
 5. [dato] COLEGA:hipatia (senalando) | fondo: estudio

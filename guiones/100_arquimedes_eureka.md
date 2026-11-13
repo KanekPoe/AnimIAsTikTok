@@ -27,8 +27,8 @@ estado: base
    DICE: Ese principio dice que un objeto desplaza agua igual a su volumen.
    PANTALLA: texto "VOLUMEN"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: Ojo: la versión de salir desnudo corriendo no aparece en el relato más antiguo.
-   PANTALLA: texto "¿DESNUDO?"
+   DICE: Y según ese mismo relato, salió corriendo desnudo por la calle gritando: ¡Eureka!, que significa "¡lo encontré!".
+   PANTALLA: texto "¡EUREKA!"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Tú habrías gritado Eureka en la bañera o en la calle? Cuéntamelo en los comentarios.
    PANTALLA: texto "¿EUREKA?"
@@ -38,7 +38,7 @@ estado: base
 - Arquímedes vivió en Siracusa aproximadamente entre 287 y 212 a. C. Fuente sugerida: Britannica (Archimedes). Confianza: alta.
 - La anécdota de la corona y la bañera la cuenta Vitruvio (*De architectura*, libro IX), casi dos siglos después de Arquímedes. Fuente sugerida: Vitruvio, *De architectura*, libro IX (prólogo). Confianza: alta (fuente); media (la fecha aproximada).
 - El encargo de la corona por el rey Hierón y la sospecha de mezcla de plata son parte del relato de Vitruvio; no hay comprobación independiente. Confianza: baja (que ocurrió así).
-- La versión de salir desnudo corriendo no aparece en el relato de Vitruvio. Fuente sugerida: Vitruvio, libro IX (leer el pasaje). Confianza: media.
+- Vitruvio sí cuenta que salió desnudo a la calle gritando "eureka" (corregido por revisión: el borrador decía lo contrario). Fuente: Vitruvio, libro IX, prólogo 9–10. Confianza: alta (que lo cuenta Vitruvio); baja (que pasó así).
 - El principio de Arquímedes: un cuerpo sumergido recibe un empuje igual al peso del fluido que desplaza. Fuente sugerida: cualquier libro de física de nivel medio. Confianza: alta.
 
 ## Imágenes nuevas
