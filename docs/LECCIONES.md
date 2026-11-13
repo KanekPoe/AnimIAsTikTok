@@ -66,3 +66,21 @@ El creador pidió los videos 25 % más rápidos. Se subió `TARGET_RATE` de 5.5 
 (`pipeline/tts_gemini.py`). Desde entonces la caché de voces (`v3`) guarda la voz **sin acelerar**
 y la aceleración se aplica al copiarla: cambiar la velocidad ya no cuesta volver a pedir voces.
 La voz acelerada también pasa por `audio_qc.check_voice`.
+
+## Lección 2 — Una "s" final acelerada parecía ruido (noviembre 2026)
+
+**Síntoma:** al subir la velocidad de la voz 25 %, el control de audio rechazó la frase
+"…con los chimpancés." (ruido agudo en la cola 3.6×) y el video no se exportó.
+
+**Medición:** la voz original pasaba (2.6×). El ruido agudo de la cola eran las dos "s" de
+"chimpancés" (picos y luego silencio: habla, no ruido). Dos causas:
+1. La ventana de la cola (200 ms) medía más habla en la voz acelerada → `check_voice(speed=)`
+   escala la ventana con la velocidad (mismos umbrales).
+2. `atempo` (WSOLA) mete ruido agudo en las sibilantes y la cantidad depende de la velocidad
+   (1.5× daba 3.1×). Con `rubberband` el resultado queda igual que la voz original a cualquier
+   velocidad (1.2–2.0×). Ahora `tts_gemini.acelerar()` usa rubberband y rehace los fundidos.
+
+**Protección:** `tests/test_audio.py` usa una voz REAL de Gemini (`tests/fixtures/voz_s_final.wav`)
+acelerada a 1.2–2.0×: debe pasar; y la misma voz con ruido al final debe fallar.
+
+**Regla:** no se aflojan umbrales; se mide qué es (habla o ruido) y se corrige el proceso.

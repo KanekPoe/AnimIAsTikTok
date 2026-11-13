@@ -40,8 +40,13 @@ def _hf_rms(x, sr):
     return float(np.sqrt(np.mean(np.diff(x, 2) ** 2)))
 
 
-def check_voice(x, sr=SR, name="voz"):
-    """Problemas de una frase de voz. Devuelve lista de textos (vacía = bien)."""
+def check_voice(x, sr=SR, name="voz", speed=1.0):
+    """Problemas de una frase de voz. Devuelve lista de textos (vacía = bien).
+
+    speed: si la voz se aceleró (atempo), la ventana de la cola se acorta igual, para medir el
+    mismo pedazo de habla que a velocidad normal (si no, una "s" final comprimida parece ruido).
+    No cambia los umbrales.
+    """
     probs = []
     if len(x) < sr * 0.15:
         return [f"{name}: audio demasiado corto ({len(x) / sr:.2f} s)"]
@@ -55,7 +60,7 @@ def check_voice(x, sr=SR, name="voz"):
         probs.append(f"{name}: golpe al inicio ({np.abs(head).max():.2f})")
     if np.abs(tail_e).max() > 0.3:
         probs.append(f"{name}: golpe al final ({np.abs(tail_e).max():.2f})")
-    tail = int(0.2 * sr)
+    tail = int(0.2 / speed * sr)
     body_hf = _hf_rms(x[:-tail], sr) + 1e-6
     tail_hf = _hf_rms(x[-tail:], sr)
     if tail_hf > 3.0 * body_hf and tail_hf > 0.02:

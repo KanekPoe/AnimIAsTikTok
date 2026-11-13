@@ -126,6 +126,26 @@ def _dur(path):
                                  "-of", "csv=p=0", path], capture_output=True, text=True).stdout)
 
 
+def _has_rubberband():
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-filters"], capture_output=True, text=True)
+    return " rubberband " in r.stdout
+
+
+RUBBERBAND = _has_rubberband()
+
+
+def acelerar(src, out, tempo):
+    """Acelera sin cambiar el tono y rehace los fundidos de los bordes (10 ms / 30 ms).
+
+    Usa rubberband: atempo (WSOLA) metía ruido agudo en las "s" según la velocidad (con 1.5×
+    una "s" final ya parecía ruido; ver docs/LECCIONES.md). atempo queda solo de respaldo.
+    """
+    stretch = f"rubberband=tempo={tempo:.3f}" if RUBBERBAND else f"atempo={tempo:.3f}"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af",
+                    f"{stretch},afade=t=in:d=0.01,areverse,afade=t=in:d=0.03,areverse", out], check=True)
+    return out
+
+
 def _synth(text, out, voice, style, alt=None):
     # v3: la caché guarda la voz SIN acelerar; la velocidad (TARGET_RATE) se aplica al copiarla,
     # así cambiar la velocidad no obliga a pagar las voces otra vez.
@@ -163,9 +183,8 @@ def _synth(text, out, voice, style, alt=None):
             json.dump(led, f, indent=1, ensure_ascii=False)
     tempo = min(MAX_TEMPO, max(1.0, TARGET_RATE / (syllables(text) / _dur(cached))))
     if tempo > 1.02:
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", cached, "-af",
-                        f"atempo={tempo:.3f}", out], check=True)
-        probs = audio_qc.check_voice(audio_qc.read(out)[0], name=f"'{text[:30]}…' acelerada")
+        acelerar(cached, out, tempo)
+        probs = audio_qc.check_voice(audio_qc.read(out)[0], name=f"'{text[:30]}…' acelerada", speed=tempo)
         if probs:  # la aceleración no debe meter ruidos (lección 1)
             raise RuntimeError("; ".join(probs))
     else:

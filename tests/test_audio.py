@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "pipeline"))
 import audio_qc  # noqa: E402
 import sfx  # noqa: E402
-from tts_gemini import decode_to_wav  # noqa: E402
+from tts_gemini import acelerar, decode_to_wav  # noqa: E402
 
 SR = 24000
 
@@ -95,6 +95,40 @@ class TestControlDeVoz(unittest.TestCase):
         x = fake_speech(sr=48000)
         x[:60] = 0.9
         self.assertTrue(audio_qc.check_voice(x, 48000))
+
+
+class TestVozAcelerada(unittest.TestCase):
+    """La voz se acelera (atempo, 25 % más rápida). Caso real (nov 2026): "…con los chimpancés."
+    a velocidad normal pasa, pero acelerada la "s" final quedaba apretada en la ventana de la cola
+    y el control la confundía con ruido. La ventana se escala con la velocidad (speed=tempo);
+    el error original (ruido a todo volumen al final) se debe seguir detectando."""
+
+    FIXTURE = os.path.join(ROOT, "tests", "fixtures", "voz_s_final.wav")  # voz real de Gemini, sin acelerar
+
+    def _acelerar(self, x, tempo, sr=48000):
+        with tempfile.TemporaryDirectory() as d:
+            a, b = os.path.join(d, "a.wav"), os.path.join(d, "b.wav")
+            with wave.open(a, "wb") as w:
+                w.setnchannels(1)
+                w.setsampwidth(2)
+                w.setframerate(sr)
+                w.writeframes((np.clip(x, -1, 1) * 32767).astype(np.int16).tobytes())
+            acelerar(a, b, tempo)  # el mismo proceso que usa la voz real
+            return audio_qc.read(b)[0]
+
+    def test_voz_real_con_s_final_acelerada_pasa(self):
+        x, sr = audio_qc.read(self.FIXTURE)
+        self.assertEqual(audio_qc.check_voice(x, sr), [])
+        for tempo in (1.2, 1.25, 1.4, 1.5, 1.6, 2.0):
+            with self.subTest(tempo=tempo):
+                self.assertEqual(audio_qc.check_voice(self._acelerar(x, tempo, sr), sr, speed=tempo), [])
+
+    def test_ruido_final_acelerado_se_detecta(self):
+        x, sr = audio_qc.read(self.FIXTURE)
+        x = x.copy()
+        x[-int(0.15 * sr):] = np.sign(np.sin(np.arange(int(0.15 * sr)) * 0.02))
+        tempo = 1.25
+        self.assertTrue(audio_qc.check_voice(self._acelerar(x, tempo, sr), sr, speed=tempo))
 
 
 class TestEfectos(unittest.TestCase):
