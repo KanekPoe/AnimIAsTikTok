@@ -1376,5 +1376,13 @@
   "prompt": "Exactly 3 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon spiral galaxy with glowing purple and blue arms and a bright yellow center; 2) a cartoon black hole: a black circle with a glowing orange swirling ring of light around it; 3) a straight rectangular bar magnet, half red with a white letter N and half blue with a white letter S, cartoon style",
   "out": "assets/art/raw/objetos_lote2.jpg",
   "tokens": 1569
+ },
+ {
+  "date": "2026-11-13T14:49:52",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 1 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon USB flash drive, blue plastic body with a silver metal connector",
+  "out": "assets/art/raw/objetos_lote3.jpg",
+  "tokens": 1504
  }
 ]

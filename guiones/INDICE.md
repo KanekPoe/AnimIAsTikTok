@@ -124,3 +124,4 @@
 | 120 | Tesla vs Edison: ¿por qué en tu casa hay corriente alterna? | 106 | tesla | 2 | `120_tesla_edison_corriente.md` |
 | 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
 | 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
+| 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
