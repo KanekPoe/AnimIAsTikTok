@@ -16,10 +16,10 @@ estado: base
    PANTALLA: texto "¿NORTE Y SUR?"
 2. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Lo intuitivo sería una mitad solo norte y otra solo sur. Pero no pasa.
-   PANTALLA: objetos/iman_barra
+   PANTALLA: objetos/iman_barra_recto
 3. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Cada pedazo sale con su propio norte y sur. Cada mitad es un imán nuevo y completo.
-   PANTALLA: objetos/iman_barra
+   PANTALLA: objetos/iman_barra_recto
 4. [dato] NEWTON (pensando) | fondo: estudio
    DICE: Un polo norte aislado, llamado monopolo, no ha sido confirmado por ningún experimento.
    PANTALLA: texto "¿POLO SOLO?"
@@ -40,7 +40,7 @@ estado: base
 
 ## Imágenes nuevas
 
-- objetos/iman_barra: a shiny cartoon bar magnet, red and silver, simple flat style
+- objetos/iman_barra_recto: a straight rectangular bar magnet, half red (N) and half blue (S), cartoon style
 
 ## Notas
 

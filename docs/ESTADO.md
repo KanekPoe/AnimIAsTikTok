@@ -59,7 +59,7 @@ truncado a 3 s.
 - **71 objetos nuevos** para los guiones ya generados (`assets/art/objetos/`), hechos con
   `pipeline/objetos_lote.py guiones/objetos_lote1.json` (hojas de ~6 con nombre automático;
   objetos verdes van en fondo magenta: `cutout.py` lo detecta solo).
-- Pendiente de decisión: `iman_barra` salió de herradura; para #112 conviene uno de barra (1 imagen).
+- `iman_barra` es de herradura (lo usa #111); #112 usa `iman_barra_recto` (N rojo, S azul).
 - Gasto Google: límite mensual de 300 MXN puesto por el creador (cuenta uso bruto aunque lo
   cubran créditos); hay ~1.27K MXN de créditos.
 
