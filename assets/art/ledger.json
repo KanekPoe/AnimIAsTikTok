@@ -2109,5 +2109,13 @@
   "prompt": "Exactly 2 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cute cartoon penguin swimming underwater with flippers spread; 2) a solid dense cartoon bird bone cut in half showing a solid filled inside without air pockets",
   "out": "assets/art/raw/objetos_lote7.jpg",
   "tokens": 1516
+ },
+ {
+  "date": "2026-11-13T21:11:34",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 2 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cute cartoon nautilus swimming sideways with its brown and white striped spiral shell and small tentacles; 2) a cartoon cross-section of a nautilus spiral shell cut in half showing the chambers inside, some filled with light blue water",
+  "out": "assets/art/raw/objetos_lote8.jpg",
+  "tokens": 1638
  }
 ]
