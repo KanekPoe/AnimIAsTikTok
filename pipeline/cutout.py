@@ -27,10 +27,16 @@ STRICT = False  # --strict: solo el verde exacto del fondo (para objetos verdes,
 
 
 def key_mask(rgb):
-    """True donde hay fondo verde."""
+    """True donde hay fondo verde (o magenta, detectado por la esquina)."""
     r, g, b = (rgb[..., i].astype(np.int32) for i in range(3))
     bg = np.median(rgb[:8, :8].reshape(-1, 3), axis=0).astype(np.int32)
     dist = np.sqrt((r - bg[0]) ** 2 + (g - bg[1]) ** 2 + (b - bg[2]) ** 2)
+    if bg[0] > 150 and bg[2] > 150 and bg[1] < 100:  # fondo magenta (objetos verdes)
+        core = dist < 90
+        magentish = (r > g + 60) & (b > g + 60) & (r > 140) & (b > 140)
+        lab, _ = ndimage.label(core | magentish)
+        touching = np.unique(lab[core])  # solo el halo magenta pegado al fondo, no lo rosa del dibujo
+        return np.isin(lab, touching[touching > 0])
     if STRICT:
         return dist < 70
     greenish = (g > r + 40) & (g > b + 40)

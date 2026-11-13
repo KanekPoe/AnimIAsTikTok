@@ -1272,5 +1272,101 @@
   "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
   "out": "assets/art/raw/colegas/hipatia_poses_ojos_cerrados.jpg",
   "tokens": 1720
+ },
+ {
+  "date": "2026-11-13T14:19:56",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon honeybee, yellow and black stripes, round body, friendly face; 2) a cute pink axolotl with feathery external gills, cartoon style, side view; 3) cartoon spider hanging on a thin thread, friendly, simple flat colors; 4) cartoon ostrich lying on sand with its neck stretched flat, side view, simple flat colors; 5) a blue whale swimming, side view, cartoon style, friendly; 6) cartoon camel with one big hump, side view, sandy colors, simple flat style",
+  "out": "assets/art/raw/objetos_animales1.jpg",
+  "tokens": 1684
+ },
+ {
+  "date": "2026-11-13T14:20:11",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a black cartoon crow perched on a branch, eyes narrowed, mischievous look; 2) a friendly cartoon dolphin jumping out of the water, side view; 3) a pink flamingo standing on one leg, cartoon style, friendly; 4) a cartoon ant, black, side view, small and friendly; 5) a cartoon giraffe head and long neck, friendly expression, side view; 6) cartoon owl with big round eyes, side view, simple flat colors",
+  "out": "assets/art/raw/objetos_animales2.jpg",
+  "tokens": 1591
+ },
+ {
+  "date": "2026-11-13T14:20:21",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) cartoon bat hanging upside down with big bright eyes, simple flat colors; 2) a cartoon sea otter floating on its back, holding its paws, wrapped in kelp; 3) cartoon dog sitting, side view, friendly, simple flat colors; 4) a cartoon archerfish with a thin jet of water shooting from its mouth, pointing up; 5) cartoon orange goldfish swimming, side view, simple flat colors; 6) a chubby translucent water bear (tardigrade) with eight short legs, cartoon style, friendly face",
+  "out": "assets/art/raw/objetos_animales3.jpg",
+  "tokens": 1788
+ },
+ {
+  "date": "2026-11-13T14:20:29",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a calm cartoon bull standing in a grassy field, side view, friendly, no weapons, simple flat colors; 2) a friendly cartoon cow with spots, standing, calm expression; 3) a round, chubby cartoon wombat sitting, friendly face, short legs; 4) an electric knifefish with a long eel-like body and small yellow sparks along it, friendly cartoon style; 5) a cartoon small bird perched on a power line, simple flat style; 6) a cartoon pigeon with a small glowing magnetic field line around its head, friendly style",
+  "out": "assets/art/raw/objetos_animales4.jpg",
+  "tokens": 1664
+ },
+ {
+  "date": "2026-11-13T14:20:38",
+  "mode": "sticker_magenta",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 5 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon hummingbird hovering in flight, wings blurred, bright green and red feathers; 2) a cartoon sea turtle swimming with a small compass-like glow on its shell, friendly style; 3) green and purple aurora curtains glowing over a small dark-blue night sky panel with rounded corners; 4) a round glass petri dish with green fuzzy mold and a clear ring of empty space around it, cartoon style; 5) three colorful wavy light rays (red, green, blue) bouncing off small grey round air molecules",
+  "out": "assets/art/raw/objetos_verdes.jpg",
+  "tokens": 1835
+ },
+ {
+  "date": "2026-11-13T14:20:48",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) planet Jupiter with orange and cream horizontal bands and a big red oval storm, cartoon style; 2) small red-orange planet Mars with a dusty surface and a thin pale atmosphere, cartoon style; 3) ringed planet Saturn with golden bands and wide pale rings, cartoon style; 4) pale cyan planet Uranus tilted on its side with a thin faint ring, cartoon style; 5) a tiny intensely bright white-blue glowing star ball with light rays, on a small round dark space patch; 6) a huge gentle shield volcano with a wide dome shape on a red planet surface, cartoon style",
+  "out": "assets/art/raw/objetos_espacio.jpg",
+  "tokens": 1712
+ },
+ {
+  "date": "2026-11-13T14:20:57",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon bathtub full of water with a small splash, plain background; 2) a chocolate bar partly melted and glossy, cartoon style, plain background; 3) a Tesla coil with small electric sparks, cartoon style, plain background; 4) a glowing incandescent light bulb, cartoon style, plain background; 5) a classic cartoon magnetic compass with a red needle, friendly style; 6) a closed lead-lined storage box with a small radiation warning sticker on the front, cartoon style, plain background",
+  "out": "assets/art/raw/objetos_cosas1.jpg",
+  "tokens": 1770
+ },
+ {
+  "date": "2026-11-13T14:21:07",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a whole cartoon onion next to a half-sliced one, simple style; 2) a cartoon car seen from the side with a metal body and windows, friendly style; 3) a cute cartoon heart organ (anatomical shape, simple, not gory), red and pink, friendly style; 4) a golden royal crown with a few sparkles, cartoon style, plain background; 5) a cartoon electrical wall outlet with two flat slots, friendly style; 6) cartoon cross-section of a hair follicle in skin, simple friendly flat colors",
+  "out": "assets/art/raw/objetos_cosas2.jpg",
+  "tokens": 1703
+ },
+ {
+  "date": "2026-11-13T14:21:15",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) small pile of golden sand grains, cartoon style; 2) a cartoon iceberg floating on blue water, mostly hidden underwater; 3) a shiny cartoon bar magnet, red and silver, simple flat style; 4) a generic silver soda can with a black-and-white design, no logos, cartoon style; 5) a generic silver soda can with red stripes, no logos, cartoon style; 6) a metal door handle with a tiny yellow spark next to it, cartoon style",
+  "out": "assets/art/raw/objetos_cosas3.jpg",
+  "tokens": 1690
+ },
+ {
+  "date": "2026-11-13T14:21:23",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon hammer, simple style; 2) a gold Nobel-style medal hanging from a blue ribbon, cartoon style, plain background; 3) a cartoon microwave oven with its door open and a bowl of soup inside; 4) a cartoon 9-volt battery with two terminals, friendly style; 5) a metal plate hit by beams of light, with tiny electron sparks flying off, cartoon style, plain background; 6) a cartoon white feather, simple style",
+  "out": "assets/art/raw/objetos_cosas4.jpg",
+  "tokens": 1693
+ },
+ {
+  "date": "2026-11-13T14:21:32",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a rotating radar dish on a small tower, cartoon style, plain background; 2) cartoon tall skyscraper at night with a lightning bolt hitting its antenna, simple flat colors; 3) a bright cartoon lightning bolt, yellow-white with a soft glow; 4) a single slice of bread with butter on top, butter side up, cartoon style; 5) a small pile of coarse white salt crystals, cartoon style; 6) cartoon bicorn hat (two-pointed military hat), side view, simple flat colors",
+  "out": "assets/art/raw/objetos_cosas5.jpg",
+  "tokens": 1767
+ },
+ {
+  "date": "2026-11-13T14:21:41",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 6 separate items arranged in a grid of 2 columns and 3 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon metal kettle with a steam whistle on the spout and steam coming out; 2) cartoon leaning tower of Pisa, side view, simple flat colors; 3) a cartoon bullet train floating above a glowing rail, with small magnetic sparks under it; 4) a glass of water drawn opaque in cartoon style: light blue water, white highlights, thick outline; 5) a small orange and red sunset over a hill; 6) a small cartoon airplane flying with a white vapor trail behind it",
+  "out": "assets/art/raw/objetos_cosas6.jpg",
+  "tokens": 1702
  }
 ]

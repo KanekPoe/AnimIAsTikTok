@@ -73,7 +73,7 @@ def run(sheet):
         imagegen.generate("sticker_magenta" if magenta else "sticker", prompt_for(items), raw)
     tmp = os.path.join(OUT, name)
     shutil.rmtree(tmp, ignore_errors=True)
-    cutout.STRICT = magenta
+    cutout.STRICT = False  # el magenta se detecta solo en cutout.key_mask
     names = cutout.cut(raw, tmp)
     n_rows = (len(items) + 1) // 2
     ok = len(names) == len(items)
