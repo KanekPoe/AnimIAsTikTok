@@ -10,6 +10,7 @@ Modos:
     fondo    fondo vertical 9:16 sin personajes
     newton   Newton con sus imágenes de referencia, sobre verde (consistencia de personaje)
     colega   personaje nuevo con el estilo de Newton (sus imágenes como referencia de estilo)
+    poses    hoja 2x2 con 4 poses del personaje de la referencia (pipeline/rig_colegas.py)
     edit     edita una imagen dada como referencia (p. ej. cerrar bocas) sin cambiar lo demás
 
 La clave la inyecta el proxy del entorno (encabezado x-goog-api-key); no se lee de ningún archivo.
@@ -27,7 +28,7 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, "assets", "art", "ledger.json")
 MODEL = os.environ.get("IMAGEGEN_MODEL", "gemini-3.1-flash-image")
-MAX_PER_MONTH = int(os.environ.get("IMAGEGEN_MAX_PER_MONTH", "60"))
+MAX_PER_MONTH = int(os.environ.get("IMAGEGEN_MAX_PER_MONTH", "150"))
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
 
 STYLE = ("cartoon illustration, bold black outlines, flat vibrant colors with soft cel shading, "
@@ -78,6 +79,12 @@ def generate(mode, prompt, out, refs=None):
                 "side, friendly and expressive. " + STICKER)
         aspect = "9:16"
         refs = (refs or []) + NEWTON_REFS
+    elif mode == "poses":  # hoja 2x2 con 4 poses del personaje de la referencia (colegas)
+        text = ("Character pose sheet of the SAME character as the reference image: identical face, "
+                "hair, clothes, colors, accessories and art style. Four full-body poses arranged in a "
+                "2x2 grid, all the same size, each well separated with plenty of space: " + prompt +
+                ". Mouth closed in all poses. Every accessory touches the body (nothing floating). " + STICKER)
+        aspect = "9:16"
     elif mode == "edit":  # edita la primera referencia y conserva todo lo demás
         text = ("Edit this image: keep absolutely everything else identical (same characters, poses, "
                 "positions, sizes, outlines, colors and the solid green background), only " + prompt)

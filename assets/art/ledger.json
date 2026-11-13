@@ -888,5 +888,53 @@
   "prompt": "replace the brass cipher rotor wheel he is holding with an open modern laptop computer held in his hands, screen facing the viewer showing green code; keep his face, clothes, sneakers and pose the same",
   "out": "assets/art/raw/colegas/turing_v2.jpg",
   "tokens": 1766
+ },
+ {
+  "date": "2026-11-13T03:13:42",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the small Galapagos tortoise sitting on his shoulder in every pose",
+  "out": "assets/art/raw/colegas/darwin_poses.jpg",
+  "tokens": 2171
+ },
+ {
+  "date": "2026-11-13T03:13:50",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/darwin_poses_boca_abierta.jpg",
+  "tokens": 1788
+ },
+ {
+  "date": "2026-11-13T03:13:57",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/darwin_poses_ojos_cerrados.jpg",
+  "tokens": 1673
+ },
+ {
+  "date": "2026-11-13T03:14:03",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/darwin_v1_boca_abierta.jpg",
+  "tokens": 1681
+ },
+ {
+  "date": "2026-11-13T03:14:10",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/darwin_v1_ojos_cerrados.jpg",
+  "tokens": 1627
+ },
+ {
+  "date": "2026-11-13T03:15:07",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep his electrified spiky hair with blue sparks in every pose",
+  "out": "assets/art/raw/colegas/tesla_poses.jpg",
+  "tokens": 2189
  }
 ]

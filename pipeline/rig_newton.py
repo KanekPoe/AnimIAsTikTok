@@ -63,7 +63,11 @@ def fit_variant(base_img, var_img):
     canvas = Image.new("RGBA", base_img.size, (0, 0, 0, 0))
     canvas.paste(v, ((base_img.width - v.width) // 2, 0))
     var = np.array(canvas)
-    box = face_box(base)
+    try:
+        box = face_box(base)
+    except RuntimeError:  # piel no detectada (p. ej. barba grande): zona alta central
+        h, w = base.shape[:2]
+        box = (int(h * 0.04), int(h * 0.30), int(w * 0.2), int(w * 0.8))
     dy, dx = shift_to_match(base, var, box)
     var = np.roll(np.roll(var, dy, axis=0), dx, axis=1)
     return base, var, box
@@ -89,34 +93,52 @@ def regions(box):
     return mouth, eyes
 
 
-def diff_region(base, var, pad=10):
-    """Zona donde la variante cambia respecto a la base (la boca o los ojos), ya alineadas."""
+def diff_region(base, var, pad=10, above=None):
+    """Zona donde la variante cambia respecto a la base (la boca o los ojos), ya alineadas.
+
+    above: si se da (y de la boca), solo cuenta lo que está arriba de esa línea y une todas las
+    piezas grandes: así un parpadeo cierra LOS DOS ojos y no toca la boca.
+    """
     d = np.abs(base[..., :3].astype(int) - var[..., :3].astype(int)).sum(axis=2)
     both = (base[..., 3] > 200) & (var[..., 3] > 200)
     m = ndimage.binary_opening((d > 60) & both, iterations=1)
+    if above is not None:
+        m[above:] = False
     m = ndimage.binary_dilation(m, iterations=6)
     lab, n = ndimage.label(m)
     if n == 0:
         return None
     sizes = ndimage.sum(m, lab, range(1, n + 1))
-    sl = ndimage.find_objects(lab)[int(np.argmax(sizes))]
     h, w = m.shape
+    if above is not None:
+        big = [i for i, s in enumerate(sizes, 1) if s >= 0.2 * sizes.max()]
+        ys, xs = np.nonzero(np.isin(lab, big))
+        return (max(0, ys.min() - pad), min(h, ys.max() + 1 + pad),
+                max(0, xs.min() - pad), min(w, xs.max() + 1 + pad))
+    sl = ndimage.find_objects(lab)[int(np.argmax(sizes))]
     return (max(0, sl[0].start - pad), min(h, sl[0].stop + pad),
             max(0, sl[1].start - pad), min(w, sl[1].stop + pad))
 
 
-def build(pose, base_path, closed, opened, blink):
-    out_dir = os.path.join(ART, "newton", "rig", pose)
+def build(pose, base_path, closed, opened, blink, out_dir=None):
+    """base_path/closed/opened/blink: rutas o imágenes PIL. out_dir: por defecto el rig de Newton."""
+    out_dir = out_dir or os.path.join(ART, "newton", "rig", pose)
     os.makedirs(out_dir, exist_ok=True)
-    base_img = Image.open(base_path).convert("RGBA")
+    load = lambda x: (x if isinstance(x, Image.Image) else Image.open(x)).convert("RGBA")
+    base_img = load(base_path)
     base_img.save(os.path.join(out_dir, "base.png"))
+    mouth_top = None  # la boca (de boca_abierta) limita la zona de los ojos
     for name, path, which in (("boca_cerrada", closed, "mouth"), ("boca_abierta", opened, "mouth"),
                               ("ojos_cerrados", blink, "eyes")):
         if not path:
             continue
-        base, var, box = fit_variant(base_img, Image.open(path).convert("RGBA"))
+        base, var, box = fit_variant(base_img, load(path))
         mouth, eyes = regions(box)
-        region = diff_region(base, var) or (mouth if which == "mouth" else eyes)
+        if which == "mouth":
+            region = diff_region(base, var) or mouth
+            mouth_top = region[0] + 10  # región con margen de 10 px
+        else:
+            region = diff_region(base, var, above=mouth_top or mouth[0]) or eyes
         res = graft(base, var, region, feather=4)
         Image.fromarray(res).save(os.path.join(out_dir, f"{name}.png"))
     print("rig:", pose)
