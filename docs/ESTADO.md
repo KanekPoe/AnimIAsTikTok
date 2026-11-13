@@ -84,6 +84,9 @@ truncado a 3 s.
   Un video usa ~8–10 (una por frase) más reintentos: ~10 videos/día como máximo. Pendiente decidir
   cómo producir más (ver opciones en la conversación del 13 nov: varias frases por petición,
   subir de nivel en Google u otra voz). #126 quedó pendiente por este límite.
+  **El límite es por modelo**: si se acaba, se puede producir con otro modelo de voz de Google
+  con las mismas voces: `TTS_MODEL=gemini-3.8-flash-lite-tts python3 pipeline/producir.py ...`
+  (así se hizo el #127; avisar al creador porque la voz puede variar un poco).
 
 ## Siguiente (aún sin orden de ejecutar)
 

@@ -2125,5 +2125,68 @@
   "prompt": "Exactly 2 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cute chubby cartoon penguin standing upright, black back and white belly, short flippers, front view; 2) a cartoon penguin standing sideways with a round x-ray window on its lower body showing a long leg bone with a bent knee hidden inside",
   "out": "assets/art/raw/objetos_lote9.jpg",
   "tokens": 1612
+ },
+ {
+  "date": "2026-11-13T22:56:10",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "¿Te has preguntado por qué los pingüinos están tan cagados? Regordetes, alas cor",
+  "tokens": 220
+ },
+ {
+  "date": "2026-11-13T22:56:16",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "Pues estás mal: ese look es para sobrevivir.",
+  "tokens": 101
+ },
+ {
+  "date": "2026-11-13T22:56:20",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "Pasan hasta el setenta y cinco por ciento de su vida en el agua.",
+  "tokens": 117
+ },
+ {
+  "date": "2026-11-13T22:56:23",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "Su grasa y sus plumas apretaditas son su chamarra contra el frío.",
+  "tokens": 129
+ },
+ {
+  "date": "2026-11-13T22:56:25",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "Y ese cuerpo es un torpedo: con sus alitas vuelan bajo el agua.",
+  "tokens": 139
+ },
+ {
+  "date": "2026-11-13T22:56:30",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "¿Lloran sal? Casi: una glándula sobre sus ojos filtra la sal del mar, pero la sa",
+  "tokens": 207
+ },
+ {
+  "date": "2026-11-13T22:56:33",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "Su traje es camuflaje: panza blanca para no verse desde abajo, espalda negra des",
+  "tokens": 175
+ },
+ {
+  "date": "2026-11-13T22:56:36",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "¿Y sus piernitas? Son largas: traen las rodillas escondidas adentro.",
+  "tokens": 166
+ },
+ {
+  "date": "2026-11-13T22:56:40",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-lite-tts",
+  "prompt": "¿Qué otro animal se ve chistoso por una buena razón? Te leo.",
+  "tokens": 108
  }
 ]
