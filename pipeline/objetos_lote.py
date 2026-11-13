@@ -81,6 +81,10 @@ def run(sheet):
         return a.mean() > 0.08
     names = [(nm, b) for nm, b in names if solid(nm)]
     n_rows = (len(items) + 1) // 2
+    if len(items) <= 2 and len(names) == 2 * len(items):
+        # con 1-2 objetos la IA a veces llena la cuadrícula repitiéndolos: se toma la primera fila
+        names = names[:len(items)]
+        print(f"  {name}: venían repetidos; se usa la primera fila (revisar la hoja de contacto)")
     ok = len(names) == len(items)
     pieces = []
     if ok:
