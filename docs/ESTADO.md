@@ -79,6 +79,12 @@ truncado a 3 s.
 - Primera prueba: las 6 ideas del creador (121–126) producidas y enviadas. Esperan su opinión
   (voces, ritmo, acomodo) antes de producir más.
 
+- Voz 25 % más rápida por defecto (`TARGET_RATE` 6.9), acelerada con rubberband (lección 2).
+- **Límite de Google: 100 peticiones de voz (TTS) al día** (Tier 1, `gemini-3.8-flash-tts`).
+  Un video usa ~8–10 (una por frase) más reintentos: ~10 videos/día como máximo. Pendiente decidir
+  cómo producir más (ver opciones en la conversación del 13 nov: varias frases por petición,
+  subir de nivel en Google u otra voz). #126 quedó pendiente por este límite.
+
 ## Siguiente (aún sin orden de ejecutar)
 
 Plan acordado: producir los 120 con una sesión multiagente de Haiku sobre un pipeline robusto.
