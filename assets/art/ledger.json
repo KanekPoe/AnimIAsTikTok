@@ -808,5 +808,77 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Te irías de vacaciones allá… o nel?",
   "tokens": 78
+ },
+ {
+  "date": "2026-11-13T00:56:14",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Charles Darwin as a friendly old naturalist: bald head, very long bushy white beard, thick eyebrows, dark Victorian frock coat with waistcoat; DISTINCTIVE TRAIT: a small cute Galapagos giant tortoise sitting on his shoulder; holding a small notebook",
+  "out": "assets/art/raw/colegas/darwin_v1.jpg",
+  "tokens": 2115
+ },
+ {
+  "date": "2026-11-13T00:56:23",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Nikola Tesla as a slim elegant inventor: black hair standing up electrified with small blue sparks crackling around it, neat thin mustache, sharp dark suit with high collar and bow tie; DISTINCTIVE TRAIT: electrified spiky hair with sparks and a small glowing lightning bolt between his fingers",
+  "out": "assets/art/raw/colegas/tesla_v1.jpg",
+  "tokens": 2162
+ },
+ {
+  "date": "2026-11-13T00:56:31",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Marie Curie as a determined scientist woman: hair in a simple bun, plain long dark dress under a white lab coat; DISTINCTIVE TRAIT: holding up a small laboratory flask with a softly glowing blue-green liquid, with a radiation symbol pin on her coat",
+  "out": "assets/art/raw/colegas/curie_v1.jpg",
+  "tokens": 2121
+ },
+ {
+  "date": "2026-11-13T00:56:39",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Alan Turing as a young British mathematician: neat dark side-parted hair, tweed jacket over a sweater vest and tie; DISTINCTIVE TRAIT: holding a big brass cipher rotor wheel with letters on its edge, and wearing running sneakers (he was a marathon runner)",
+  "out": "assets/art/raw/colegas/turing_v1.jpg",
+  "tokens": 2195
+ },
+ {
+  "date": "2026-11-13T00:56:47",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Kurt Godel as a thin thoughtful logician: slicked-back dark hair, very large round black-rimmed glasses, long heavy winter overcoat and scarf even though it is not cold; DISTINCTIVE TRAIT: wrapped in the huge winter coat and scarf, holding a small chalkboard with an infinity symbol",
+  "out": "assets/art/raw/colegas/godel_v1.jpg",
+  "tokens": 2118
+ },
+ {
+  "date": "2026-11-13T00:56:56",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Ada Lovelace as a Victorian mathematician woman: dark hair parted in the middle with curls at the sides, elegant 1840s Victorian dress; DISTINCTIVE TRAIT: holding a long strip of punched cards (like those of an analytical engine) that unfolds in the air",
+  "out": "assets/art/raw/colegas/ada_v1.jpg",
+  "tokens": 2157
+ },
+ {
+  "date": "2026-11-13T00:57:04",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Hypatia of Alexandria as an ancient Greek philosopher-astronomer woman: dark hair tied back, white ancient Greek chiton with a blue cloak; DISTINCTIVE TRAIT: holding a golden brass astrolabe, with a small scroll tucked in her belt",
+  "out": "assets/art/raw/colegas/hipatia_v1.jpg",
+  "tokens": 2102
+ },
+ {
+  "date": "2026-11-13T00:57:12",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Mary Anning as an 1800s English fossil hunter woman: bonnet-less, wearing a battered black top hat, long brown dress with a shawl and muddy boots; DISTINCTIVE TRAIT: top hat, a geologist hammer in one hand and a spiral ammonite fossil in the other, with a basket",
+  "out": "assets/art/raw/colegas/anning_v1.jpg",
+  "tokens": 2169
+ },
+ {
+  "date": "2026-11-13T00:57:20",
+  "mode": "colega",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Rosalind Franklin as a 1950s British scientist woman: short dark wavy hair, white lab coat over a simple 1950s blouse; DISTINCTIVE TRAIT: holding up a photographic X-ray plate showing an X-shaped diffraction pattern (Photo 51), with a small DNA double helix floating beside her",
+  "out": "assets/art/raw/colegas/franklin_v1.jpg",
+  "tokens": 2153
  }
 ]

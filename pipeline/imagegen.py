@@ -9,6 +9,7 @@ Modos:
     sticker  piezas sueltas sobre fondo verde (luego: pipeline/cutout.py)
     fondo    fondo vertical 9:16 sin personajes
     newton   Newton con sus imágenes de referencia, sobre verde (consistencia de personaje)
+    colega   personaje nuevo con el estilo de Newton (sus imágenes como referencia de estilo)
     edit     edita una imagen dada como referencia (p. ej. cerrar bocas) sin cambiar lo demás
 
 La clave la inyecta el proxy del entorno (encabezado x-goog-api-key); no se lee de ningún archivo.
@@ -69,6 +70,13 @@ def generate(mode, prompt, out, refs=None):
         text, aspect, refs = f"{prompt}. {BACKGROUND}", "9:16", refs or []
     elif mode == "newton":
         text, aspect = f"{NEWTON}{prompt}. {STICKER}", "9:16"
+        refs = (refs or []) + NEWTON_REFS
+    elif mode == "colega":  # personaje nuevo con el MISMO estilo que Newton (Newton solo como referencia de estilo)
+        text = ("Draw a NEW and DIFFERENT cartoon character (do NOT draw Newton), in exactly the same art "
+                "style as the reference images: same bold black outlines, proportions, cel shading, face "
+                "style and level of detail. " + prompt + ". Full body, standing, facing slightly to the "
+                "side, friendly and expressive. " + STICKER)
+        aspect = "9:16"
         refs = (refs or []) + NEWTON_REFS
     elif mode == "edit":  # edita la primera referencia y conserva todo lo demás
         text = ("Edit this image: keep absolutely everything else identical (same characters, poses, "
