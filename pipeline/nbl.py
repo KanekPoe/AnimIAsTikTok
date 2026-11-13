@@ -450,9 +450,12 @@ def mix(tl, path, music=True):
                 cands.append((1, ev["t0"], "drop", ev))
         elif ev.get("kind") == "line":
             cands.append((2, ev["t0"], "line", ev))
+        elif a == "static" or ev["t0"] < 0:  # portada: ya está en pantalla, no suena
+            continue
         else:
             cands.append((3, ev["t0"], "pop", ev))
-    for _, t0, kind, ev in sorted(sorted(cands)[:MAX_ACCENTS], key=lambda c: c[1]):
+    top = sorted(cands, key=lambda c: (c[0], c[1]))[:MAX_ACCENTS]  # sin comparar dicts en empates
+    for _, t0, kind, ev in sorted(top, key=lambda c: c[1]):
         if kind == "stamp":
             add(fx, sfx.stamp(), t0, 1.0)
         elif kind == "drop":
