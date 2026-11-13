@@ -936,5 +936,341 @@
   "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep his electrified spiky hair with blue sparks in every pose",
   "out": "assets/art/raw/colegas/tesla_poses.jpg",
   "tokens": 2189
+ },
+ {
+  "date": "2026-11-13T03:15:16",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/tesla_poses_boca_abierta.jpg",
+  "tokens": 1733
+ },
+ {
+  "date": "2026-11-13T03:15:24",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/tesla_poses_ojos_cerrados.jpg",
+  "tokens": 1697
+ },
+ {
+  "date": "2026-11-13T03:15:31",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/tesla_v1_boca_abierta.jpg",
+  "tokens": 1634
+ },
+ {
+  "date": "2026-11-13T03:15:47",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/tesla_v1_ojos_cerrados.jpg",
+  "tokens": 1636
+ },
+ {
+  "date": "2026-11-13T03:15:59",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the small flask with glowing blue-green liquid in every pose",
+  "out": "assets/art/raw/colegas/curie_poses.jpg",
+  "tokens": 2030
+ },
+ {
+  "date": "2026-11-13T03:16:06",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/curie_poses_boca_abierta.jpg",
+  "tokens": 1773
+ },
+ {
+  "date": "2026-11-13T03:16:14",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/curie_poses_ojos_cerrados.jpg",
+  "tokens": 1653
+ },
+ {
+  "date": "2026-11-13T03:16:20",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/curie_v1_boca_abierta.jpg",
+  "tokens": 1624
+ },
+ {
+  "date": "2026-11-13T03:16:27",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/curie_v1_ojos_cerrados.jpg",
+  "tokens": 1629
+ },
+ {
+  "date": "2026-11-13T03:16:38",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the open laptop with green code on the screen in every pose",
+  "out": "assets/art/raw/colegas/turing_poses.jpg",
+  "tokens": 1997
+ },
+ {
+  "date": "2026-11-13T03:16:47",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/turing_poses_boca_abierta.jpg",
+  "tokens": 1723
+ },
+ {
+  "date": "2026-11-13T03:16:53",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/turing_poses_ojos_cerrados.jpg",
+  "tokens": 1669
+ },
+ {
+  "date": "2026-11-13T03:17:00",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/turing_v2_boca_abierta.jpg",
+  "tokens": 1692
+ },
+ {
+  "date": "2026-11-13T03:17:06",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/turing_v2_ojos_cerrados.jpg",
+  "tokens": 1614
+ },
+ {
+  "date": "2026-11-13T03:17:18",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the huge winter coat, scarf and the small chalkboard with the infinity symbol in every pose",
+  "out": "assets/art/raw/colegas/godel_poses.jpg",
+  "tokens": 1982
+ },
+ {
+  "date": "2026-11-13T03:17:27",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/godel_poses_boca_abierta.jpg",
+  "tokens": 1839
+ },
+ {
+  "date": "2026-11-13T03:17:35",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/godel_poses_ojos_cerrados.jpg",
+  "tokens": 1666
+ },
+ {
+  "date": "2026-11-13T03:17:41",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/godel_v1_boca_abierta.jpg",
+  "tokens": 1692
+ },
+ {
+  "date": "2026-11-13T03:17:49",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/godel_v1_ojos_cerrados.jpg",
+  "tokens": 1655
+ },
+ {
+  "date": "2026-11-13T03:18:00",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the strip of punched cards in every pose",
+  "out": "assets/art/raw/colegas/ada_poses.jpg",
+  "tokens": 2021
+ },
+ {
+  "date": "2026-11-13T03:18:08",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/ada_poses_boca_abierta.jpg",
+  "tokens": 1747
+ },
+ {
+  "date": "2026-11-13T03:18:14",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/ada_poses_ojos_cerrados.jpg",
+  "tokens": 1659
+ },
+ {
+  "date": "2026-11-13T03:18:21",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/ada_v1_boca_abierta.jpg",
+  "tokens": 1653
+ },
+ {
+  "date": "2026-11-13T03:18:27",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/ada_v1_ojos_cerrados.jpg",
+  "tokens": 1649
+ },
+ {
+  "date": "2026-11-13T03:18:41",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the golden brass astrolabe in every pose",
+  "out": "assets/art/raw/colegas/hipatia_poses.jpg",
+  "tokens": 2106
+ },
+ {
+  "date": "2026-11-13T03:18:50",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/hipatia_poses_boca_abierta.jpg",
+  "tokens": 1842
+ },
+ {
+  "date": "2026-11-13T03:18:58",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/hipatia_poses_ojos_cerrados.jpg",
+  "tokens": 1656
+ },
+ {
+  "date": "2026-11-13T03:19:05",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/hipatia_v1_boca_abierta.jpg",
+  "tokens": 1629
+ },
+ {
+  "date": "2026-11-13T03:19:12",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/hipatia_v1_ojos_cerrados.jpg",
+  "tokens": 1720
+ },
+ {
+  "date": "2026-11-13T03:19:24",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the black top hat, the geologist hammer and the ammonite fossil in every pose",
+  "out": "assets/art/raw/colegas/anning_poses.jpg",
+  "tokens": 2079
+ },
+ {
+  "date": "2026-11-13T03:19:31",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/anning_poses_boca_abierta.jpg",
+  "tokens": 1714
+ },
+ {
+  "date": "2026-11-13T03:19:38",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/anning_poses_ojos_cerrados.jpg",
+  "tokens": 1708
+ },
+ {
+  "date": "2026-11-13T03:19:45",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/anning_v1_boca_abierta.jpg",
+  "tokens": 1659
+ },
+ {
+  "date": "2026-11-13T03:19:51",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/anning_v1_ojos_cerrados.jpg",
+  "tokens": 1644
+ },
+ {
+  "date": "2026-11-13T03:20:03",
+  "mode": "poses",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "top-left: explaining enthusiastically, one hand raised with open palm; top-right: pointing to the side with the index finger, confident smile; bottom-left: scared and surprised, both hands up, eyes wide open; bottom-right: thinking, hand on chin, looking up. Keep the X-ray photographic plate with the X-shaped pattern in every pose",
+  "out": "assets/art/raw/colegas/franklin_poses.jpg",
+  "tokens": 2152
+ },
+ {
+  "date": "2026-11-13T03:20:12",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of every character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/franklin_poses_boca_abierta.jpg",
+  "tokens": 1767
+ },
+ {
+  "date": "2026-11-13T03:20:22",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/franklin_poses_ojos_cerrados.jpg",
+  "tokens": 1742
+ },
+ {
+  "date": "2026-11-13T03:20:29",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "change the mouth of the character to open as if speaking mid-word, showing a little tongue",
+  "out": "assets/art/raw/colegas/franklin_v1_boca_abierta.jpg",
+  "tokens": 1688
+ },
+ {
+  "date": "2026-11-13T03:20:37",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/franklin_v1_ojos_cerrados.jpg",
+  "tokens": 1654
+ },
+ {
+  "date": "2026-11-13T03:22:35",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down; BOTH eyes closed behind the round glasses, drawn as curved closed-eyelid lines inside both lenses, no pupils visible; the glasses stay exactly the same",
+  "out": "assets/art/raw/colegas/godel_poses_ojos_cerrados.jpg",
+  "tokens": 1720
+ },
+ {
+  "date": "2026-11-13T03:22:42",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of the character in a relaxed blink, eyelids down; BOTH eyes closed behind the round glasses, drawn as curved closed-eyelid lines inside both lenses, no pupils visible; the glasses stay exactly the same",
+  "out": "assets/art/raw/colegas/godel_v1_ojos_cerrados.jpg",
+  "tokens": 1737
+ },
+ {
+  "date": "2026-11-13T03:22:55",
+  "mode": "edit",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "close the eyes of every character in a relaxed blink, eyelids down",
+  "out": "assets/art/raw/colegas/hipatia_poses_ojos_cerrados.jpg",
+  "tokens": 1720
  }
 ]

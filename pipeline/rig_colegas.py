@@ -48,6 +48,9 @@ POSES_PROMPT = ("top-left: explaining enthusiastically, one hand raised with ope
                 "up. Keep {item} in every pose")
 OPEN = "change the mouth of every character to open as if speaking mid-word, showing a little tongue"
 BLINK = "close the eyes of every character in a relaxed blink, eyelids down"
+# parpadeos que necesitan instrucción especial (lentes)
+BLINK_EXTRA = {"godel": "; BOTH eyes closed behind the round glasses, drawn as curved closed-eyelid lines "
+                        "inside both lenses, no pupils visible; the glasses stay exactly the same"}
 
 
 def gen(mode, prompt, out, ref):
@@ -71,31 +74,32 @@ def full_cut(path):
 
 
 def quadrants(path, layout=None):
-    """Recorta cada personaje: agrupa las piezas por cuadrante (2x2) o todo junto (1 personaje).
+    """Recorta cada personaje: agrupa las piezas por cuadrante (2x2) según su centro de masa.
 
-    layout: lista de 4 cajas (x0, y0, x1, y1) de la imagen base; se reutiliza para las variantes,
-    que la edición deja en el mismo lugar.
+    Solo deja visibles las piezas del propio cuadrante (sin pedazos del vecino).
+    layout: cajas (x0, y0, x1, y1) de la imagen base; se reutilizan en las variantes (la edición
+    deja todo en el mismo lugar) para que la escala coincida.
     """
     rgba, keep, lab = full_cut(path)
     h, w = keep.shape
-    if layout is None:
-        layout = []
-        for qy in (0, 1):
-            for qx in (0, 1):
-                m = np.zeros_like(keep)
-                m[qy * h // 2:(qy + 1) * h // 2, qx * w // 2:(qx + 1) * w // 2] = True
-                ids = set(np.unique(lab[keep & m])) - {0}
-                # una pieza pertenece al cuadrante de su centro de masa
-                own = [i for i in ids if (lambda c: (int(c[0] >= h / 2), int(c[1] >= w / 2)))(
-                    ndimage.center_of_mass(lab == i)) == (qy, qx)]
-                ys, xs = np.nonzero(np.isin(lab, own))
-                layout.append((max(0, xs.min() - 8), max(0, ys.min() - 8),
-                               min(w, xs.max() + 9), min(h, ys.max() + 9)))
-    out = []
-    for x0, y0, x1, y1 in layout:
+    ids = [i for i in np.unique(lab[keep]) if i]
+    centers = ndimage.center_of_mass(keep, lab, ids)
+    owners = {i: (int(cy >= h / 2), int(cx >= w / 2)) for i, (cy, cx) in zip(ids, centers)}
+    out, boxes = [], []
+    for k, q in enumerate([(0, 0), (0, 1), (1, 0), (1, 1)]):
+        own = np.isin(lab, [i for i, o in owners.items() if o == q])
+        if layout is None:
+            ys, xs = np.nonzero(own)
+            box = (max(0, xs.min() - 8), max(0, ys.min() - 8), min(w, xs.max() + 9), min(h, ys.max() + 9))
+        else:
+            box = layout[k]
+        x0, y0, x1, y1 = box
         crop = rgba[y0:y1, x0:x1].copy()
+        mine = ndimage.binary_dilation(own[y0:y1, x0:x1], iterations=3)
+        crop[..., 3] = np.where(mine, crop[..., 3], 0)
         out.append(Image.fromarray(crop))
-    return out, layout
+        boxes.append(box)
+    return out, boxes
 
 
 def single(path):
@@ -128,10 +132,11 @@ def make(name):
     ref = os.path.join(RAW, design + ".jpg")
     sheet = gen("poses", POSES_PROMPT.format(item=item), os.path.join(RAW, f"{name}_poses.jpg"), ref)
     s_open = gen("edit", OPEN, os.path.join(RAW, f"{name}_poses_boca_abierta.jpg"), sheet)
-    s_blink = gen("edit", BLINK, os.path.join(RAW, f"{name}_poses_ojos_cerrados.jpg"), sheet)
+    blink = BLINK + BLINK_EXTRA.get(name, "")
+    s_blink = gen("edit", blink, os.path.join(RAW, f"{name}_poses_ojos_cerrados.jpg"), sheet)
     d_open = gen("edit", OPEN.replace("every character", "the character"),
                  os.path.join(RAW, f"{design}_boca_abierta.jpg"), ref)
-    d_blink = gen("edit", BLINK.replace("every character", "the character"),
+    d_blink = gen("edit", blink.replace("every character", "the character"),
                   os.path.join(RAW, f"{design}_ojos_cerrados.jpg"), ref)
     rig_dir = os.path.join(COL, name, "rig")
     bases, layout = quadrants(sheet)
