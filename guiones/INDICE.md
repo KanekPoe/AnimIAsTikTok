@@ -10,6 +10,7 @@
 | 124 | ¿Qué onda con los agujeros negros? | 118 | hipatia | 0 | `124_que_onda_agujeros_negros.md` |
 | 125 | ¿Nos hicimos humanos por comer hongos? (mono drogado) | 110 | darwin | 1 | `125_simios_hongos.md` |
 | 126 | ¿Somos el pináculo de la escala evolutiva? Nel, carnal | 117 | darwin | 1 | `126_pinaculo_evolucion.md` |
+| 127 | Datos sorprendentes de los pingüinos | 120 | darwin | 0 | `127_datos_pinguinos.md` |
 
 ## Ideas generales
 

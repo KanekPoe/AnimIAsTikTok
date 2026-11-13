@@ -75,6 +75,11 @@ def run(sheet):
     shutil.rmtree(tmp, ignore_errors=True)
     cutout.STRICT = False  # el magenta se detecta solo en cutout.key_mask
     names = cutout.cut(raw, tmp)
+    # a veces la IA dibuja las líneas de la cuadrícula: piezas casi vacías (líneas finas) se descartan
+    def solid(nm):
+        a = np.array(Image.open(os.path.join(tmp, nm)))[..., 3] > 128
+        return a.mean() > 0.08
+    names = [(nm, b) for nm, b in names if solid(nm)]
     n_rows = (len(items) + 1) // 2
     ok = len(names) == len(items)
     pieces = []
