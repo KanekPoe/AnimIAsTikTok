@@ -2,8 +2,8 @@
 
 ## ★ Prioridad (ideas del creador)
 
-
 | # | Idea | Palabras | Colega | Datos media/baja | Archivo |
+|---|---|---|---|---|---|
 | 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
 | 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
 | 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
@@ -12,7 +12,6 @@
 | 126 | ¿Somos el pináculo de la escala evolutiva? Nel, carnal | 117 | darwin | 1 | `126_pinaculo_evolucion.md` |
 
 ## Ideas generales
-
 
 | # | Idea | Palabras | Colega | Datos media/baja | Archivo |
 |---|---|---|---|---|---|
