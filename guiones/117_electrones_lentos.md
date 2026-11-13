@@ -18,7 +18,7 @@ estado: base
    DICE: Lo que viaja casi a la luz es la señal, el campo que empuja a los electrones.
    PANTALLA: objetos/cable_cobre
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Los electrones mismos se mueven despacio: con corrientes normales, apenas milímetros por segundo.
+   DICE: Los electrones se mueven despacio: apenas milímetros por segundo.
    PANTALLA: texto "MILÍMETROS/s"
 4. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: Es como un tubo lleno de canicas: empujas una y la del otro extremo sale al instante.
@@ -27,7 +27,7 @@ estado: base
    DICE: Ninguna canica recorre el tubo entero. Cada una se mueve poquito y avisa a la siguiente.
    PANTALLA: texto "POCO A POCO"
 6. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: ¿Y por qué tu lámpara prende casi al instante? La señal llega rápido, aunque cada electrón camina como caracol.
+   DICE: ¿Y por qué la lámpara prende al instante? La señal llega rápido, aunque el electrón camina como caracol.
    PANTALLA: texto "¡CARACOL!"
 7. [cierre] NEWTON (explicando_pluma) | fondo: estudio
    DICE: ¿Te imaginabas electrones tan lentos? Cuéntame qué más te suena rápido y no lo es.

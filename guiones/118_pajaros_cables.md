@@ -15,13 +15,13 @@ estado: base
    DICE: Un pájaro se posa en un cable de alta tensión y ni se inmuta. ¿Por qué?
    PANTALLA: texto "¿POR QUÉ?"
 2. [dato] NEWTON (voz) | fondo: jardin
-   DICE: La corriente necesita un camino: una diferencia de voltaje entre dos puntos del cuerpo.
+   DICE: La corriente necesita un camino por el cuerpo: dos puntos con distinto voltaje.
    PANTALLA: objetos/pajaro_en_cable
 3. [dato] NEWTON (voz) | fondo: jardin
    DICE: Con las dos patas en el mismo cable no hay diferencia de voltaje, y no circula corriente.
    PANTALLA: objetos/pajaro_en_cable
 4. [giro] NEWTON (asustado) | fondo: estudio
-   DICE: El peligro: tocar dos cables distintos a la vez, con las alas abiertas, o un cable y un poste con tierra.
+   DICE: El peligro: tocar dos cables a la vez con las alas abiertas, o un cable y un poste con tierra.
    PANTALLA: texto "¡PELIGRO!"
 5. [dato] NEWTON (voz) | fondo: jardin
    DICE: Así une dos puntos con distinto voltaje, y ahí sí pasa corriente por su cuerpo.

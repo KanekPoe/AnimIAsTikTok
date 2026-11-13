@@ -15,10 +15,10 @@ estado: base
    DICE: Edison y Tesla tuvieron una rivalidad famosa. ¿Y sabes qué corriente llega hoy a tu casa?
    PANTALLA: texto "¿ALTERNA O DIRECTA?"
 2. [dato] COLEGA:tesla (presentando) | fondo: estudio
-   DICE: Yo defendí la corriente alterna. Con transformadores puedes subir el voltaje y perder menos energía.
+   DICE: Yo defendí la alterna. Con transformadores puedes subir el voltaje y perder menos energía.
    PANTALLA: objetos/cable_cobre
 3. [dato] NEWTON (voz) | fondo: laboratorio
-   DICE: Edison fue un inventor genial, pero apostó por la directa, la de las pilas, y tenía mucho en juego.
+   DICE: Edison fue un inventor genial, pero apostó por la directa, la de las pilas.
    PANTALLA: texto "CD"
 4. [dato] NEWTON (voz) | fondo: laboratorio
    DICE: La directa pierde mucha energía en cables largos. Necesitaba centrales cada pocos kilómetros.
