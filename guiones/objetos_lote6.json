@@ -1,0 +1,24 @@
+[
+ {
+  "hoja": "lote6",
+  "fondo": "verde",
+  "items": [
+   [
+    "tarjeta_perforada",
+    "a beige IBM-style computer punched card with rows of small rectangular holes and a cut corner"
+   ],
+   [
+    "hoja_papel",
+    "a single sheet of white paper with lines of handwritten text"
+   ],
+   [
+    "cinta_magnetica",
+    "a modern black data tape cartridge (LTO style), square with a small white label"
+   ],
+   [
+    "cristal_5d",
+    "a small round transparent glass disc with tiny glowing blue data dots inside, light blue tint"
+   ]
+  ]
+ }
+]

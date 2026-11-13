@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|
 | 121 | ¿Qué es la realidad? | 111 | ninguno | 1 | `121_que_es_la_realidad.md` |
 | 122 | ¿Cómo va a ser el fin del universo? | 120 | hipatia | 3 | `122_fin_del_universo.md` |
-| 123 | USBs de agujeros negros: la memoria más grande posible | 118 | turing | 0 | `123_usb_agujero_negro.md` |
+| 123 | Top 6 para guardar información (de la tarjeta perforada al agujero negro) | 120 | turing | 3 | `123_usb_agujero_negro.md` |
 | 124 | ¿Qué onda con los agujeros negros? | 118 | hipatia | 0 | `124_que_onda_agujeros_negros.md` |
 | 125 | ¿Nos hicimos humanos por comer hongos? (mono drogado) | 110 | darwin | 1 | `125_simios_hongos.md` |
 | 126 | ¿Somos el pináculo de la escala evolutiva? Nel, carnal | 117 | darwin | 1 | `126_pinaculo_evolucion.md` |

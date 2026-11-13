@@ -1715,5 +1715,13 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "¿Qué superpoder animal te gustaría tener? Te leo en los comentarios.",
   "tokens": 120
+ },
+ {
+  "date": "2026-11-13T15:37:35",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 4 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a beige IBM-style computer punched card with rows of small rectangular holes and a cut corner; 2) a single sheet of white paper with lines of handwritten text; 3) a modern black data tape cartridge (LTO style), square with a small white label; 4) a small round transparent glass disc with tiny glowing blue data dots inside, light blue tint",
+  "out": "assets/art/raw/objetos_lote6.jpg",
+  "tokens": 1612
  }
 ]
