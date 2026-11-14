@@ -14,7 +14,7 @@ Los videos se producen solos a partir de tu guion: **respeta el formato al pie d
 2. **Duración**: entre 70 y 120 palabras en total, sumando todas las líneas DICE (unos 25–37 s). Usa de 6 a 10 líneas, cada una de máximo 25 palabras.
    - Para tops o listas, pon `duracion: larga` en el encabezado: permite hasta 165 palabras (~50 s).
 3. **Orden del contenido**: lo más fuerte va justo después del gancho, y el giro o la imagen más loca cerca del final.
-4. **Cierre**: la última línea es una pregunta para comentarios.
+4. **Cierre en positivo**: la última línea invita a comentar SIN ofrecer el "no" (nada de "¿o nel?", "si quieres", "si la pides", "¿no quieres…?"). Tres tipos: suposición ("esa te la cuento en la parte 2"), alternativa entre dos opciones positivas ("¿cuál te voló más: X o Y?") o acción concreta ("comenta 'parte 2'"). Excepción: cuando el "nel" es el chiste (p. ej. "¿te irías de vacaciones a Venus… o nel?").
 5. **Rigor**:
    - Cada cifra o afirmación va en "Datos que hay que verificar", con fuente sugerida y confianza (alta/media/baja).
    - Nada de exagerar.

@@ -17,4 +17,10 @@ Motor: `pipeline/nbl.py` (episodios en `episodes/nbl*.py`). Plan: `docs/PLAN_CAN
 - Máximo 3 efectos de sonido de acento por video (`MAX_ACCENTS`).
 - Si el video se va a promocionar: nada de sangre explícita ni groserías fuertes.
 - Guiones del creador: respetar su estilo y modismos; solo corregir imprecisiones y avisarle.
+- Cierres en positivo (principio de ventas acordado con el creador): no ofrecer el "no" en la pregunta
+  final ("¿o nel?", "si quieres", "si la pides", "¿no quieres…?"). Usar uno de tres tipos:
+  suposición ("esa te la cuento en la parte 2"), alternativa entre dos opciones positivas
+  ("¿cuál te voló más: X o Y?") o acción concreta ("comenta 'parte 2'"). Excepción: cuando el "nel"
+  ES el chiste (Venus: "¿te irías de vacaciones allá… o nel?"). Alternar los tres tipos y medir
+  comentarios para ver cuál funciona mejor con este público.
 - Gasto: imágenes con tope mensual (`pipeline/imagegen.py`, registro en `assets/art/ledger.json`).

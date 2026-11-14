@@ -23,7 +23,7 @@ Si el validador marca errores, corrígelos hasta que diga OK.
    hasta 165 palabras (~50 s).
    **6 a 10 líneas**, cada una de **máximo 25 palabras**.
 3. **Lo más fuerte justo después del gancho**; el giro o la imagen más loca, cerca del final.
-4. **Cierre**: la última línea es una pregunta para comentarios o un gancho a otro video. Si
+4. **Cierre en positivo**: la última línea invita a comentar SIN ofrecer el "no" (nada de "¿o nel?", "si quieres", "si la pides", "¿no quieres…?"). Tres tipos: suposición ("esa te la cuento en la parte 2"), alternativa entre dos opciones positivas ("¿cuál te voló más: X o Y?") o acción concreta ("comenta 'parte 2'"). Excepción: cuando el "nel" es el chiste (p. ej. "¿te irías de vacaciones a Venus… o nel?").
    puede conectar con el inicio (loop), mejor.
 5. **Rigor**: cada número o afirmación va en "Datos que hay que verificar". Si hay matiz de
    rigor en la idea, **respétalo en el texto** (p. ej. "se cree", "unos", "según un estudio").
