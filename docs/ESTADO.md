@@ -88,6 +88,14 @@ truncado a 3 s.
   con las mismas voces: `TTS_MODEL=gemini-3.8-flash-lite-tts python3 pipeline/producir.py ...`
   (así se hizo el #127; avisar al creador porque la voz puede variar un poco).
 
+## Fotos reales (NASA, dominio público)
+
+- El entorno permite `images-api.nasa.gov`, `images-assets.nasa.gov`, `commons.wikimedia.org` y
+  `upload.wikimedia.org`. Wikimedia limita las descargas: bajar la miniatura de 960 px con un
+  User-Agent descriptivo y genérico (sin datos del creador). Créditos en `assets/art/raw/fotos/CREDITOS.md`.
+- Las fotos se ponen como "tarjeta" con crédito ("FOTO REAL · NASA / …") en `assets/art/objetos/<x>.png`.
+  Primera: `arrokoth_nasa` (#130).
+
 ## Siguiente (aún sin orden de ejecutar)
 
 Plan acordado: producir los 120 con una sesión multiagente de Haiku sobre un pipeline robusto.
