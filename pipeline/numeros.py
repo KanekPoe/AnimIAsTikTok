@@ -87,7 +87,10 @@ def a_palabras(text):
     # potencias "10⁶⁶" -> "diez a la sesenta y seis"
     text = re.sub(r"10([⁰¹²³⁴⁵⁶⁷⁸⁹]+)", lambda m: "diez a la " + entero(int(m.group(1).translate(_SUP))), text)
     text = text.translate(_SUP)
-    text = re.sub(r"(\d)\s*[–-]\s*(\d)", r"\1 a \2", text)  # rangos "1665–1666"
+    text = re.sub(r"(\d)\s*–\s*(\d)", r"\1 a \2", text)  # rangos con raya: "1665–1666"
+    text = re.sub(r"(\d) - (\d)", r"\1 a \2", text)  # rangos con espacios: "10 - 20"
+    text = re.sub(r"(\d)-(\d)", r"\1 \2", text)  # nombres de catálogo: "Stephenson 2-18" -> "dos dieciocho"
+    text = re.sub(r"(?<=[A-Za-z])(\d)", r" \1", text)  # "B2" -> "B dos"
     text = re.sub(r"\b(\d+)([A-Z])\b", r"\1 \2", text)  # "5D" -> "cinco D", "3D" -> "tres D"
 
     def rep(m):

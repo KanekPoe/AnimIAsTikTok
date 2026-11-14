@@ -32,6 +32,9 @@ class TestNumeros(unittest.TestCase):
         "1665–1666": "mil seiscientos sesenta y cinco a mil seiscientos sesenta y seis",
         "Cristal 5D": "Cristal cinco D",
         "el GTA 6?": "el GTA seis?",
+        "Stephenson 2-18": "Stephenson dos dieciocho",
+        "Sagitario B2": "Sagitario B dos",
+        "de 10 - 20 km": "de diez a veinte kilómetros",
     }
 
     def test_casos(self):

@@ -2283,5 +2283,19 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Wacha: está pegadito a su sol, por eso el James Webb dice que más bien es un mun",
   "tokens": 170
+ },
+ {
+  "date": "2026-11-14T17:53:54",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Uno: se llama Sagitario B dos, una nube gigante con esa misma molécula.",
+  "tokens": 156
+ },
+ {
+  "date": "2026-11-14T17:53:59",
+  "mode": "tts",
+  "model": "gemini-3.8-flash-tts",
+  "prompt": "Dos: la estrella Stephenson dos dieciocho. Está tan pasada de lanza que, según a",
+  "tokens": 287
  }
 ]
