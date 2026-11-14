@@ -147,8 +147,12 @@ def validate(path):
         for b in BAD_WORDS:
             if re.search(r"\b" + re.escape(b), low):
                 errs.append(f"{tag}: palabra prohibida '{b}'")
-    if lines and not lines[-1].get("dice", "").rstrip().endswith(("?", "👇")) and "?" not in lines[-1].get("dice", ""):
-        warns.append("el cierre no tiene pregunta para comentarios")
+    if lines and lines[-1].get("dice"):  # regla del canal: cierres en positivo (ver CLAUDE.md)
+        last = lines[-1]["dice"].lower()
+        for neg in ("o nel", "si quieres", "si la pides", "si lo pides", "¿no quieres", "¿no te"):
+            if neg in last:
+                warns.append(f"cierre en negativo ('{neg}'): usar suposición, alternativa o acción "
+                             "(se permite solo si el 'nel' es el chiste)")
     if colega == "ninguno" and colega_lines:
         errs.append("hay líneas de colega pero el encabezado dice 'ninguno'")
     if colega_lines > 2:

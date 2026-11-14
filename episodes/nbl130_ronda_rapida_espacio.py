@@ -5,7 +5,7 @@ No editar a mano: corrige el guion y vuelve a convertir.
 SLUG = 'nbl130_ronda_rapida_espacio'
 BADGE = 'RONDA ESPACIAL'
 SOURCE = None
-CTA = '¿Armamos la parte 2 con la estrella que gira 716 veces por segundo? 👇'
+CTA = 'La parte 2 ya viene: la estrella que confundieron con aliens 👽'
 SCENES = [{'bg': 'espacio_vertical',
   'cast': [],
   'lines': [{'who': 'newton',
@@ -151,10 +151,10 @@ SCENES = [{'bg': 'espacio_vertical',
                          'y': 0.414,
                          'at': 0.05}]},
             {'who': 'newton',
-             'say': 'Y hay una que gira setecientos dieciséis veces por segundo… pero esa te la cuento en la '
-                    'parte dos. ¿La armamos o nel?',
-             'text': 'Y hay una que gira 716 veces por segundo… pero esa te la cuento en la parte 2. ¿La '
-                     'armamos o nel?',
+             'say': 'Y hay una que gira setecientos dieciséis veces por segundo y la confundieron con '
+                    'aliens… esa te la cuento en la parte dos.',
+             'text': 'Y hay una que gira 716 veces por segundo y la confundieron con aliens… esa te la '
+                     'cuento en la parte 2.',
              'pose': 'explicando_pluma',
              'key': ['716', '2'],
              'events': [{'img': 'objetos/pulsar',

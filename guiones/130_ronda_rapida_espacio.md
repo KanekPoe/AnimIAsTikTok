@@ -5,7 +5,7 @@ categoria: Espacio
 idea: Ronda rápida de 5 datos locos del espacio (nube de ron y frambuesa, Stephenson 2-18, 55 Cancri e, Arrokoth, estrella de neutrones; cierre con el púlsar para la parte 2)
 colega: hipatia
 badge: RONDA ESPACIAL
-cta: ¿Armamos la parte 2 con la estrella que gira 716 veces por segundo? 👇
+cta: La parte 2 ya viene: la estrella que confundieron con aliens 👽
 estado: base
 prioridad: creador
 duracion: larga
@@ -36,7 +36,7 @@ portada: espacio objetos/frambuesa
    DICE: Cinco: un terrón de azúcar de estrella de neutrones pesaría como una montaña.
    PANTALLA: objetos/estrella_neutrones · texto "1 TERRÓN = 1 MONTAÑA"
 8. [cierre] NEWTON (explicando_pluma) | fondo: estudio
-   DICE: Y hay una que gira 716 veces por segundo… pero esa te la cuento en la parte 2. ¿La armamos o nel?
+   DICE: Y hay una que gira 716 veces por segundo y la confundieron con aliens… esa te la cuento en la parte 2.
    PANTALLA: objetos/pulsar
 
 ## Datos que hay que verificar
@@ -57,6 +57,7 @@ portada: espacio objetos/frambuesa
 - Idea del creador (14 nov 2026): "Ronda rápida de datos del espacio" con las ideas 1 a 5 de la lista. Gancho con el dato más loco en la primera frase.
 - El planeta de diamante se dice con su duda ("tal vez no tanto") y la estrella de Tabby con su explicación (polvo): rigor sin quitarle lo loco.
 - Versión 2 (14 nov 2026, pedido del creador): se quitaron la lluvia de diamantes y la estrella de Tabby; entran la estrella gigante (gancho), Arrokoth y el púlsar como cierre que anuncia la parte 2 (los púlsares dan para un video completo).
+- Versión 7 (14 nov 2026, creador): cierre en positivo por suposición ("esa te la cuento en la parte 2"), regla nueva del canal.
 - Versión 6 (14 nov 2026, creador): Stephenson 2-18 con animación del sistema solar a escala: el Sol crece hasta ~9 UA (dentro del rango estimado de 7–10 UA), rebasa Júpiter y queda casi en la órbita de Saturno.
 - Versión 5 (14 nov 2026, creador): "Wacha: está pegadito a su sol, por eso…" y las ilustraciones oficiales de NASA/JPL-Caltech de 55 Cancri e (con etiqueta ILUSTRACIÓN).
 - Versión 4 (14 nov 2026, creador): "Cinco locuras en fa"; Arrokoth con la FOTO REAL de NASA/New Horizons (dominio público; crédito en assets/art/raw/fotos/CREDITOS.md), a pantalla completa sobre el espacio con la voz de Hipatia.
