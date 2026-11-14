@@ -2196,5 +2196,13 @@
   "prompt": "underwater view of the cold Antarctic sea: deep blue icy water, floating ice floes and an iceberg seen from below at the surface, soft light rays, a few small bubbles, dark rocky sea floor at the bottom, no animals, no fish, no corals",
   "out": "assets/art/raw/mar_antartico_vertical.jpg",
   "tokens": 1600
+ },
+ {
+  "date": "2026-11-14T16:40:53",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 4 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) planet Neptune, deep blue with faint white cloud streaks, cartoon style; 2) a sparkling cartoon diamond gem, light blue with white shine; 3) a single cartoon raspberry, red and juicy, with a small green leaf; 4) a bright yellow cartoon star partly covered by a dark irregular brown cloud of space dust",
+  "out": "assets/art/raw/objetos_lote10.jpg",
+  "tokens": 1641
  }
 ]
