@@ -67,7 +67,9 @@ def contact(sheet, pieces, ok):
 
 def run(sheet):
     name, items = sheet["hoja"], sheet["items"]
-    magenta = sheet.get("fondo") == "magenta"
+    # objetos verdes sobre fondo verde se borran al recortar: si alguno es verde, se usa magenta
+    magenta = sheet.get("fondo") == "magenta" or (
+        sheet.get("fondo") != "verde_forzado" and any("green" in d.lower() for _, d in items))
     raw = os.path.join(ROOT, "assets", "art", "raw", f"objetos_{name}.jpg")
     if not os.path.exists(raw):
         imagegen.generate("sticker_magenta" if magenta else "sticker", prompt_for(items), raw)

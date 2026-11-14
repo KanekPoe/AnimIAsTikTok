@@ -2297,5 +2297,21 @@
   "model": "gemini-3.8-flash-tts",
   "prompt": "Dos: la estrella Stephenson dos dieciocho. Está tan pasada de lanza que, según a",
   "tokens": 287
+ },
+ {
+  "date": "2026-11-14T18:02:35",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 2 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cartoon kitchen blender spinning with motion lines, simple friendly style; 2) a cute little green alien cartoon with big black eyes and a small antenna, waving",
+  "out": "assets/art/raw/objetos_lote13.jpg",
+  "tokens": 1474
+ },
+ {
+  "date": "2026-11-14T18:02:48",
+  "mode": "sticker_magenta",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 1 separate items arranged in a grid of 2 columns and 1 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a cute little green alien cartoon with big black eyes and a small antenna, waving",
+  "out": "assets/art/raw/objetos_lote14.jpg",
+  "tokens": 1398
  }
 ]
