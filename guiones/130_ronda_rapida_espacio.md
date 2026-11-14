@@ -22,7 +22,7 @@ portada: espacio objetos/frambuesa
    PANTALLA: objetos/galaxia · texto "SAGITARIO B2"
 3. [dato] NEWTON (voz) | fondo: espacio
    DICE: Dos: la estrella Stephenson 2-18. Está tan pasada de lanza que, según algunas medidas, en lugar del Sol llegaría casi hasta Saturno.
-   PANTALLA: objetos/estrella_gigante · objetos/saturno
+   PANTALLA: anim "sistema_solar" · texto "STEPHENSON 2-18"
 4. [dato] NEWTON (voz) | fondo: espacio
    DICE: Tres: el famoso planeta de diamante, 55 Cancri e.
    PANTALLA: objetos/cancri_e_estrella · texto "¿DIAMANTE?"
@@ -57,6 +57,7 @@ portada: espacio objetos/frambuesa
 - Idea del creador (14 nov 2026): "Ronda rápida de datos del espacio" con las ideas 1 a 5 de la lista. Gancho con el dato más loco en la primera frase.
 - El planeta de diamante se dice con su duda ("tal vez no tanto") y la estrella de Tabby con su explicación (polvo): rigor sin quitarle lo loco.
 - Versión 2 (14 nov 2026, pedido del creador): se quitaron la lluvia de diamantes y la estrella de Tabby; entran la estrella gigante (gancho), Arrokoth y el púlsar como cierre que anuncia la parte 2 (los púlsares dan para un video completo).
+- Versión 6 (14 nov 2026, creador): Stephenson 2-18 con animación del sistema solar a escala: el Sol crece hasta ~9 UA (dentro del rango estimado de 7–10 UA), rebasa Júpiter y queda casi en la órbita de Saturno.
 - Versión 5 (14 nov 2026, creador): "Wacha: está pegadito a su sol, por eso…" y las ilustraciones oficiales de NASA/JPL-Caltech de 55 Cancri e (con etiqueta ILUSTRACIÓN).
 - Versión 4 (14 nov 2026, creador): "Cinco locuras en fa"; Arrokoth con la FOTO REAL de NASA/New Horizons (dominio público; crédito en assets/art/raw/fotos/CREDITOS.md), a pantalla completa sobre el espacio con la voz de Hipatia.
 - Versión 3 (14 nov 2026): estructura propuesta por Argon (otro LLM) con las correcciones de rigor de Claude. Gancho sensorial en la primera frase; la línea 2 no repite "frambuesa". Ajustes al bloque de Argon: slug y categoría del sistema; línea 1 recortada a 25 palabras (máximo por línea); sin sello "MITO" en 55 Cancri e (está en duda, no descartado); el púlsar usa objetos/pulsar; portada con la frambuesa.

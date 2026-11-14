@@ -85,6 +85,8 @@ tierra torre_eiffel venus
 
 En `PANTALLA` también puedes poner textos: `texto "464 °C"` (dato grande) o `sello "MITO"`
 (sello que cae con golpe; **máximo 1 sello por guion**).
+Animaciones disponibles: `anim "sistema_solar"` (órbitas a escala y el Sol que crece hasta una estrella
+gigante de ~9 UA, para comparar tamaños de estrellas).
 
 ---
 

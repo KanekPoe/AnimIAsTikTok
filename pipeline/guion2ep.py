@@ -65,7 +65,7 @@ def parse(path):
 def items(pantalla):
     out = []
     for part in [p.strip() for p in re.split(r"\s*·\s*", pantalla) if p.strip()]:
-        m = re.match(r'^(texto|sello)\s+"(.*)"$', part)
+        m = re.match(r'^(texto|sello|anim)\s+"(.*)"$', part)
         if m:
             out.append((m.group(1), m.group(2)))
         elif part.startswith("objetos/"):
@@ -90,6 +90,17 @@ def layout_events(its, zone):
     stamps = [t for k, t in its if k == "sello"]
     objs = [o for k, o in its if k == "obj"]
     evs, y = [], y0
+    anims = [t for k, t in its if k == "anim"]
+    if anims:  # animación a pantalla completa (p. ej. "sistema_solar"); los textos van arriba
+        for i, t in enumerate(labels):
+            size = min(label_size(t, zw), 96)
+            evs.append({"kind": "label", "text": t, "size": size, "color": GOLD, "anim": "pop",
+                        "x": 0.5, "y": 0.215 + 0.075 * i, "at": 0.05})
+        for a in anims:
+            if a == "sistema_solar":
+                evs.append({"kind": "sistema_solar", "x": 0.5, "y": 0.43, "scale": 36, "tilt": 0.45,
+                            "star_au": 9.0, "grow_at": 0.45, "grow": 1.5, "at": 0})
+        return evs
     if labels and objs and zw > 1.8 * zh:  # zona baja y ancha (dos personajes): todo en una fila
         row = []
         for t in labels:

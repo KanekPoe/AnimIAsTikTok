@@ -71,7 +71,7 @@ def check(r, tl=None):
         for j in range(len(bx)):
             for k in range(j + 1, len(bx)):
                 (e1, b1), (e2, b2) = bx[j], bx[k]
-                if "stamp" in (e1.get("kind"), e2.get("kind")) or e1.get("behind") or e2.get("behind"):
+                if ({"stamp", "sistema_solar"} & {e1.get("kind"), e2.get("kind")}) or e1.get("behind") or e2.get("behind"):
                     continue
                 if overlap(b1, b2) > 0.12:
                     probs.append(f"frase {i}: {name(e1)} y {name(e2)} se enciman ({overlap(b1, b2):.0%})")

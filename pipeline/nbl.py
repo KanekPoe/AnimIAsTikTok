@@ -110,6 +110,56 @@ def arrow(length=260, width=40, color=(255, 194, 26, 255), down=True):
 
 
 # ----------------------------------------------------------------------------
+# Animación: sistema solar y estrella que crece (escala real de órbitas)
+# ----------------------------------------------------------------------------
+PLANETAS = [("Mercurio", 0.39, (170, 160, 150), 5), ("Venus", 0.72, (230, 200, 140), 7),
+            ("Tierra", 1.0, (80, 150, 255), 7), ("Marte", 1.52, (220, 90, 50), 6),
+            ("Júpiter", 5.2, (215, 170, 120), 13), ("Saturno", 9.54, (230, 210, 150), 11)]
+ROTULOS = {"Tierra", "Júpiter", "Saturno"}
+
+
+def draw_solar(layer, cx, cy, ev, age, dur):
+    """Órbitas a escala (vista inclinada) y una estrella que crece de Sol a gigante.
+
+    ev: "scale" px por UA, "tilt" achatamiento de las órbitas, "star_au" radio final en UA,
+    "grow_at" fracción de la frase en que empieza a crecer, "grow" segundos que tarda.
+    """
+    d = ImageDraw.Draw(layer)
+    S, tilt = ev.get("scale", 40), ev.get("tilt", 0.45)
+    fade = min(1.0, max(age, 0) / 0.3)
+    a = int(255 * fade)
+    p = ease((age - ev.get("grow_at", 0.45) * dur) / ev.get("grow", 1.5))
+    r_star = 9 + (ev.get("star_au", 9.0) * S - 9) * p
+    for name, au, col, rad in PLANETAS:  # órbitas
+        rx, ry = au * S, au * S * tilt
+        d.ellipse((cx - rx, cy - ry, cx + rx, cy + ry), outline=(255, 255, 255, int(110 * fade)), width=3)
+    pos = []
+    for k, (name, au, col, rad) in enumerate(PLANETAS):  # planetas (giran según Kepler, acelerado)
+        ang = 0.9 + k * 1.7 + age * 1.6 / au ** 1.5
+        x, y = cx + au * S * math.cos(ang), cy + au * S * tilt * math.sin(ang)
+        pos.append((name, au, col, rad, x, y))
+        if au * S <= r_star:  # dentro de la estrella: solo se ve si aún no lo alcanza
+            if math.hypot(x - cx, y - cy) > r_star:
+                d.ellipse((x - rad, y - rad, x + rad, y + rad), fill=col + (a,), outline=(0, 0, 0, a), width=2)
+    # estrella: de amarilla a roja, con resplandor
+    c0, c1 = (255, 220, 90), (235, 75, 40)
+    col = tuple(int(c0[i] + (c1[i] - c0[i]) * p) for i in range(3))
+    glow = Image.new("RGBA", layer.size, (0, 0, 0, 0))
+    gr = r_star * 1.10 + 6
+    ImageDraw.Draw(glow).ellipse((cx - gr, cy - gr, cx + gr, cy + gr), fill=col + (int(90 * fade),))
+    layer.alpha_composite(glow.filter(ImageFilter.GaussianBlur(14)))
+    d.ellipse((cx - r_star, cy - r_star, cx + r_star, cy + r_star), fill=col + (a,), outline=(0, 0, 0, a), width=4)
+    for name, au, col_p, rad, x, y in pos:  # órbitas más grandes que la estrella: el planeta va por fuera
+        if au * S > r_star:
+            d.ellipse((x - rad, y - rad, x + rad, y + rad), fill=col_p + (a,), outline=(0, 0, 0, a), width=2)
+    f = font("InterDisplay-Black.otf", 34)
+    for name, au, col_p, rad, x, y in pos:  # rótulos de los planetas que siguen a la vista
+        if name in ROTULOS and (au * S > r_star or math.hypot(x - cx, y - cy) > r_star):
+            draw_text(layer, (x - text_width(name, f) / 2, y + rad + 4), name, f, fill=(255, 255, 255, a),
+                      stroke=6, stroke_fill=(0, 0, 0, a))
+
+
+# ----------------------------------------------------------------------------
 # Línea de tiempo
 # ----------------------------------------------------------------------------
 class Timeline:
@@ -274,6 +324,13 @@ class Renderer:
                 _IMG[key] = text_sticker(ev["text"], ev.get("size", 90), ev.get("color", WHITE), 10)
             elif k == "arrow":
                 _IMG[key] = arrow(ev.get("length", 260), down=ev.get("down", True))
+            elif k == "sistema_solar":  # estado final, para medir su tamaño en la QA
+                S = ev.get("scale", 40)
+                rx = max(9.54 * S, ev.get("star_au", 9.0) * S * 1.10) + 12
+                ry = max(9.54 * S * ev.get("tilt", 0.45), ev.get("star_au", 9.0) * S * 1.10) + 12
+                lay = Image.new("RGBA", (int(2 * rx), int(2 * ry)), (0, 0, 0, 0))
+                draw_solar(lay, rx, ry, ev, 99.0, 1.0)
+                _IMG[key] = lay
         return _IMG[key]
 
     def draw_event(self, frame, ev, t):
@@ -282,6 +339,11 @@ class Renderer:
             return
         anim = ev.get("anim", "pop")
         x, y = ev.get("x", 0.5) * W, ev.get("y", 0.5) * H
+        if ev.get("kind") == "sistema_solar":
+            layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            draw_solar(layer, ev.get("x", 0.5) * W, ev.get("y", 0.46) * H, ev, age, ev["t1"] - ev["t0"])
+            frame.alpha_composite(layer)
+            return
         if ev.get("kind") == "line":  # línea punteada que crece (distancias)
             p = ease(age / ev.get("grow", 1.0))
             x0, y0, x1, y1 = ev["from"][0] * W, ev["from"][1] * H, ev["to"][0] * W, ev["to"][1] * H
@@ -450,7 +512,7 @@ def mix(tl, path, music=True):
                 cands.append((1, ev["t0"], "drop", ev))
         elif ev.get("kind") == "line":
             cands.append((2, ev["t0"], "line", ev))
-        elif a == "static" or ev["t0"] < 0:  # portada: ya está en pantalla, no suena
+        elif a == "static" or ev["t0"] < 0 or ev.get("kind") == "sistema_solar":  # sin efecto propio
             continue
         else:
             cands.append((3, ev["t0"], "pop", ev))
