@@ -13,7 +13,7 @@
 | 127 | ¿Por qué los pingüinos están tan cagados? | 119 | darwin | 1 | `127_datos_pinguinos.md` |
 | 128 | Datos sorprendentes del nautilo | 120 | darwin | 0 | `128_datos_nautilo.md` |
 | 129 | Top 6 teorías locas de los agujeros negros | 165 | hipatia | 2 | `129_teorias_agujeros_negros.md` |
-| 130 | Ronda rápida de datos del espacio | 119 | hipatia | 0 | `130_ronda_rapida_espacio.md` |
+| 130 | Ronda rápida del espacio (cierra con el púlsar → parte 2) | 119 | hipatia | 1 | `130_ronda_rapida_espacio.md` |
 
 ## Ideas generales
 

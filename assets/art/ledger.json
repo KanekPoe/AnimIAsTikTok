@@ -2204,5 +2204,13 @@
   "prompt": "Exactly 4 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) planet Neptune, deep blue with faint white cloud streaks, cartoon style; 2) a sparkling cartoon diamond gem, light blue with white shine; 3) a single cartoon raspberry, red and juicy, with a small green leaf; 4) a bright yellow cartoon star partly covered by a dark irregular brown cloud of space dust",
   "out": "assets/art/raw/objetos_lote10.jpg",
   "tokens": 1641
+ },
+ {
+  "date": "2026-11-14T16:49:07",
+  "mode": "sticker",
+  "model": "gemini-3.1-flash-image",
+  "prompt": "Exactly 3 separate items arranged in a grid of 2 columns and 2 rows, in this exact order from left to right and top to bottom, each item centered in its own cell with plenty of empty space around it, no text, no labels, no numbers: 1) a huge glowing red giant star, cartoon style, with soft orange flares; 2) the Kuiper belt object Arrokoth, a reddish snowman-shaped space rock made of two flattened lobes stuck together, cartoon style; 3) a small bright cartoon neutron star spinning, with two blue light beams shooting out of its poles like a lighthouse",
+  "out": "assets/art/raw/objetos_lote11.jpg",
+  "tokens": 1544
  }
 ]
